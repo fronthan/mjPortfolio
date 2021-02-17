@@ -1,0 +1,192 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&family=Roboto:wght@500&display=swap"); //nanum : 400 regular, 700 bold /notosans : 300 light, 400 regular, 500 medium / roboto : 500 medium
+
+$fontRoboto: "Roboto", "Nanum Gothic", sans-serif;
+$colorBlack: #1e1e1e;
+$colorSkin: #fff3dc;
+$colorYellow: #ffd980;
+$colorBrown: #80594d;
+$colorMaroon: #403333;
+$colorPink: #ff8c80;
+
+html {
+  font-family: "Noto Sans KR", "Nanum Gothic", sans-serif;
+  font-weight: 400;
+}
+
+.cont_tit {
+  //영역별 제목
+  position: relative;
+  padding-top: 115px;
+  padding-bottom: 90px;
+  font-family: $fontRoboto;
+  color: $colorMaroon;
+  font-size: 3.2rem;
+  font-weight: 500;
+  text-align: center;
+
+  &:after {
+    content: " ";
+    display: block;
+    width: 1px;
+    height: 60px;
+    position: absolute;
+    left: calc(50% - 1px);
+    bottom: 0;
+    background: $colorMaroon;
+  }
+
+  .last_update {
+    color: #5f5f5f;
+    font-family: "Noto Sans KR", "Nanum Gothic", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+}
+
+//상단 헤더
+.mj_header {
+  background: url(/images/bg_skill.svg) no-repeat center center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  &.fixed {
+    background: rgba(255, 255, 255, 0.5);
+
+    a:hover {
+      background: $colorYellow;
+    }
+  }
+
+  .header_wrap {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1274px;
+    height: 80px;
+    margin: 0 auto;
+    color: $colorMaroon;
+  }
+}
+
+.mj_title {
+  //로고 대신
+  display: flex;
+  align-items: center;
+
+  .ko_name {
+    font-family: $fontRoboto;
+    font-size: 3.2rem;
+  }
+
+  .txt_box {
+    padding-left: 1rem;
+  }
+  .en_name,
+  .job_txt {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1;
+  }
+  .en_name {
+    padding-bottom: 3px;
+  }
+}
+
+.my_tnb {
+  //헤더 메뉴
+  max-width: 760px;
+  width: 59%;
+  display: flex;
+  align-items: center;
+
+  ul {
+    display: flex;
+    flex-grow: 1;
+
+    li {
+      flex-grow: 1;
+      font-weight: 300;
+      font-size: 1.6rem;
+      text-align: center;
+    }
+  }
+
+  a {
+    display: block;
+    width: 64px;
+    height: 64px;
+    line-height: 64px;
+  }
+  a:hover {
+    border-radius: 50%;
+    background-color: $colorSkin;
+  }
+}
+
+.mj_portfolio {
+  background: url(/images/bg_skill.svg) no-repeat center 0;
+}
+
+.mj_skill {
+    height: 1026px;
+  padding-top: 80px;
+  background: url(/images/bg_skill.svg) repeat center 0;
+}
+
+.skill_conts {
+    width:1274px; margin: 0 auto;
+    //main skill
+    .skill_main {
+        display: flex;
+        padding-top: 89px;
+
+        li {
+            flex-grow :1;
+            padding: 0 18px;
+            background: transparentize($colorSkin, 0.5);
+            &:nth-child(2) {margin: 0 7px;}
+        }
+    }
+
+    .skill_desc {font-weight: 300; text-align: center;}
+    .sentence {padding-bottom: 20px;
+        line-height:1.4;  font-size: 1.2rem;
+        &:last-child {padding-bottom: 42px;}
+
+        .mark_txt {background: $colorYellow; font-size: inherit;}
+    }
+
+    .skill_name {
+        margin-bottom: 44px;
+        margin-top: -58px;
+        text-align: center;
+    }
+
+    //sub skill
+    .skill_sub {
+        display:flex;
+        justify-content: space-between;
+        width:548px;
+        margin: 80px auto 0;
+        
+    
+    }
+}
+
+.mj_history {
+  background: url(/images/bg_history.svg) repeat;
+  height: 885px;
+}
+
+.mj_contact {
+  background: url(/images/bg_skill.svg) repeat center 0;
+  height: 735px;
+}
+
+.mj_footer {
+  height: 100px;
+  background: $colorMaroon;
+}

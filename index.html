@@ -3,22 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="description" content="" />
+    <meta name="rebots" content="noindex, nofollow"> <!-- 임시 메타 -->
     <title>portfolio</title>
+    <link rel="stylesheet" href="css/reset_browser.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="mj_header">
-        <h1 class="mj_title">
-            <div class="ko_name">한민정</div>
-            <span class="en_name">Min Jeong Han</span>
-            <em class="job_txt">Front End Developer</em>
-        </h1>
-        <nav class="my_tnb">
-            <ul>
-                <li><a href="#">Skill</a></li>
-                <li><a href="#">History</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+    <header class="mj_header fixed">
+        <div class="header_wrap">
+            <h1 class="mj_title">
+                <div class="ko_name">한민정</div>
+                <div class="txt_box">
+                    <span class="en_name">Min Jeong Han</span>
+                    <em class="job_txt">Front End Developer</em>
+                </div>
+            </h1>
+            <nav class="my_tnb">
+                <ul>
+                    <li><a href="#">Skill</a></li>
+                    <li><a href="#">History</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main class="mj_portfolio">
@@ -28,44 +38,44 @@
                 <ul class="skill_main">
                     <li>
                         <h3 class="skill_name">
-                            <img src="#" alt="" />
+                            <img src="images/skill_html5.svg" alt="" />
                         </h3>
                         <div class="skill_desc">
-                            <div class="sentence">웹 표준을 준수하여 다양한 브라우저와 기기에서 올바르게 표시되도록 <em class="mark_txt">상/하위 호환성 확보 및 소스의 경량화</em>로 트래픽 비용을 최소화합니다.</div>
-                            <div class="sentence">META 요소를 이용해 정확한 문서 정보의 제공과 적절한 HEADING 요소의 사용, html을 디자인적인 의미로 사용하지 않고 <em class="mark_txt">의미있는 마크업</em>으로 검색 친화적인 사이트를 구현합니다.</div>
+                            <div class="sentence">웹 표준을 준수하여 다양한 브라우저와 기기에서<br> 올바르게 표시되도록 <em class="mark_txt">상/하위 호환성 확보 및 소스의 경량화</em>로 <br>트래픽 비용을 최소화합니다.</div>
+                            <div class="sentence">META 요소를 이용해 정확한 문서 정보의 제공과 <br>적절한 HEADING 요소의 사용, html을 디자인적인 의미로 사용하지 않고 <br><em class="mark_txt">의미있는 마크업</em>으로 검색 친화적인 사이트를 구현합니다.</div>
                         </div>
                     </li>
                     <li>
                         <h3 class="skill_name">
-                            <img src="#" alt="" />
+                            <img src="images/skill_css.svg" alt="" />
                         </h3>
                         <div class="skill_desc">
-                            <div class="sentence">기획자와 디자이너가 그린 웹을 브라우저에 정확하게 그려냅니다. 어떤 화면에서도 <em class="mark_txt">사용자 경험을 높이도록 함께 고민</em>하며 작업합니다.</div>
+                            <div class="sentence">기획자와 디자이너가 그린 웹을 브라우저에 정확하게 그려냅니다.<br> 어떤 화면에서도 <em class="mark_txt">사용자 경험을 높이도록 함께 고민</em>하며 작업합니다.</div>
                             <div class="sentence">기존의 css 코딩 방식을 벗어나 보다 <em class="mark_txt">간결하게 컴포넌트화</em>할 수 있도록 합니다.</div>
-                            <div class="sentence">어떤 사람이 봐도 한 눈에 파악할 수 있도록 <em class="mark_txt">유지보수에 용이</em>한 코드를 작성합니다.</div>
+                            <div class="sentence">어떤 사람이 봐도 한 눈에 파악할 수 있도록 <br><em class="mark_txt">유지보수에 용이</em>한 코드를 작성합니다.</div>
                         </div>
                     </li>
                     <li>
                         <h3 class="skill_name">
-                            <img src="#" alt="" />
+                            <img src="images/skill_js.svg" alt="" />
                         </h3>
                         <div class="skill_desc">
-                            <div class="sentence">기본 자바스크립트 코드만으로 사이트의 불필요한 리소스 낭비를 줄이면서 <em class="mark_txt"> 브라우저 성능을 최대로 활용</em>하도록 합니다.</div>
-                            <div class="sentence">css 선택자를 활용하는 jQuery로 <em class="mark_txt">쉽고 자유롭게 DOM을 조작</em>하여 웹 페이지를 구현합니다.</div>
+                            <div class="sentence">기본 자바스크립트 코드만으로 사이트의 불필요한 리소스 낭비를 줄이면서 <br><em class="mark_txt"> 브라우저 성능을 최대로 활용</em>하도록 합니다.</div>
+                            <div class="sentence">css 선택자를 활용하는 jQuery로 <br><em class="mark_txt">쉽고 자유롭게 DOM을 조작</em>하여 웹 페이지를 구현합니다.</div>
                         </div>
                     </li>
                 </ul>
                 <ul class="skill_sub">
-                    <li><img src="#" alt="리액트" /></li>
-                    <li><img src="#" alt="노드 제이에서" />/li>
-                    <li><img src="#" alt="뷰 제이에스" /></li>
-                    <li><img src="#" alt="리액트 내이티브" /></li>
+                    <li><img src="images/skill_react.svg" alt="리액트" /></li>
+                    <li><img src="images/skill_node.svg" alt="노드 제이에서" /></li>
+                    <li><img src="images/skill_vue.svg" alt="뷰 제이에스" /></li>
+                    <li><img src="images/skill_rn.svg" alt="리액트 내이티브" /></li>
                 </ul>
             </div>
         </div>
         <div class="mj_history">
-            <h2 class="cont_tit">HISTORY
-                <div class="last_update">2021.02.17</div>
+            <h2 class="cont_tit">WORKING HISTORY
+                <div class="last_update">Last update 2021.02.17</div>
             </h2>
             <ul class="history_main">
                 <li class="history_item">

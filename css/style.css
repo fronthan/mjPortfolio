@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&family=Roboto:wght@500&display=swap");
+html { font-family: "Noto Sans KR", "Nanum Gothic", sans-serif; font-weight: 400; }
+
+.cont_tit { position: relative; padding-top: 115px; padding-bottom: 90px; font-family: "Roboto", "Nanum Gothic", sans-serif; color: #403333; font-size: 3.2rem; font-weight: 500; text-align: center; }
+
+.cont_tit:after { content: " "; display: block; width: 1px; height: 60px; position: absolute; left: calc(50% - 1px); bottom: 0; background: #403333; }
+
+.cont_tit .last_update { color: #5f5f5f; font-family: "Noto Sans KR", "Nanum Gothic", sans-serif; font-size: 1.2rem; font-weight: 300; }
+
+.mj_header { background: url(/images/bg_skill.svg) no-repeat center center; position: fixed; top: 0; left: 0; width: 100%; }
+
+.mj_header.fixed { background: rgba(255, 255, 255, 0.5); }
+
+.mj_header.fixed a:hover { background: #ffd980; }
+
+.mj_header .header_wrap { display: flex; justify-content: space-between; max-width: 1274px; height: 80px; margin: 0 auto; color: #403333; }
+
+.mj_title { display: flex; align-items: center; }
+
+.mj_title .ko_name { font-family: "Roboto", "Nanum Gothic", sans-serif; font-size: 3.2rem; }
+
+.mj_title .txt_box { padding-left: 1rem; }
+
+.mj_title .en_name, .mj_title .job_txt { display: block; font-size: 1.2rem; font-weight: 300; line-height: 1; }
+
+.mj_title .en_name { padding-bottom: 3px; }
+
+.my_tnb { max-width: 760px; width: 59%; display: flex; align-items: center; }
+
+.my_tnb ul { display: flex; flex-grow: 1; }
+
+.my_tnb ul li { flex-grow: 1; font-weight: 300; font-size: 1.6rem; text-align: center; }
+
+.my_tnb a { display: block; width: 64px; height: 64px; line-height: 64px; }
+
+.my_tnb a:hover { border-radius: 50%; background-color: #fff3dc; }
+
+.mj_portfolio { background: url(/images/bg_skill.svg) no-repeat center 0; }
+
+.mj_skill { height: 1026px; padding-top: 80px; background: url(/images/bg_skill.svg) repeat center 0; }
+
+.skill_conts { width: 1274px; margin: 0 auto; }
+
+.skill_conts .skill_main { display: flex; padding-top: 89px; }
+
+.skill_conts .skill_main li { flex-grow: 1; padding: 0 18px; background: rgba(255, 243, 220, 0.5); }
+
+.skill_conts .skill_main li:nth-child(2) { margin: 0 7px; }
+
+.skill_conts .skill_desc { font-weight: 300; text-align: center; }
+
+.skill_conts .sentence { padding-bottom: 20px; line-height: 1.4; font-size: 1.2rem; }
+
+.skill_conts .sentence:last-child { padding-bottom: 42px; }
+
+.skill_conts .sentence .mark_txt { background: #ffd980; font-size: inherit; }
+
+.skill_conts .skill_name { margin-bottom: 44px; margin-top: -58px; text-align: center; }
+
+.skill_conts .skill_sub { display: flex; justify-content: space-between; width: 548px; margin: 80px auto 0; }
+
+.mj_history { background: url(/images/bg_history.svg) repeat; height: 885px; }
+
+.mj_contact { background: url(/images/bg_skill.svg) repeat center 0; height: 735px; }
+
+.mj_footer { height: 100px; background: #403333; }
+/*# sourceMappingURL=style.css.map */
