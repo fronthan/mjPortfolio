@@ -1,19 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&family=Roboto:wght@500&display=swap");
-html { font-family: "Noto Sans KR", "Nanum Gothic", sans-serif; font-weight: 400; }
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR:wght@350;400;500&family=Roboto:wght@500&display=swap");
+html { font-family: "Noto Sans KR", "Nanum Gothic", sans-serif; font-weight: 400; font-size: 62.5%; }
+
+body { background: #fff3dc; }
+
+::selection { background-color: rgba(255, 217, 128, 0.7); }
 
 .mj_header .header_wrap, .skill_conts, .history_main, .contact_main { max-width: 1274px; margin: 0 auto; }
 
-.cont_tit { position: relative; padding-top: 115px; padding-bottom: 90px; font-family: "Roboto", "Nanum Gothic", sans-serif; color: #403333; font-size: 3.2rem; font-weight: 500; text-align: center; }
+.cont_tit { position: relative; padding-top: 5.9%; padding-bottom: 90px; font-family: "Roboto", "Nanum Gothic", sans-serif; color: #403333; font-size: 3.2rem; font-weight: 500; text-align: center; }
 
 .cont_tit:after { content: " "; display: block; width: 1px; height: 60px; position: absolute; left: calc(50% - 1px); bottom: 0; background: #403333; }
 
-.cont_tit .last_update { color: #5f5f5f; font-family: "Noto Sans KR", "Nanum Gothic", sans-serif; font-size: 1.2rem; font-weight: 300; line-height: 17px; }
+.cont_tit .last_update { color: #5f5f5f; font-family: "Noto Sans KR", "Nanum Gothic", sans-serif; font-size: 1.2rem; font-weight: 350; line-height: 17px; }
 
-.mj_header { background: url(/images/bg_skill.svg) no-repeat center center; position: fixed; top: 0; left: 0; width: 100%; }
+.mj_header { position: fixed; top: 0; left: 0; width: 100%; z-index: 100; }
 
-.mj_header.fixed { background: rgba(255, 255, 255, 0.5); }
+.mj_header.change_bg { background: rgba(255, 255, 255, 0.5); }
 
-.mj_header.fixed a:hover { background: #ffd980; }
+.mj_header.change_bg a:hover { background: #ffd980; }
 
 .mj_header .header_wrap { display: flex; justify-content: space-between; height: 80px; color: #403333; }
 
@@ -23,7 +27,7 @@ html { font-family: "Noto Sans KR", "Nanum Gothic", sans-serif; font-weight: 400
 
 .mj_title .txt_box { padding-left: 1rem; }
 
-.mj_title .en_name, .mj_title .job_txt { display: block; font-size: 1.2rem; font-weight: 300; line-height: 1; }
+.mj_title .en_name, .mj_title .job_txt { display: block; font-size: 1.2rem; font-weight: 350; line-height: 1; }
 
 .mj_title .en_name { padding-bottom: 3px; }
 
@@ -31,23 +35,21 @@ html { font-family: "Noto Sans KR", "Nanum Gothic", sans-serif; font-weight: 400
 
 .my_tnb ul { display: flex; flex-grow: 1; }
 
-.my_tnb ul li { flex-grow: 1; font-weight: 300; font-size: 1.6rem; text-align: center; }
+.my_tnb ul li { flex-grow: 1; font-weight: 350; font-size: 1.6rem; text-align: center; }
 
-.my_tnb a { display: block; width: 64px; height: 64px; line-height: 64px; }
+.my_tnb a { display: block; width: 64px; height: 64px; line-height: 64px; margin: 0 auto; }
 
 .my_tnb a:hover { border-radius: 50%; background-color: #fff3dc; }
 
 .mj_portfolio { background: url(/images/bg_skill.svg) no-repeat center 0; }
 
-.mj_skill { padding-top: 80px; padding-bottom: 194px; background: url(/images/bg_skill.svg) repeat center 0; }
+.mj_skill { padding-bottom: 10%; background: url(/images/bg_skill.svg) repeat center 0; }
 
-.skill_conts .skill_main { display: flex; padding-top: 89px; }
+.skill_conts .skill_main { display: flex; flex-wrap: wrap; padding-top: 89px; }
 
-.skill_conts .skill_main li { flex-grow: 1; padding: 0 18px; background: rgba(255, 243, 220, 0.5); }
+.skill_conts .skill_main li { padding: 0 18px; background: rgba(255, 243, 220, 0.5); }
 
-.skill_conts .skill_main li:nth-child(2) { margin: 0 7px; }
-
-.skill_conts .skill_desc { font-weight: 300; text-align: center; }
+.skill_conts .skill_desc { font-weight: 350; text-align: center; }
 
 .skill_conts .sentence { padding-bottom: 20px; line-height: 1.4; font-size: 1.2rem; }
 
@@ -57,27 +59,29 @@ html { font-family: "Noto Sans KR", "Nanum Gothic", sans-serif; font-weight: 400
 
 .skill_conts .skill_name { margin-bottom: 44px; margin-top: -58px; text-align: center; }
 
-.skill_conts .skill_sub { display: flex; justify-content: space-between; width: 548px; margin: 80px auto 0; }
+.skill_conts .skill_sub { display: flex; justify-content: space-between; max-width: 548px; margin: 6.3% auto 0; }
 
-.mj_history { background: url(/images/bg_history.svg) repeat; height: 885px; }
+.mj_history { padding-bottom: 6%; background: url(/images/bg_history.svg) repeat; }
 
 .history_main { display: flex; flex-wrap: wrap; justify-content: space-between; position: relative; margin-top: 34px; }
 
-.history_main .history_item { width: calc(25% - 20px); }
+.history_main .history_item { width: calc(25% - 20px); padding-bottom: 20px; }
+
+.history_main .history_item.view_mode .history_detail { display: block; visibility: visible; }
 
 .history_main .history_item:nth-child(4n) { margin-right: 0; }
 
-.history_main .history_item .item_img_s { display: block; width: 100%; height: 170px; background: #ffd980; }
+.history_main .history_item .item_img_s { display: block; width: 100%; background: #ffd980; }
 
-.history_detail { position: relative; width: 100%; max-width: 1274px; margin-top: 20px; padding: 23px 0 0 20px; height: 100px; }
+.history_detail { display: none; visibility: hidden; position: relative; max-width: 1274px; margin-top: 20px; padding: 23px 0 0 20px; }
 
-.history_detail .item_img { position: absolute; left: 0; top: 0; width: 464px; border: 1px solid #ffd980; }
+.history_detail .item_img { position: absolute; left: 0; top: 0; width: 24vw; border: 1px solid #ffd980; }
 
 .history_detail .item_img .img_wrap { display: block; position: relative; }
 
 .history_detail .item_img .img_wrap .btn_view_code { display: inline-block; width: 120px; height: 40px; line-height: 40px; position: absolute; bottom: 20px; right: 0; background: #ffd980; font-size: 2rem; text-align: center; }
 
-.history_detail .site_desc { width: 100vw; max-width: 1254px; padding: 31px 30px 40px 475px; border-top: 2px solid #ffd980; background: #fff; color: #403333; }
+.history_detail .site_desc { width: calc(100vw - 37px); max-width: 1254px; padding: 31px 30px 40px 475px; border-top: 2px solid #ffd980; background: #fff; color: #403333; }
 
 .history_detail .site_desc .head_area { margin-bottom: 23px; padding-left: 5px; border-left: 2px solid #ffd980; }
 
@@ -97,7 +101,7 @@ html { font-family: "Noto Sans KR", "Nanum Gothic", sans-serif; font-weight: 400
 
 .site_desc .small_tit { font-weight: 500; }
 
-.mj_contact { padding: 115px 0 131px; background: url(/images/bg_skill.svg) repeat center 0; }
+.mj_contact { padding: 0 0 6.8%; background: url(/images/bg_skill.svg) repeat center 0; }
 
 .contact_main { padding-top: 34px; }
 
@@ -105,11 +109,46 @@ html { font-family: "Noto Sans KR", "Nanum Gothic", sans-serif; font-weight: 400
 
 .contact_main .mj_mail a { color: #fff3dc; font-size: 2rem; }
 
-.contact_main .opentalk_area { margin-top: 30px; }
+.opentalk_area { margin-top: 30px; color: #403333; line-height: 1.4; text-align: center; }
+
+.opentalk_area .big_note { font-size: 1.6rem; font-weight: 400; }
+
+.opentalk_area .big_note .mark_txt { position: relative; font-size: inherit; z-index: 1; background: linear-gradient(transparent 55%, #ffd980 95%, #ffd980 98%); }
+
+.opentalk_area .small_note { padding-top: 5px; font-size: 1.2rem; }
+
+.opentalk_area .qr_code { width: 160px; height: 160px; background: #80594d; margin: 20px auto; }
+
+.opentalk_area .info_txt { font-size: 1.2rem; line-height: 1.4; }
 
 .mj_footer { padding: 35px 10px; background: #403333; text-align: center; }
 
 .mj_footer .frontend { font-size: 1.2rem; line-height: 1.4; color: #fff; }
 
 .mj_footer .webdesigner { display: block; font-size: 1rem; line-height: 1.3; color: #80594d; }
+
+@media (min-width: 1275px) { .skill_main li { flex-grow: 1; }
+  .skill_main li:nth-child(2) { margin: 0 7px; } }
+
+@media (max-width: 1274px) { .mj_header .header_wrap { padding: 0 20px; } }
+
+@media (max-width: 1274px) and (min-width: 721px) { .skill_conts .skill_main li { width: calc(50% - 30px); flex-grow: initial; margin-left: 20px; }
+  .skill_conts .skill_main li:nth-child(3) { width: calc(100% - 40px); }
+  .history_main .history_item { width: calc(33.3% - 20px); } }
+
+@media (max-width: 1024px) { .history_main .history_item { width: calc(50% - 20px); }
+  .history_detail { margin-top: 0; padding-top: 10px; }
+  .history_detail .item_img { display: none; }
+  .history_detail .site_desc { padding-left: 30px; } }
+
+@media (max-width: 720px) { .my_tnb { width: 50%; }
+  .skill_conts .skill_main { justify-content: center; }
+  .skill_conts .skill_main li { width: 100%; max-width: 420px; margin: 0; }
+  .history_detail { padding-top: 0px; }
+  .history_main .history_item { width: 100%; }
+  .history_main .history_item.view_mode .item_img_s { margin-left: 20px; }
+  .history_main .history_item .item_img_s { width: calc(100% - 40px); max-width: 304px; margin: 0 auto; text-align: center; } }
+
+@media (max-width: 480px) { .txt_box { display: none; }
+  .my_tnb { width: auto; min-width: 200px; } }
 /*# sourceMappingURL=style.css.map */
