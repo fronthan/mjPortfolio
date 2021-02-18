@@ -1,11 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&family=Roboto:wght@500&display=swap");
 html { font-family: "Noto Sans KR", "Nanum Gothic", sans-serif; font-weight: 400; }
 
+.mj_header .header_wrap, .skill_conts, .history_main, .contact_main { max-width: 1274px; margin: 0 auto; }
+
 .cont_tit { position: relative; padding-top: 115px; padding-bottom: 90px; font-family: "Roboto", "Nanum Gothic", sans-serif; color: #403333; font-size: 3.2rem; font-weight: 500; text-align: center; }
 
 .cont_tit:after { content: " "; display: block; width: 1px; height: 60px; position: absolute; left: calc(50% - 1px); bottom: 0; background: #403333; }
 
-.cont_tit .last_update { color: #5f5f5f; font-family: "Noto Sans KR", "Nanum Gothic", sans-serif; font-size: 1.2rem; font-weight: 300; }
+.cont_tit .last_update { color: #5f5f5f; font-family: "Noto Sans KR", "Nanum Gothic", sans-serif; font-size: 1.2rem; font-weight: 300; line-height: 17px; }
 
 .mj_header { background: url(/images/bg_skill.svg) no-repeat center center; position: fixed; top: 0; left: 0; width: 100%; }
 
@@ -13,7 +15,7 @@ html { font-family: "Noto Sans KR", "Nanum Gothic", sans-serif; font-weight: 400
 
 .mj_header.fixed a:hover { background: #ffd980; }
 
-.mj_header .header_wrap { display: flex; justify-content: space-between; max-width: 1274px; height: 80px; margin: 0 auto; color: #403333; }
+.mj_header .header_wrap { display: flex; justify-content: space-between; height: 80px; color: #403333; }
 
 .mj_title { display: flex; align-items: center; }
 
@@ -37,9 +39,7 @@ html { font-family: "Noto Sans KR", "Nanum Gothic", sans-serif; font-weight: 400
 
 .mj_portfolio { background: url(/images/bg_skill.svg) no-repeat center 0; }
 
-.mj_skill { height: 1026px; padding-top: 80px; background: url(/images/bg_skill.svg) repeat center 0; }
-
-.skill_conts { width: 1274px; margin: 0 auto; }
+.mj_skill { padding-top: 80px; padding-bottom: 194px; background: url(/images/bg_skill.svg) repeat center 0; }
 
 .skill_conts .skill_main { display: flex; padding-top: 89px; }
 
@@ -61,7 +61,55 @@ html { font-family: "Noto Sans KR", "Nanum Gothic", sans-serif; font-weight: 400
 
 .mj_history { background: url(/images/bg_history.svg) repeat; height: 885px; }
 
-.mj_contact { background: url(/images/bg_skill.svg) repeat center 0; height: 735px; }
+.history_main { display: flex; flex-wrap: wrap; justify-content: space-between; position: relative; margin-top: 34px; }
 
-.mj_footer { height: 100px; background: #403333; }
+.history_main .history_item { width: calc(25% - 20px); }
+
+.history_main .history_item:nth-child(4n) { margin-right: 0; }
+
+.history_main .history_item .item_img_s { display: block; width: 100%; height: 170px; background: #ffd980; }
+
+.history_detail { position: relative; width: 100%; max-width: 1274px; margin-top: 20px; padding: 23px 0 0 20px; height: 100px; }
+
+.history_detail .item_img { position: absolute; left: 0; top: 0; width: 464px; border: 1px solid #ffd980; }
+
+.history_detail .item_img .img_wrap { display: block; position: relative; }
+
+.history_detail .item_img .img_wrap .btn_view_code { display: inline-block; width: 120px; height: 40px; line-height: 40px; position: absolute; bottom: 20px; right: 0; background: #ffd980; font-size: 2rem; text-align: center; }
+
+.history_detail .site_desc { width: 100vw; max-width: 1254px; padding: 31px 30px 40px 475px; border-top: 2px solid #ffd980; background: #fff; color: #403333; }
+
+.history_detail .site_desc .head_area { margin-bottom: 23px; padding-left: 5px; border-left: 2px solid #ffd980; }
+
+.site_desc { font-size: 1.2rem; line-height: 16px; }
+
+.site_desc .site_title { font-size: 2rem; line-height: 27px; }
+
+.site_desc .site_title .preview_btns { display: inline-flex; padding-left: 10px; vertical-align: super; }
+
+.site_desc .site_title .preview_btns .btn_mobile { width: 10px; height: 19px; background: url(/images/icon_mobile.svg) no-repeat center; }
+
+.site_desc .site_title .preview_btns .btn_tablet { width: 14px; height: 19px; background: url(/images/icon_tablet.svg) no-repeat center; margin: 0 16px; }
+
+.site_desc .site_title .preview_btns .btn_desktop { width: 27px; height: 19px; background: url(/images/icon_monitor.svg) no-repeat center; }
+
+.site_desc .dev_tech { margin: 20px 0; }
+
+.site_desc .small_tit { font-weight: 500; }
+
+.mj_contact { padding: 115px 0 131px; background: url(/images/bg_skill.svg) repeat center 0; }
+
+.contact_main { padding-top: 34px; }
+
+.contact_main .mj_mail { display: block; width: 270px; height: 40px; line-height: 40px; margin: 0 auto; background: #80594d; text-align: center; }
+
+.contact_main .mj_mail a { color: #fff3dc; font-size: 2rem; }
+
+.contact_main .opentalk_area { margin-top: 30px; }
+
+.mj_footer { padding: 35px 10px; background: #403333; text-align: center; }
+
+.mj_footer .frontend { font-size: 1.2rem; line-height: 1.4; color: #fff; }
+
+.mj_footer .webdesigner { display: block; font-size: 1rem; line-height: 1.3; color: #80594d; }
 /*# sourceMappingURL=style.css.map */
