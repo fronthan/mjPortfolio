@@ -61,25 +61,31 @@ body {
 
 //상단 헤더
 .mj_header {
-  position: fixed;
+  position:absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   z-index: 100;
+  transition: all 1s;
 
   &.change_bg {
     background: rgba(255, 255, 255, 0.5);
+    transition: all .3s;
 
     a:hover {
       background: $colorYellow;
     }
   }
 
+  &.fixed {
+    position: fixed;
+    transition: all 1s;
+  }
+
   .header_wrap {
     display: flex;
     justify-content: space-between;
     @extend %center_page;
-    height: 80px;
     color: $colorMaroon;
   }
 }
@@ -91,11 +97,11 @@ body {
 
   .ko_name {
     font-family: $fontRoboto;
-    font-size: 3.2rem;
   }
 
   .txt_box {
     padding-left: 1rem;
+    transition: padding .4s;
   }
   .en_name,
   .job_txt {
@@ -115,6 +121,7 @@ body {
   width: 59%;
   display: flex;
   align-items: center;
+  transition: width .4s;
 
   ul {
     display: flex;
@@ -129,11 +136,10 @@ body {
   }
 
   a {
-    display: block;
+    display: inline-block;
     width: 64px;
     height: 64px;
     line-height: 64px;
-    margin: 0 auto;
   }
   a:hover {
     border-radius: 50%;
@@ -151,6 +157,7 @@ body {
 
   .cont_tit {
     padding-top: 10%;
+    transition: padding .4s;
   }
 }
 
@@ -162,9 +169,12 @@ body {
     display: flex;
     flex-wrap: wrap;
     padding-top: 6.9%;
+    transition: padding .4s;
 
-    li {padding: 0 18px;
-      background: transparentize($colorSkin, 0.5);}
+    li {
+      padding: 0 18px;
+      background: transparentize($colorSkin, 0.5);
+    }
   }
 
   .skill_desc {
@@ -175,6 +185,7 @@ body {
     padding-bottom: 22px;
     line-height: 1.4;
     font-size: 1.2rem;
+    transition: all .4s;
     &:last-child {
       padding-bottom: 44px;
     }
@@ -189,6 +200,7 @@ body {
     margin-bottom: 10%;
     margin-top: -17%;
     text-align: center;
+    transition: margin .4s;
   }
 
   //sub skill
@@ -197,6 +209,7 @@ body {
     justify-content: space-between;
     max-width: 548px;
     margin: 6.3% auto 0;
+    transition: margin .4s;
   }
 }
 
@@ -204,6 +217,7 @@ body {
 .mj_history {
   padding-bottom: 6%;
   background: url(/images/bg_history.svg) repeat;
+  transition: padding .4s;
 }
 
 .history_main {
@@ -246,6 +260,7 @@ body {
     top: 0;
     width: 24vw;
     border: 1px solid $colorYellow;
+    transition: width .4s;
 
     .img_wrap {
       display: block;
@@ -407,11 +422,13 @@ body {
       }
     }
   }
+
+  .history_main {max-width:1252px;  }
 }
 
 @media (max-width: 1274px) {
   .mj_header .header_wrap {
-    padding: 0 20px;
+    padding: 8px 20px;
   }
 
   .skill_conts .skill_main {
@@ -423,6 +440,7 @@ body {
     padding-top: 15%;
   }
 
+  .history_detail .site_desc {max-width:832px}
   
 }
 
@@ -452,26 +470,59 @@ body {
    .enter_t {display:block;}
   }
 
-  .history_main {max-width:912px;
-   
+  .history_main {max-width:852px;  }
+}
+
+@media (max-width:1024px) {
+  
+  
+  .history_detail {margin-top: 0; padding-top: 10px;}
+  .history_detail .item_img {display:none;}
+
+  .history_detail .site_desc {padding-left: 30px;}
+}
+
+@media (max-width:1024px) and (min-width:852px) {
+  .history_main .history_item {
+    width:calc(33% - 11px);
+    max-width:304px;
+    margin-right:20px;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
   }
 
   .history_detail .site_desc {
-    max-width:892px;
+    max-width:812px; 
+  }
+}
+@media (max-width:900px) {
+  .history_main {
+    padding:0 20px;
+  }
+}
+
+@media (max-width:853px) and (min-width:721px) {
+  .history_main .history_item {
+    width:calc(33% - 13px);
+    max-width:304px;
+    margin-right:20px;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
   }
 
+  .history_detail .site_desc {max-width:calc(100vw - 40px);}
 }
 
 @media (max-width:1024px) and (min-width:721px) {
-  .history_main .history_item {
-    width:calc(50% - 20px);
-    max-width:310px;
-
-    &:nth-child(even) {
-      margin-left: 20px;
-    }
-  }
+  .history_detail { padding-left: 0;}
 }
+
+
+
 
 @media (max-width:810px) and (min-width:721px) {
   .enter_tm {display:block}
@@ -484,19 +535,7 @@ body {
   }
 }
 
-@media (max-width:1024px) {
-  .history_main {
-    justify-content: center;
-  }
-  .history_detail {margin-top: 0; padding-top: 10px;}
-  .history_detail .item_img {display:none;}
 
-  .history_detail .site_desc {padding-left: 30px;}
-}
-@media (max-width:1024px) and (min-width:721px) {
-  .history_detail { padding-left: 0;}
-  
-}
 @media (max-width: 720px) {
   .my_tnb {
     width: 50%;
@@ -507,7 +546,7 @@ body {
     li {
       width:100%;
       max-width:420px;
-      margin: 12% 0 0;
+      margin: 16% 0 0;
       padding:0 16px;
     }
   } 
@@ -515,12 +554,12 @@ body {
   .skill_conts .skill_name {
     margin-bottom: 6%;
   }
-  .history_detail {padding-top: 0px;}
+  .history_detail {padding-top: 0px; padding-left: 0;}
   .history_main .history_item {
     width:100%;
 
     &.view_mode .item_img_s {
-      margin-left: 20px;
+      margin-left: 0;
     }
     .item_img_s {width:calc(100% - 40px); max-width:304px; margin: 0 auto;text-align:center;
     }
