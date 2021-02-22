@@ -45,10 +45,20 @@ hr {
     padding:0;
 }
 
-.blind {
-    width:0; height:0;
-    position:absolute;
-    font-size:0; line-height:0;
-	overflow:hidden; visibility:hidden;
+.blind_block {
+    position : absolute; width : 1px; height : 1px;
+	padding : 0; margin : -1px; overflow : hidden;
+	border : 0; 
+	clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
 }
 
+.blind_inline {
+    overflow: hidden;
+    display: inline-block;
+      width: 1px; height: 1px;
+      margin: -1px;
+      border:0;  
+      clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+}

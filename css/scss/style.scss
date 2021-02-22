@@ -1,27 +1,4 @@
-@charset "utf-8";
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR:wght@350;400;500&family=Roboto:wght@500&display=swap"); //nanum : 400 regular, 700 bold /notosans : 350 demilight, 400 regular, 500 medium / roboto : 500 medium
-
-$fontRoboto: "Roboto", "Nanum Gothic", sans-serif;
-$colorBlack: #1e1e1e;
-$colorSkin: #fff3dc;
-$colorYellow: #ffd980;
-$colorBrown: #80594d;
-$colorMaroon: #403333;
-$colorPink: #ff8c80;
-
-html {
-  font-family: "Noto Sans KR", "Nanum Gothic", sans-serif;
-  font-weight: 400;
-  font-size: 62.5%;
-}
-
-body {
-  background: $colorSkin;
-}
-
-::selection {
-  background-color: transparentize($colorYellow, 0.3);
-}
+@import '_common';
 
 %center_page {
   max-width: 1274px;
