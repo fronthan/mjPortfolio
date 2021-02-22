@@ -10,6 +10,7 @@
     <meta name="rebots" content="noindex, nofollow"> <!-- 임시 메타 -->
     <title>portfolio</title>
     <link rel="stylesheet" href="css/reset_browser.css">
+    <link rel="stylesheet" href="css/loading.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -101,9 +102,9 @@
                             <dt class="head_area">
                                 <div class="site_title">플레이콕
                                     <div class="preview_btns">
-                                        <button class="btn_mobile"><span class="blind">모바일로 미리보기</span></button>
-                                        <button class="btn_tablet"><span class="blind">태블릿으로 미리보기</span></button>
-                                        <button class="btn_desktop"><span class="blind">데스크탑으로 미리보기</span></button>
+                                        <button class="btn_mobile"><span class="blind_inline">모바일로 미리보기</span></button>
+                                        <button class="btn_tablet"><span class="blind_inline">태블릿으로 미리보기</span></button>
+                                        <button class="btn_desktop"><span class="blind_inline">데스크탑으로 미리보기</span></button>
                                     </div>
                                 </div>
                                 <span class="proj_range">2020.01.01~2020.04.30</span>
@@ -178,8 +179,24 @@
         <span class="frontend">Frontend Developer 한민정 webdev-han.xyz</span>
         <span class="webdesigner">Design by 민소정</span>
     </footer>
+    <span id="typed"></span>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
     <script>
         
+var typed = new Typed('#typed', {
+  strings: ['페이지를 불러오는 중입니다. . .'],
+  typeSpeed: 0100,
+  onBegin: (self) => {
+      document.querySelector('.mj_header').style.zIndex = '-1'
+  },
+  onComplete: (self) => {
+      document.querySelector('#typed').remove();
+      document.querySelector('.mj_header').style.zIndex = '100';
+  }
+});
+
+
+
 window.addEventListener('scroll', scrollEvent);
 
 let did_scroll; 
