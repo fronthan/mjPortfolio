@@ -210,37 +210,34 @@ body {
   position: relative;
   margin-top: 34px;
 
-  .history_item {
-    width: calc(25% - 20px);
+  .history_item {    
     padding-bottom: 20px;
 
-    &.view_mode .history_detail {
-      display:block;
-      visibility: visible;
-    }
-    &:nth-child(4n) {
-      margin-right: 0;
+    &.view_mode {
+      .history_detail {
+        display:block;
+        visibility: visible;
+      }      
     }
 
     .item_img_s {
       display: block;
       width: 100%;
       background: $colorYellow;
+      cursor: pointer;
     }
+
+    .closed_mark {display:inline-block; padding:1px 5px; margin-left:5px;}
   }
 }
 .history_detail {
   display:none; visibility: hidden;
-  position: relative;
-  max-width: 1274px;
-  margin-top: 20px;
-  padding: 23px 0 0 20px;
 
   .item_img {
     position: absolute;
     left: 0;
     top: 0;
-    width: 24vw;
+    width: 465px;
     border: 1px solid $colorYellow;
 
     .img_wrap {
@@ -263,9 +260,7 @@ body {
   }
 
   .site_desc {
-    width: calc(100vw - 37px);
     max-width: 1254px;
-    padding: 31px 30px 40px 475px;
     border-top: 2px solid $colorYellow;
     background: #fff;
     color: $colorMaroon;
@@ -309,13 +304,14 @@ body {
     }
   }
 
-  .dev_tech {
-    margin: 20px 0;
-  }
-  .small_tit {
-    font-weight: 500;
-  }
+  .closed_mark {color:$colorBlack; background:$colorSkin;}
+
+  .dev_tech { margin: 20px 0; }
+  .small_tit { font-weight: 500; }
 }
+
+.m_site_desc .closed_mark {background:$colorBrown;}
+
 
 .mj_contact {
   padding: 0 0 6.8%;
@@ -393,21 +389,87 @@ body {
 
 
 @media (min-width:1275px) {
-  .skill_main {
+  .skill_main li {
+    flex-grow: 1;
     
-    li {
-      flex-grow: 1;
-      
-      &:nth-child(2) {
-        margin: 0 7px;
-      }
+    &:nth-child(2) {
+      margin: 0 7px;
+    }    
+  }
+
+  .history_item {
+    width: calc(25% - 20px);    
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    .item_img_s:hover {
+      outline:1px solid $colorYellow;
     }
   }
+
+  .history_detail {
+    position: relative;
+    max-width: 1274px;
+    margin-top: 20px;
+    padding: 23px 0 0 20px;
+  }
+
+  .site_desc {
+    width: calc(100vw - 37px);
+    padding: 31px 30px 40px 475px;
+  }
+
+  .m_site_desc {display: none;}
 }
 
 @media (max-width: 1274px) {
   .mj_header .header_wrap {
     padding: 0 20px;
+  }
+ 
+  .history_detail .item_img {display:none;}
+
+  .item_img_s {position: relative;
+
+   &:after {
+     display:block;
+     width:100%;height:100%;
+     position:absolute; left:0; top:0;
+     background-color:transparentize($colorBlack, 0.1);
+     z-index: 0;
+   }
+  }
+  .m_site_desc {
+    width:fit-content;
+    position:absolute;
+    left:50%; top:50%;
+    transform:translate(-50%, -50%);
+    color:$colorSkin;
+    z-index: 1;
+    font-size:1.4rem;
+    .site_title {margin-bottom: 0.8rem;}
+   .site_type {display: block; margin-top: 0.8rem;}
+  }
+  .view_mode {
+    .m_site_desc {
+      display: block;
+    }
+    .item_img_s:after {content:' ';}
+  } 
+}
+
+@media (max-width:1274px) and (min-width:1025px) {
+  .history_main {
+    max-width: 940px;
+
+    .history_item {width: calc(33.3% - 20px)}
+  }
+
+
+  .site_desc {
+    width: 940px;
+    padding: 31px 30px 40px;
   }
 }
 
@@ -421,21 +483,22 @@ body {
       width: calc(100% - 40px);
     }
   }
-
-  .history_main .history_item {
-    width:calc(33.3% - 20px);
-  }
 }
 
 @media (max-width:1024px) {
-  .history_main .history_item {
-    width:calc(50% - 20px);
-  }
-  .history_detail {margin-top: 0; padding-top: 10px;}
-  .history_detail .item_img {display:none;}
+  .history_main {
+    max-width: 640px;
 
-  .history_detail .site_desc {padding-left: 30px;}
+    .history_item {
+      width:calc(50% - 20px);
+    }
+  }
+
+  .history_detail {margin-top: 0; padding-top: 10px;}
+
+  .site_desc {display:none}
 }
+
 @media (max-width: 720px) {
   .my_tnb {
     width: 50%;
@@ -454,13 +517,10 @@ body {
   .history_main .history_item {
     width:100%;
 
-    &.view_mode .item_img_s {
-      margin-left: 20px;
-    }
-    .item_img_s {width:calc(100% - 40px); max-width:304px; margin: 0 auto;text-align:center;
-    }
-
-    
+    .item_img_s {
+      width:calc(100% - 40px); max-width:304px;
+      margin: 0 auto;text-align:center;
+    }   
   }
 }
 
