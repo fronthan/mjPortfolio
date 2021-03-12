@@ -1,27 +1,4 @@
-@charset "utf-8";
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR:wght@350;400;500&family=Roboto:wght@500&display=swap"); //nanum : 400 regular, 700 bold /notosans : 350 demilight, 400 regular, 500 medium / roboto : 500 medium
-
-$fontRoboto: "Roboto", "Nanum Gothic", sans-serif;
-$colorBlack: #1e1e1e;
-$colorSkin: #fff3dc;
-$colorYellow: #ffd980;
-$colorBrown: #80594d;
-$colorMaroon: #403333;
-$colorPink: #ff8c80;
-
-html {
-  font-family: "Noto Sans KR", "Nanum Gothic", sans-serif;
-  font-weight: 400;
-  font-size: 62.5%;
-}
-
-body {
-  background: $colorSkin;
-}
-
-::selection {
-  background-color: transparentize($colorYellow, 0.3);
-}
+@import '_common';
 
 %center_page {
   max-width: 1274px;
@@ -61,25 +38,31 @@ body {
 
 //상단 헤더
 .mj_header {
-  position: fixed;
+  position:absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  z-index: 100;
+  width: 100vw;
+  z-index: -1;
+  transition: all 1s;
 
   &.change_bg {
     background: rgba(255, 255, 255, 0.5);
+    transition: all .3s;
 
     a:hover {
       background: $colorYellow;
     }
   }
 
+  &.fixed {
+    position: fixed;
+    transition: all 1s;
+  }
+
   .header_wrap {
     display: flex;
     justify-content: space-between;
     @extend %center_page;
-    height: 80px;
     color: $colorMaroon;
   }
 }
@@ -91,11 +74,11 @@ body {
 
   .ko_name {
     font-family: $fontRoboto;
-    font-size: 3.2rem;
   }
 
   .txt_box {
     padding-left: 1rem;
+    transition: padding .4s;
   }
   .en_name,
   .job_txt {
@@ -115,6 +98,7 @@ body {
   width: 59%;
   display: flex;
   align-items: center;
+  transition: width .4s;
 
   ul {
     display: flex;
@@ -129,11 +113,10 @@ body {
   }
 
   a {
-    display: block;
+    display: inline-block;
     width: 64px;
     height: 64px;
     line-height: 64px;
-    margin: 0 auto;
   }
   a:hover {
     border-radius: 50%;
@@ -147,7 +130,12 @@ body {
 
 .mj_skill {
   padding-bottom: 10%;
-  background: url(/images/bg_skill.svg) repeat center 0;
+  background: url(/images/bg_skill.svg) repeat center 0/cover;
+
+  .cont_tit {
+    padding-top: 10%;
+    transition: padding .4s;
+  }
 }
 
 .skill_conts {
@@ -157,10 +145,13 @@ body {
   .skill_main {
     display: flex;
     flex-wrap: wrap;
-    padding-top: 89px;
+    padding-top: 6.9%;
+    transition: padding .4s;
 
-    li {padding: 0 18px;
-      background: transparentize($colorSkin, 0.5);}
+    li {
+      padding: 0 18px;
+      background: transparentize($colorSkin, 0.5);
+    }
   }
 
   .skill_desc {
@@ -168,11 +159,12 @@ body {
     text-align: center;
   }
   .sentence {
-    padding-bottom: 20px;
+    padding-bottom: 22px;
     line-height: 1.4;
     font-size: 1.2rem;
+    transition: all .4s;
     &:last-child {
-      padding-bottom: 42px;
+      padding-bottom: 44px;
     }
 
     .mark_txt {
@@ -182,9 +174,10 @@ body {
   }
 
   .skill_name {
-    margin-bottom: 44px;
-    margin-top: -58px;
+    margin-bottom: 10%;
+    margin-top: -17%;
     text-align: center;
+    transition: margin .4s;
   }
 
   //sub skill
@@ -193,6 +186,7 @@ body {
     justify-content: space-between;
     max-width: 548px;
     margin: 6.3% auto 0;
+    transition: margin .4s;
   }
 }
 
@@ -200,6 +194,7 @@ body {
 .mj_history {
   padding-bottom: 6%;
   background: url(/images/bg_history.svg) repeat;
+  transition: padding .4s;
 }
 
 .history_main {
@@ -239,6 +234,7 @@ body {
     top: 0;
     width: 465px;
     border: 1px solid $colorYellow;
+    transition: width .4s;
 
     .img_wrap {
       display: block;
@@ -349,7 +345,7 @@ body {
       position: relative;
       font-size: inherit;
       z-index: 1;
-      background: linear-gradient(transparent 55%, $colorYellow 95%, $colorYellow 98%);
+      background: linear-gradient(rgba(255,255,255,0) 15%, $colorYellow);
     }
   }
   .small_note {
@@ -425,7 +421,7 @@ body {
 
 @media (max-width: 1274px) {
   .mj_header .header_wrap {
-    padding: 0 20px;
+    padding: 8px 20px;
   }
  
   .history_detail .item_img {display:none;}
@@ -471,16 +467,38 @@ body {
     width: 940px;
     padding: 31px 30px 40px;
   }
+
+  .skill_conts .skill_main {
+    justify-content: center;
+    padding-top:10%;
+  }
+
+  .mj_skill .cont_tit {
+    padding-top: 15%;
+  }  
 }
 
 @media (max-width:1274px) and (min-width:721px) {
-  .skill_conts .skill_main li {
-    width: calc(50% - 30px);
-    flex-grow: initial;
-    margin-left: 20px;
+  .skill_conts {
+    max-width:912px;
+    
+    .skill_main li {
+      width: calc(50% - 30px);
+      flex-grow: initial;
 
-    &:nth-child(3) {
-      width: calc(100% - 40px);
+      &:nth-child(2) {
+
+      margin-left: 2%;
+      }
+  
+      &:nth-child(3) {
+        width: calc(100% - 40px);
+        margin-top:8%;
+        .skill_name {
+          margin-top: -7%;
+        margin-bottom: 4%;
+        }
+      }
     }
   }
 }
@@ -494,26 +512,49 @@ body {
     }
   }
 
+
+  .enter_t {display:block;}
+}
+
+@media (max-width:1024px) {
+  
+  
   .history_detail {margin-top: 0; padding-top: 10px;}
 
   .site_desc {display:none}
 }
+
+@media (max-width:810px) and (min-width:721px) {
+  .enter_tm {display:block}
+}
+
+@media (max-width:780px) and (min-width:721px) {
+  .enter_ts {display:block}
+  .skill_conts .skill_main li {
+    padding:0 14px
+  }
+}
+
 
 @media (max-width: 720px) {
   .my_tnb {
     width: 50%;
   }
   .skill_conts .skill_main {
-    justify-content: center;
+    padding-top:4%;
 
     li {
       width:100%;
       max-width:420px;
-      margin: 0;
+      margin: 16% 0 0;
+      padding:0 16px;
     }
-    
   } 
-  .history_detail {padding-top: 0px;}
+
+  .skill_conts .skill_name {
+    margin-bottom: 6%;
+  }
+  .history_detail {padding-top: 0px; padding-left: 0;}
   .history_main .history_item {
     width:100%;
 
@@ -521,6 +562,12 @@ body {
       width:calc(100% - 40px); max-width:304px;
       margin: 0 auto;text-align:center;
     }   
+  }
+}
+
+@media (max-width:600px) {
+  .skill_conts .skill_sub {
+    padding: 0 25px;
   }
 }
 
