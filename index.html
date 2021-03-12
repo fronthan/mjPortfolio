@@ -77,9 +77,9 @@
                 </ul>
                 <ul class="skill_sub">
                     <li><img src="images/skill_react.svg" alt="리액트" /></li>
-                    <li><img src="images/skill_node.svg" alt="노드 제이에서" /></li>
-                    <li><img src="images/skill_vue.svg" alt="뷰 제이에스" /></li>
-                    <li><img src="images/skill_rn.svg" alt="리액트 내이티브" /></li>
+                    <li><img src="images/skill_node.svg" alt="노드 제이에스" /></li>
+                    <!-- <li><img src="images/skill_vue.svg" alt="뷰 제이에스" /></li>
+                    <li><img src="images/skill_rn.svg" alt="리액트 내이티브" /></li> -->
                 </ul>
             </div>
         </div>
@@ -90,7 +90,7 @@
             <ul class="history_main">
                 <li class="history_item view_mode">
                     <div class="item_img_s">
-                        <img src="images/history_pk_s.jpg" alt="" title="자세히 보려면 클릭하세요" />
+                        <img src="images/history_pk_s.jpg" alt="playkok" title="자세히 보려면 클릭하세요" class="js-history_img"/>
                         <div class="m_site_desc">
                             <div class="site_title">플레이콕</div>
                             <span class="proj_range">2020.01.01~2020.04.30</span><span class="closed_mark">서비스 종료</span>
@@ -106,7 +106,8 @@
                         </div>
                         <dl class="site_desc">
                             <dt class="head_area">
-                                <div class="site_title">플레이콕
+                                <div class="site_title"><span class="title_txt">
+                                플레이콕</span>
                                     <div class="preview_btns">
                                         <button class="btn_mobile"><span class="blind_inline">모바일로 미리보기</span></button>
                                         <button class="btn_tablet"><span class="blind_inline">태블릿으로 미리보기</span></button>
@@ -121,42 +122,19 @@
                                 플레이콕에서 즐거운 시간을 보낼 수 있습니다.<br>
                                 자신의 취미를 발견하고 이웃들과 함께 추억을 만들어보세요.
                             </dd>
-                            <dd class="dev_tech"><b class="small_tit">기술 : </b></dd>
-                            <dd class="dev_system"><b class="small_tit">환경 : </b></dd>
+                            <dd class="dev_tech"><b class="small_tit">기술 : </b><span class="tech_txt"></span></dd>
+                            <dd class="dev_system"><b class="small_tit">환경 : </b><span class="sys_txt"></span></dd>
                         </dl>
                     </div>
                 </li>
                 <li class="history_item">
                     <span class="item_img_s">
-                        <img src="images/history_pk_s.jpg" alt="" title="자세히 보려면 클릭하세요" />
-                    </span>
-                    <div class="history_detail" hidden>
-                        <span class="site_img"><img src="#" alt="사이트 메인 이미지" /></span>
-                        <dl class="site_desc">
-                            <dt class="head_area">
-                                <div class="site_title">플레이블록
-                                    <div class="preview_btns">
-                                        <button class="btn_mobile"><span class="blind">모바일로 미리보기</span></button>
-                                        <button class="btn_tablet"><span class="blind">태블릿으로 미리보기</span></button>
-                                        <button class="btn_desktop"><span class="blind">데스크탑으로 미리보기</span></button>
-                                    </div>
-                                </div>
-                                <span class="proj_range">2020.01.01~2020.04.30</span>
-                            </dt>
-                            <dd class="site_intro">
-                                새로운 세상에서 다양한 사람들과 이야기해보세요.
-                                같은 관심사를 가진 사람들과 이웃을 맺고 서로 소통하거나 좋아하는 컨텐츠를 볼 수 있고 키워드로 빠르게 검색 해
-                                플레이콕에서 즐거운 시간을 보낼 수 있습니다.
-                                자신의 취미를 발견하고 이웃들과 함께 추억을 만들어보세요.
-                            </dd>
-                            <dd class="dev_tech"><b class="small_tit">기술 : </b></dd>
-                            <dd class="dev_system"><b class="small_tit">환경 : </b></dd>
-                        </dl>
-                    </div>
+                        <img src="images/history_pk_s.jpg" alt="playblock" title="자세히 보려면 클릭하세요" class="js-history_img"/>
+                    </span>                   
                 </li>
                 <li class="history_item">
                     <span class="item_img_s">
-                        <img src="images/history_pk_s.jpg" alt="" title="자세히 보려면 클릭하세요" />
+                        <img src="images/history_pk_s.jpg" alt="PG" title="자세히 보려면 클릭하세요" class="js-history_img" />
                     </span>
                 </li>
                 <li class="history_item">
@@ -187,6 +165,8 @@
     </footer>
     <span id="typed"></span>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- json을 위한 jquery -->
     <script src="js/front_common.js"></script>
 </body>
 

@@ -9,7 +9,9 @@ var typed = new Typed('#typed', {
   });
   
   
-  
+  /* ----------------------
+  * 스크롤 이벤트
+  * ----------------------*/
   window.addEventListener('scroll', scrollEvent);
   
   let did_scroll; 
@@ -52,3 +54,38 @@ var typed = new Typed('#typed', {
       
       last_st = st;
   }
+
+
+  /* ------------------------
+  * 클릭이벤트, history 업뎃
+  * ------------------------ */
+const history_img = document.querySelectorAll('.js-history_img');
+for (let i=0; i < history_img.length; i++) {
+    history_img[i].addEventListener('click', changeHistoryDetail);
+}
+
+function changeHistoryDetail(ev) {
+    const target = ev.target;
+    const target_alt = target.getAttribute('alt');
+    
+    $.getJSON('/js/history.json', function(data){        
+        const project = data[target_alt];
+
+        const site_name = project.name;
+        const date_range = project.data_range;
+        const intro = project.intro;
+        const dev_tech = project.dev_tech;
+        const dev_system = project.dev_system;
+
+        const history_item = target.parentElement.parentElement;
+        const site_desc = history_item.querySelector('.site_desc');
+
+        site_desc.querySelector('.title_txt').textContent = site_name;
+        site_desc.querySelector('.proj_range').textContent = date_range;
+        site_desc.querySelector('.site_intro').textContent = intro;  
+        site_desc.querySelector('.tech_txt').textContent = dev_tech;
+        site_desc.querySelector('.sys_txt').textContent = dev_system;
+    });
+
+    
+}
