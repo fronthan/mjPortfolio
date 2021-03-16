@@ -1,0 +1,1957 @@
+@import '_common';
+
+/*-----------------------------------------------------------------------
+	# 신용카드 - 결제
+-------------------------------------------------------------------------*/
+.pop_head {
+	//결제 팝업 헤드 공통
+	overflow  : hidden;
+	margin    : 0 20px;
+	padding   : 20px 0;
+	text-align: center;
+
+	.logo {
+		position: absolute;
+		left    : 10px;
+		top     : 2px;
+		width:68px;
+	}
+
+	.head_txt {
+		display    : inline;
+		color      : $subtitIndigo;
+		font-size  : $titlePop;
+		font-weight: 500;
+	}
+
+
+	.btn_close_pop {
+		@include bg(21px, 21px, '../images/btn_x.png');
+		position: absolute;
+		right   : 20px;
+		top     : 18px;
+	}
+}
+
+.pay_credit_pop {
+	//결제 팝업 공통
+	position     : relative;
+	width        : 460px;
+	height       : 690px;
+	border-radius: 10px;
+	box-shadow   : 0px 10px 20px 0 rgba(0, 0, 0, 0.2);
+	background   : #fff;
+
+	&:after {
+		content: '';
+		@include bg(60px, 60px, '../images/bg_triangle.png');
+		display : block;
+		position: absolute;
+		right   : 0;
+		bottom  : 0;
+	}
+
+	&.pop_sales_slip {
+		width : 520px;
+		height: 840px;
+	}
+
+	.pop_head {
+		border-bottom: 1px solid $lineBlue;
+	}
+
+	.cscenter {
+		position   : absolute;
+		font-size  : $contPop;
+		text-align : center;
+		font-weight: 100;
+		color      : #747474;
+		left       : 0;
+		bottom     : 9px;
+		width      : 100%;
+	}
+
+	.custom_checkbox {
+		//결제 팝업 인풋 체크 공통
+		position   : relative;
+		display    : block;
+		font-size  : $contPop;
+		font-weight: 300;
+		line-height: 28px;
+	}
+			.btn_allterm {
+				position: absolute;
+				right   : 0;
+				top     : 24px;
+				@include btnCenter(70px, 22px, 0, $contPopS, #ddd);
+				color        : #242424;
+				border-radius: 4px;
+				z-index      : 1;
+	
+				&:hover {
+					cursor: pointer;
+					text-decoration: underline;
+				}
+			}
+}
+
+.pop_cont {
+	padding: 0 20px;
+
+}
+
+.pop_bottom {
+	//결제 팝업 하단 버튼 공통
+	.wrap_pop_btn {
+		overflow: hidden;
+
+		.btn_cnxl,
+		.btn_receipt {
+			float: left;
+			@include btnCenter(150px, 40px, 0, $contPopB);
+			background: url(../images/bg_btn_gray.svg) no-repeat left top;
+			cursor    : pointer;
+		}
+
+		.btn_next {
+			float: right;
+			@include btnCenter(150px, 40px, 0, $contPopB);
+			background: url(../images/bg_btn_blue.svg) no-repeat left top;
+			cursor    : pointer;
+		}
+	}
+}
+
+.pop_yakwan {
+	//신용카드 결제1
+	.wrap_allchk {
+		padding: 20px 0;
+
+		.custom_checkbox {
+			padding-left: 35px;
+		}
+	}
+
+	.wrap_singlechk {
+		border-top: 1px solid $lineBlue;
+
+		.box_term {
+			position: relative;
+			padding      : 20px 0 19px;
+			border-bottom: 1px solid #ddd;
+		}
+
+		.custom_checkbox {
+			.checkmark {
+				margin-left: 11px;
+			}
+		}
+	}
+
+	.pop_bottom {
+		padding-top: 40px;
+
+		.wrap_pop_btn {
+			padding: 10px 50px 0;
+		}
+	}
+}
+
+.pay_info_chk_tbl {
+	//결제 팝업 탑 공통, 결제 정보 테이블
+
+	font-size : $contPop;
+	background: #f6f6f6;
+
+	th {
+		padding-left: 22px;
+		font-weight : 500;
+		text-align  : left;
+	}
+
+	td {
+		padding-left : 18px;
+		padding-right: 20px;
+		font-weight  : 300;
+
+	}
+
+	.product_name {
+
+		th,
+		td {
+			padding-top   : 25px;
+			padding-bottom: 20px;
+		}
+	}
+
+	.payment_price {
+
+		th,
+		td {
+			padding-bottom: 20px;
+		}
+	}
+
+	.payment_date {
+
+		th,
+		td {
+			padding-bottom: 24px;
+		}
+	}
+}
+
+.pop_payment_insert {
+	//신용카드 결제2
+
+	.pay_info_chk_tbl {
+		border    : 1px solid #ddd;
+		border-top: 0;
+	}
+
+	.box_tit {
+		position      : absolute;
+		left          : 0;
+		top           : 0;
+		font-size     : $contPop;
+		letter-spacing: -0.9px;
+	}
+
+	.pop_cont_middle {
+		.pop_cont_tit {
+			padding-top   : 28px;
+			padding-bottom: 20px;
+			font-size     : $contPopB;
+			font-weight   : 500;
+			color         : $subtitIndigo;
+		}
+
+		.cmn_card_list,
+		.instmt_range_list {
+			background: #fff;
+			font-size : $contPopS;
+
+			li {
+				padding: 5px;
+				cursor : pointer;
+
+				&:hover {
+					background: #ddd;
+				}
+			}
+		}
+
+		.select_toggle_box {
+			display   : none;
+			width     : 100%;
+			max-height: 150px;
+			position  : absolute;
+			top       : 25px;
+			left      : 0;
+			border    : 1px solid #ddd;
+			border-top: 0;
+			overflow  : auto;
+			z-index   : 1;
+
+			li.on {
+				background: $lineBlue;
+			}
+		}
+
+		.card_company_group {
+			.most_card_list {
+				overflow     : hidden;
+				margin-bottom: 29px;
+
+				li {
+					float: left;
+					@include btnCenter(80px, 40px, auto, $contPop, #fff);
+					margin-right: 33px;
+					box-sizing  : border-box;
+					border      : 1px solid #747474;
+					color       : #747474;
+
+					&:hover {
+						text-decoration: underline;
+						cursor         : pointer;
+					}
+
+					&.active {
+						border-color: $lineBlue;
+						background  : $lineBlue;
+						color       : #fff;
+					}
+
+					&:nth-child(4n) {
+						margin-right: 0;
+					}
+
+					&:nth-child(1),
+					&:nth-child(2),
+					&:nth-child(3),
+					&:nth-child(4) {
+						margin-bottom: 10px;
+					}
+				}
+			}
+
+			.common_card_list {
+				position: relative;
+
+				.cmn_card_area {
+					@include selectCustom;
+					width      : 331px;
+					margin-left: auto;
+
+				}
+			}
+		}
+
+		.installment_range {
+			position  : relative;
+			margin-top: 19px;
+
+			.instmt_range_area {
+				@include selectCustom;
+				width      : 331px;
+				margin-left: auto;
+			}
+		}
+	}
+
+	.selected_box {
+		padding      : 0 0 9px 2px;
+		border-bottom: 1px solid #ddd;
+
+		.cmpn_name,
+		.paymt_plan {
+			font-size: $contPop;
+		}
+	}
+
+	.email_area {
+		margin-top: 24px;
+
+		.custom_checkbox {
+			padding-left: 34px;
+		}
+	}
+
+	.email_inp_wrap {
+		position: relative;
+
+		.box_tit {
+			letter-spacing: normal
+		}
+
+		.inp_box {
+			width        : 331px;
+			padding      : 0 2px 7px;
+			margin-top   : 17px;
+			margin-left  : auto;
+			border-bottom: 1px solid #ddd;
+
+			input {
+				width    : 100%;
+				font-size: $contPopS;
+			}
+		}
+	}
+
+	.pop_bottom {
+		padding: 0 20px;
+
+		.wrap_pop_btn {
+			margin-top: 41px;
+			padding   : 0 50px;
+		}
+	}
+}
+
+.pop_pay_on {
+
+	//신용카드 결제3
+	.pay_info_chk_tbl {
+		border: 1px solid #ddd;
+	}
+
+	.card_shape {
+		width        : 385px;
+		height       : 255px;
+		padding-top  : 35px;
+		margin       : 49px auto 0;
+		border-radius: 14px;
+		box-shadow   : 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+		background   : #fff url(/images/motion_ing.gif) no-repeat top 120px center;
+		box-sizing   : border-box;
+
+		&:before {
+			content      : '';
+			display      : block;
+			width        : 385px;
+			height       : 42px;
+			background   : #ddd;
+			margin-bottom: 18px;
+		}
+
+		.note_pay_on {
+			font-size  : $contPopB;
+			color      : $subtitIndigo;
+			font-weight: 500;
+			text-align : center;
+		}
+	}
+
+	.nepay_safe_note {
+		padding-top: 47px;
+		line-height: 1.67;
+		font-size  : $contPopB;
+		text-align : center;
+	}
+}
+
+.pop_pay_result_success {
+
+	//신용카드 결제 성공
+	.pop_result_tit {
+		padding   : 18px 0 17px;
+		font-size : $contPopB;
+		text-align: center;
+	}
+
+	.pop_cont_middle {
+		margin-top: 28px;
+		padding   : 0 25px;
+		border    : 1px solid #ddd;
+		background: #f6f6f6;
+
+		.card_result_info_tbl {
+			width    : 100%;
+			font-size: $contPop;
+		}
+
+		th {
+			width     : 68px;
+			text-align: left;
+		}
+
+		th,
+		td {
+			padding-top   : 20px;
+			padding-bottom: 20px;
+			border-bottom : 1px solid #ddd;
+		}
+
+		.approval_number {
+
+			th,
+			td {
+				border-bottom: 0;
+			}
+		}
+
+		.cont_middle_th {
+			font-weight: 500;
+		}
+
+		.order_number {
+			th {
+				padding-top: 23px;
+			}
+
+			td {
+				padding-top: 23px;
+			}
+		}
+
+		.paymt_date .vtc_bar {
+			margin: 0 10px;
+			color : $lineBlue;
+		}
+	}
+
+	.pop_bottom {
+		padding-top: 33px;
+
+		.wrap_pop_btn {
+			padding: 0 70px
+		}
+	}
+}
+
+.pop_pay_result_fail {
+	//신용카드 결제 실패
+
+	.pop_cont_top {
+		margin-bottom: 30px;
+
+		.pop_result_tit {
+			padding   : 18px 0;
+			font-size : $contPopB;
+			color     : #ff4053;
+			text-align: center;
+		}
+	}
+
+	.pop_cont_middle {
+		background: #ffe2e2;
+
+		.card_result_info_tbl {
+			width    : 100%;
+			font-size: $contPop;
+
+			th {
+				width      : 90px;
+				padding    : 0 0 20px 25px;
+				text-align : left;
+				font-weight: 500;
+				box-sizing : border-box;
+			}
+
+			td {
+				padding: 0 0 20px 47px;
+			}
+
+			.order_number {
+
+				th,
+				td {
+					padding-top: 23px;
+				}
+			}
+
+			.fail_code {
+
+				th,
+				td {
+					padding-bottom: 22px;
+				}
+			}
+		}
+	}
+
+	.pop_bottom {
+		padding-top: 25px;
+
+		.fail_notice {
+			font-size  : $contPopB;
+			line-height: 1.67;
+			text-align : center;
+
+			.email_txt {
+				text-decoration: underline;
+				color          : $lineBlue;
+				cursor         : pointer;
+			}
+		}
+
+		.wrap_pop_btn {
+			padding-top: 42px;
+
+			.btn_next {
+				float: none;
+			}
+		}
+	}
+}
+
+.pay_info_chk_tbl_wrap {
+	//신용카드 결제 성공, 실패 공통
+	border: 1px solid #ddd;
+
+	.pay_info_chk_tbl {
+		width: 100%;
+
+		.affiliate_name {
+
+			th,
+			td {
+				padding-bottom: 25px
+			}
+		}
+
+		th {
+			padding-left: 26px;
+		}
+
+		td {
+			padding-left: 26px;
+		}
+	}
+}
+
+.pop_sales_slip {
+
+	//신용카드 매출전표
+	.pop_head {
+		margin        : 0 10px;
+		padding-bottom: 17px;
+		border-bottom : 0;
+
+		.logo {
+			display: none;
+		}
+
+		.btn_close_pop {
+			right: 10px;
+			top  : 10px;
+		}
+	}
+
+	.pop_cont {
+		margin    : 0 25px;
+		padding   : 0;
+		border-top: 2px solid $lineBlue;
+	}
+
+	.card_receipt_tbl {
+		width       : 100%;
+		table-layout: fixed;
+
+		.cont_top_th {
+			padding      : 5px 0;
+			background   : #cee8ff;
+			color        : $subtitIndigo;
+			font-weight  : 500;
+			font-size    : 10px;
+			border-bottom: 1px solid #fff;
+
+			&:nth-child(2) {
+				border-right: 1px solid #fff;
+				border-left : 1px solid #fff;
+			}
+		}
+
+		td {
+			padding      : 4px 0 6px;
+			background   : #f3f3f3;
+			border-bottom: 1px solid #fff;
+			text-align   : center;
+
+			&:nth-child(2) {
+				border-right: 1px solid #fff;
+				border-left : 1px solid #fff;
+			}
+		}
+
+		.aprv_number {
+			color: #ff0000
+		}
+
+		.vtc_bar {
+			margin: 0 7px;
+			color : $lineBlue;
+		}
+	}
+
+	.saler_info_group .pop_cont_tit {
+		padding: 19px 0 8px;
+	}
+
+	.affiliate_info_group .pop_cont_tit {
+		padding: 16px 0 7px;
+	}
+
+	.pop_cont_tit {
+		border-bottom: 2px solid $lineBlue;
+		color        : $subtitIndigo;
+		font-size    : $contPopS;
+		font-weight  : 500;
+		text-align   : center;
+	}
+
+	.receipt_total_tbl {
+		width: 100%;
+
+		.cont_btm_th {
+			width        : 156px;
+			padding      : 4px 0 4px 15px;
+			background   : #cee8ff;
+			border-bottom: 1px solid #fff;
+			border-right : 1px solid #fff;
+			box-sizing   : border-box;
+			font-size    : 10px;
+			font-weight  : 500;
+			color        : $subtitIndigo;
+			text-align   : left;
+		}
+
+		td {
+			padding      : 5px 18px 5px 0;
+			background   : #f3f3f3;
+			border-bottom: 1px solid #fff;
+			font-weight  : 500;
+			font-size    : 10px;
+			text-align   : right;
+		}
+
+		.total_price {
+			font-size: 11px;
+			color    : #ff0000;
+		}
+	}
+
+	.pop_cont_bottom .pop_cont_tit {
+		padding: 16px 0 7px;
+
+	}
+
+	.pop_bottom {
+		padding-top: 10px;
+
+		.raw_note {
+			padding  : 0 37px;
+			font-size: 10px;
+			color    : #757575;
+		}
+
+		.wrap_pop_btn {
+			padding-top: 30px;
+
+			.btn_next {
+				float          : none;
+				height         : 30px;
+				line-height    : 30px;
+				background-size: 150px 30px;
+				font-size      : $contPop;
+			}
+		}
+	}
+}
+
+
+/*--------------------------------------------------------------------------------
+	# ADMIN 가맹점 팝업 - cp, master
+---------------------------------------------------------------------------------*/
+.cp_admin_pop {
+	// cp - 가맹점 기본정보, 계약관리 보기 / master 계약관리 보기
+	position     : relative;
+	width        : 920px;
+	border-radius: 10px;
+	box-shadow   : 0px 10px 20px 0 rgba(0, 0, 0, 0.2);
+	background   : #fff;
+
+	&:after {
+		content: '';
+		@include bg(100px, 100px, '../images/bg_triangle.png');
+		display : block;
+		position: absolute;
+		right   : 0;
+		bottom  : 0;
+	}
+
+	.pop_head {
+		.btn_close_pop {
+			right: 10px;
+			top  : 10px;
+		}
+	}
+
+	.pop_cont_top {
+		padding: 0 59px;
+
+		td {
+			padding  : 15px 0;
+			font-size: $contPop;
+			color    : $inputGray;
+		}
+	}
+
+	&.pop_covenant_info {
+
+		// cp admin 가맹점 계약관리 보기
+		.pop_head {
+			padding-top   : 19px;
+			padding-bottom: 23px;
+		}
+
+		.pop_cont {
+			padding: 0 60px 35px;
+		}
+
+		.covenant_tbl {
+			width: 100%;
+
+			.cont_th {
+				width     : 143px;
+				padding   : 15px 18px 15px 0;
+				font-size : $contPop;
+				text-align: right;
+				box-sizing: border-box;
+			}
+
+			tr td:first-of-type {
+				width: 265px
+			}
+
+			td {
+				font-size: $contPop;
+				color    : $inputGray
+			}
+
+			.fee_pct {
+				padding-top: 15px;
+			}
+		}
+
+
+		.cause_info .aflte_info {
+			padding-bottom: 8px;
+		}
+
+		.covenant_tbl {
+
+			.effective_date,
+			.chg_date,
+			.termination_date,
+			.revocation_date {
+				.vtc_bar {
+					color: $lineBlue
+				}
+
+				color:#242424;
+			}
+		}
+
+		.fee_aflte_info {
+
+			.cont_th,
+			.fee_tp,
+			.aflte_info {
+				padding-top: 20px;
+			}
+		}
+
+		.stop_dates {
+			.cont_th {
+				padding-top: 0;
+			}
+
+			.termination_date,
+			.revocation_date {
+				padding-top: 0;
+			}
+		}
+	}
+
+	&.pop_affiliate_info {
+
+		.pop_cont_bottom {
+			margin       : 0 59px;
+			border-top   : 2px solid $lineBlue;
+			border-bottom: 2px solid $lineBlue;
+
+			.responsible_list_tbl {
+
+				//가맹점 담당자 정보
+				.cont_th {
+					width     : 143px;
+					padding   : 15px 17px 15px 0;
+					text-align: right;
+					box-sizing: border-box;
+					font-size : $contPop;
+				}
+
+				td:after {
+					content   : '';
+					display   : block;
+					width     : 1px;
+					height    : 15px;
+					position  : absolute;
+					right     : 0;
+					top       : 15px;
+					background: $lineBlue;
+				}
+
+
+				.rspsblty_name {
+					padding-left : 0;
+					padding-right: 17px;
+				}
+
+				.rspsblty_directnbr {
+					padding-left : 20px;
+					padding-right: 41px;
+				}
+
+				.contract_responsible {
+
+					th,
+					td {
+						padding-top: 26px;
+					}
+
+					td:after {
+						top: 26px
+					}
+				}
+
+				.rspsblty_cellnbr {
+					padding-left : 27px;
+					padding-right: 44px;
+				}
+
+				.rspsblty_email {
+					padding-left: 24px;
+
+					&:after {
+						display: none;
+					}
+				}
+			}
+
+			.customer_responsible {
+
+				.cont_th,
+				td {
+					padding-bottom: 22px;
+				}
+			}
+
+		}
+
+	}
+}
+
+
+.pop_affiliate_info {
+	// cp admin 가맹점 기본정보 보기 / master 가맹점 기본정보 보기, 계약관리 보기
+	padding-bottom: 50px;
+
+	.pop_head {
+		padding-bottom: 23px;
+	}
+
+	.affiliate_tbl {
+		width: 100%;
+
+		.cont_th {
+			width     : 143px;
+			padding   : 15px 18px 15px 0;
+			font-size : $contPop;
+			text-align: right;
+			box-sizing: border-box;
+		}
+
+		.aflte_number {
+			width: 268px
+		}
+	}
+
+
+	&.pop_calculate_info {
+		//가맹점 정산정보
+		padding-bottom: 27px;
+	}
+}
+
+
+.pop_system_menu {//master - pg 시스템 메뉴관리
+  .affiliate_tbl .aflte_number {width:auto}
+
+  .affiliate_tbl {margin: 0 60px 25px;}
+  .cont_th {
+    padding-right: 16px;
+    font-size: $contPop;color:#242424; text-align: right;
+  }
+  
+  td {color:#242424}
+  .menu_code {color:#757575}
+  input {width:251px;}
+  .menu_url input {width:560px}
+
+  .sysmenu_tg_list {//사용여부
+    background: #fff;
+    font-size : $contPopS;
+
+    li {
+      padding: 5px;
+      cursor : pointer;
+
+      &:hover { background: #ddd; }
+    }
+  }
+  .select_toggle_box {
+    display   : none; width     : 100%; max-height: 150px;
+    position  : absolute; top       : 25px; left      : 0;
+    border    : 1px solid #ddd; border-top: 0;
+    overflow  : auto; z-index   : 1;
+
+    li.on { background: $lineBlue; }
+  }
+
+  .pop_cont_bottom {margin: 0 40px 30px;} //메뉴관리 수정
+}
+
+
+
+
+
+.admin_pop {
+	//master 가맹점 기본정보, 계약관리, 정산 공통
+	position     : relative;
+	width        : 920px;
+	border-radius: 10px;
+	box-shadow   : 0px 10px 20px 0 rgba(0, 0, 0, 0.2);
+	background   : #fff;
+
+	&::after {
+		content: '';
+		display : block;
+		@include bg(100px, 100px, '../images/bg_triangle.png');
+		position: absolute;
+		right   : 0;
+		bottom  : 0;
+	}
+
+	.pop_head {
+		.btn_close_pop {
+			right: 10px;
+			top  : 10px;
+		}
+	}
+
+	td {
+		padding  : 15px 0;
+		font-size: $contPop;
+		color    : $inputGray;
+	}
+
+
+	&.pop_affiliate_info {
+		.pop_cont_top {
+			margin: 0 60px;
+		}
+
+		.pop_cont_middle {
+			margin        : 13px 59px 0;
+			padding-bottom: 6px;
+			border-top    : 2px solid $lineBlue;
+			border-bottom : 2px solid $lineBlue
+		}
+
+		.pop_cont_bottom {
+			margin        : 20px 59px 0;
+			padding-bottom: 8px;
+		}
+
+
+		.responsible_list_tbl {
+
+			//가맹점 담당자 정보
+			.cont_th {
+				width     : 143px;
+				padding   : 15px 17px 15px 0;
+				text-align: right;
+				box-sizing: border-box;
+				font-size : $contPop;
+			}
+
+			td:after {
+				content   : '';
+				display   : block;
+				width     : 1px;
+				height    : 15px;
+				position  : absolute;
+				right     : 0;
+				top       : 15px;
+				background: $lineBlue;
+			}
+
+
+			.rspsblty_name {
+				padding-left : 0;
+				padding-right: 17px;
+			}
+
+			.rspsblty_directnbr {
+				padding-left : 20px;
+				padding-right: 41px;
+			}
+
+			.contract_responsible {
+
+				th,
+				td {
+					padding-top: 26px;
+				}
+
+				td:after {
+					top: 26px
+				}
+			}
+
+			.rspsblty_cellnbr {
+				padding-left : 27px;
+				padding-right: 44px;
+			}
+
+			.rspsblty_email {
+				padding-left: 24px;
+
+				&:after {
+					display: none;
+				}
+			}
+		}
+
+
+		.control_cp_tbl {
+
+			//master 가맹점 계약관리 보기
+			.cont_th {
+				width     : 151px;
+				padding   : 15px 18px 0 0;
+				font-size : $contPop;
+				text-align: right;
+				box-sizing: border-box;
+			}
+
+			.manageer_contact {
+				width: 287px;
+			}
+		}
+	}
+
+	&.pop_affiliate_modify {
+
+		&:after {
+			display: none;
+		}
+
+		&.sty2:after {display: block;}
+
+		
+		&.sty3 {//신규계정관리 팝업
+
+			.pop_cont_top {margin:0 24px;}
+			
+			.wrap_search_accountarea {padding:25px 0 34px;font-size:15px;}
+			.pop_affiliate_modify  .tbl td {color:#242424}
+			.wrap_search_accountarea .check_condition {margin-right:101px;padding-left:79px;}
+			.wrap_search_accountarea .txt {margin-right:19px;}
+			.wrap_search_accountarea span, .wrap_search_accountarea  .select_box_area {display:inline-block;}
+			.wrap_search_accountarea  .select_box_area, .wrap_search_accountarea input[type="text"] {width:171px;}
+			.wrap_search_accountarea input[type="text"] {margin-right:63px;border-bottom:2px solid #1684e6;}
+			.wrap_search_accountarea  .btn_franchisee  {display:inline-block;width:118px;height:30px;color:#fff;font-size:15px;line-height:30px;text-align:center;background:#ff9e01}
+			@media only screen and (min-width: 1340px) and (max-width: 1620px) {
+				#wrap_admin #header .gnb {margin-left:30px;}
+			}
+			@media only screen and (max-width: 1340px) {
+				#gnb {width:75%;margin-left:0  !important;}
+				#gnb .depth1 {width:20% !important;margin-right:0 !important;}
+			}
+		}	
+		
+
+
+
+		.pop_cont_top {
+			margin     : 0 59px;
+			padding-top: 17px;
+
+			.affiliate_tbl {
+
+				.cont_th,
+				td {
+					padding-top   : 0;
+					padding-bottom: 21px;
+				}
+			}
+		}
+
+		.cont_th {
+			width     : 143px;
+			padding   : 0 16px 15px 0;
+			font-size : $contPop;
+			text-align: right;
+			box-sizing: border-box;
+		}
+
+		.aflte_number {
+			width: 265px
+		}
+
+		.pop_cont_middle {
+			margin: 25px 59px 0
+		}
+
+		.responsible_list_tbl {
+
+			.rspsblty_name {
+				padding-right: 18px;
+			}
+
+			.rspsblty_directnbr {
+				padding-right: 16px;
+			}
+
+			.rspsblty_cellnbr {
+				padding-right: 17px;
+			}
+
+			.cont_th,
+			td {
+				padding-bottom: 18px;
+				padding-top   : 0;
+			}
+
+			input {
+				width         : 151px;
+				padding-bottom: 7px;
+				border-bottom : 2px solid $lineBlue;
+			}
+		}
+
+
+
+		.covenant_tbl {
+			td {
+				padding-top   : 0;
+				padding-bottom: 21px;
+
+				input {
+					width         : 251px;
+					padding-bottom: 4px;
+					border-bottom : 2px solid $lineBlue;
+				}
+			}
+
+			.aflte_name {
+				padding-bottom: 18px;
+			}
+
+			.profit_type {
+				padding-bottom: 18px;
+			}
+		}
+
+
+		.profit_type_area,
+		.tax_tp_area,
+		.wk_info_area,
+		.pay_type_area,
+		.middle_pg_area,
+		.fee_type_area {
+			@include selectCustom;
+			width        : 251px;
+			border-bottom: 2px solid $lineBlue;
+
+			li:hover {
+				background: #ddd;
+				color     : #242424;
+			}
+		}
+
+
+		.selected_box {
+			padding-bottom: 9px;
+		}
+
+		.raw_prft_list,
+		.tax_type_list,
+		.work_if_list,
+		.work_if_list,
+		.fee_type_list,
+		.middle_pg_list,
+		.pay_type_list {
+			background: #fff;
+		}
+
+		.prft_type,
+		.tax_tp_txt {
+			color: $inputGray
+		}
+
+		.affiliate_tbl input {
+			width        : 251px;
+			padding      : 0 0 4px;
+			border-bottom: 2px solid $lineBlue;
+		}
+
+		.pop_cont_bottom {
+			margin        : 0 59px;
+			padding-bottom: 8px;
+			padding-top   : 13px;
+
+
+			td {
+				padding: 0 0 19px;
+
+				color: #242424
+			}
+
+			.vtc_bar {
+				padding: 0 2px 0 1px;
+				color  : $lineBlue
+			}
+
+			.effective_date {
+				width: 265px;
+
+				&.sty2 {width:auto}
+			}
+		}
+  }
+  
+	.btn_save {
+		@include btnCenter(150px, 40px);
+		background: url(../images/bg_btn_blue.svg) no-repeat left top;
+	}
+
+	.btn_cnxl {
+		@include btnCenter(150px, 40px, 0);
+		background: url(../images/bg_btn_gray.svg) no-repeat left top;
+
+	}
+}
+
+.responsible_list_tbl {
+
+	//가맹점 담당자 정보
+	.cont_th {
+		width     : 143px;
+		padding   : 15px 17px 15px 0;
+		text-align: right;
+		box-sizing: border-box;
+		font-size : $contPop;
+	}
+
+	td {
+		position : relative;
+		overflow : hidden;
+		font-size: $contPop;
+		color    : $inputGray;
+	}
+}
+
+
+.control_cp {
+
+	//가맹점 계약일자, 중지일자, 시작일자, 해지일자, 계약담당자
+	.cont_th {
+		width     : 143px;
+		padding   : 0 17px 17px 0;
+		text-align: right;
+		box-sizing: border-box;
+		font-size : $contPop;
+	}
+
+	td {
+		padding-top: 0;
+		color      : #242424
+	}
+
+	.vtc_bar {
+		padding: 0 2px 0 1px;
+		color  : $lineBlue
+	}
+
+	.effective_date {
+		width: 265px;
+	}
+
+}
+
+.fee_percent {
+
+	//카드사별 수수료
+	.cont_th {
+		vertical-align: top;
+	}
+
+	.card_company_list {
+		overflow: hidden;
+
+		li {
+			padding-right: 68px;
+			margin-bottom: 30px;
+			float        : left;
+
+			&:first-child {
+				padding-right: 76px;
+			}
+
+			&:nth-child(5) {
+				padding-right: 0;
+			}
+		}
+
+		.vam_bar {
+			content       : '';
+			display       : inline-block;
+			width         : 1px;
+			height        : 15px;
+			background    : $lineBlue;
+			margin        : 0 13px;
+			vertical-align: middle;
+		}
+	}
+
+
+}
+
+
+.pay_sms {
+
+	//master only 결제SMS 발송
+	.custom_checkbox {
+		padding-left: 30px;
+		height      : 18px;
+		line-height : 18px;
+
+		.checkmark {
+			top : -5px;
+			left: -5px;
+		}
+	}
+}
+
+.wrap_demo {
+	//신용카드 결제데모
+	width           : 100%;
+	height          : 463px;
+	padding-top     : 50px;
+	background-color: #eeeeee;
+	box-sizing      : border-box;
+
+	#contents {
+		width : 1400px;
+		margin: 0 auto;
+	}
+
+	.notice {
+		margin-bottom: 47px;
+		font-size    : 20px;
+		color        : #fb9e08;
+		text-align   : center;
+
+		.txt {
+			padding-left: 27px;
+			background  : url('../images/ico_demo_info.png') no-repeat left center;
+		}
+	}
+
+	.list_info {
+		overflow: hidden;
+		width   : 652px;
+		height  : 192px;
+		margin  : 0 auto;
+
+		>li {
+			float       : left;
+			width       : 212px;
+			height      : 190px;
+			margin-right: 5px;
+			border      : 1px solid #d5d5d5;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		dl {
+			color: #001b32
+		}
+
+		dt {
+			padding      : 20px 0 20px 35px;
+			border-bottom: 1px solid #d5d5d5;
+			font-size    : 16px;
+		}
+
+		dd {
+			padding: 20px 0 0 37px;
+
+			ul>li {
+				margin-bottom: 10px;
+				font-size    : 14px;
+			}
+		}
+
+		input {
+			width     : 140px;
+			height    : 25px;
+			margin-top: 5px;
+			border    : none;
+		}
+
+		.demo_payment {
+			padding-right: 21px;
+			box-sizing   : border-box;
+		}
+
+		.txt_demo_payment {
+			margin-left: -21px;
+
+		}
+
+		dl {
+			color: #001b32
+		}
+
+		dt {
+			padding      : 20px 0 20px 35px;
+			border-bottom: 1px solid #d5d5d5;
+			font-size    : 16px;
+			background   : url('../images/ico_dot_demo.png') no-repeat 19px center;
+		}
+
+		dd {
+			padding: 20px 0 0 0;
+
+			ul>li {
+				margin-bottom: 10px;
+				padding-left : 37px;
+				font-size    : 14px;
+				background   : url('../images/ico_line_demo.png') no-repeat 19px 8px;
+			}
+		}
+	}
+
+	.btn_payment_demo {
+		display    : block;
+		width      : 160px;
+		height     : 55px;
+		margin     : 48px auto 0;
+		color      : #fff;
+		font-size  : 18px;
+		line-height: 55px;
+		text-align : center;
+		cursor     : pointer;
+		background : #012875;
+	}
+}
+
+.cause_memo {
+	display   : block;
+	overflow  : auto;
+	width     : 658px;
+	height    : 90px;
+	border    : 1px solid $lineBlue;
+	resize    : none;
+	background: #fff
+}
+
+
+.covenant_modify {
+
+	//마스터 가맹점 계약관리 수정
+	.pop_cont {
+		padding: 0 59px;
+
+		.affiliate_tbl {
+			.cont_th {
+				width: 140px;
+			}
+
+			.svc_name,
+			.pay_sms,
+			.pay_tp {
+				padding-top: 7px;
+			}
+
+			.mdd_pg {
+				padding-top: 3px;
+			}
+
+			.aflte_number {
+				width: 251px
+			}
+
+			.fee_pct {
+				padding-top: 5px;
+			}
+
+			.fee_percent .cont_th {
+				padding-top: 5px;
+			}
+
+			.fee_aflte_info {
+				td {
+					padding-top: 10px;
+				}
+			}
+
+			.aflte_info {
+				padding-top: 0;
+			}
+		}
+
+		.card_company_list {
+			input {
+				width     : 41px;
+				text-align: center;
+			}
+
+			.vam_bar {
+				margin: 0 5px 0 13px;
+			}
+
+			li {
+				padding-right: 57px;
+				margin-bottom: 22px;
+			}
+
+			li:first-child {
+				padding-right: 63px;
+			}
+
+			li:nth-child(5) {
+				padding-right: 0;
+			}
+		}
+	}
+
+	.control_cp_tbl {
+		.cont_th {
+			width        : 141px;
+			padding-right: 15px
+		}
+
+		input {
+			width         : 251px;
+			padding-bottom: 6px;
+			border-bottom : 2px solid $lineBlue;
+		}
+
+		.manageer_contact {
+			width: 261px
+		}
+	}
+}
+
+
+.pop_calculate_modify {
+	//가맹점 정산정보 수정
+
+	padding-bottom: 0;
+
+	&:after {
+		display: none;
+	}
+
+	.pop_head {
+		padding-bottom: 38px;
+	}
+
+	.affiliate_tbl {
+		input {
+			padding-bottom: 8px;
+			border-bottom : 2px solid $lineBlue;
+		}
+
+		.cont_th,
+		.aflte_name,
+		.aflte_number {
+			padding-top   : 0;
+			padding-bottom: 23px;
+		}
+
+		.affiliate_nbr,
+		.svc_id,
+		.account_company,
+		.account_number {
+			padding-top   : 0;
+			padding-bottom: 18px;
+		}
+
+		.account_name {
+			padding-top   : 0;
+			padding-bottom: 19px;
+		}
+
+		.acnt_company_area {
+			@include selectCustom;
+			width         : 251px;
+			padding-bottom: 7px;
+			border-bottom : 2px solid $lineBlue;
+
+			.acnt_company_list {
+
+				background: #fff;
+				font-size : $contPopS;
+
+				li {
+					padding: 5px;
+					cursor : pointer;
+
+					&:hover {
+						background: #ddd;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+
+.pop_bottom_v1 {
+	//연한 하늘색 배경색 있는
+	overflow  : hidden;
+	padding   : 14px 293px 21px 290px;
+	background: #e8ebef;
+
+	.btn_save {
+		float     : left;
+		margin-top: 0;
+	}
+
+	.btn_cnxl {
+		float: right;
+	}
+}
+
+
+
+.pop_system_code {
+	//pg시스템, 공통코드
+	width: 1060px;
+
+	&:after {
+		display: none;
+	}
+
+	.pop_head {
+		padding-bottom: 35px;
+	}
+
+	.pop_cont {
+		padding: 0 35px 28px;
+	}
+
+	.tbl tbody tr {
+		background: transparent;
+	}
+
+	.tbl {
+		table-layout : auto;
+		border-bottom: 0;
+
+		th {
+			padding   : 0 10px 11px;
+			text-align: left;
+			font-size : $contPopB;
+		}
+
+		td {
+			padding  : 32px 0 0 0;
+			font-size: $contPopB;
+
+			input {
+				width        : 170px;
+				padding      : 0 10px 8px;
+				margin-right : 35px;
+				border-bottom: 1px solid $lineBlue;
+				box-sizing   : border-box;
+			}
+		}
+	}
+
+	.pop_bottom_v1 {
+		padding-right: 363px;
+		padding-left : 360px;
+	}
+}
+
+.useable_area {
+	width        : 170px;
+	padding      : 0 10px 11px;
+	margin-right : 0;
+	border-bottom: 1px solid $lineBlue;
+	box-sizing   : border-box;
+
+	@include selectCustom($bottom:11px);
+	text-align                   : left;
+
+	.select_toggle_box {
+		top: 30px;
+	}
+
+	.useable_list {
+		background: #fff;
+
+		li {
+			padding: 5px;
+			cursor : pointer;
+
+			&:hover {
+				background: #ddd;
+			}
+		}
+	}
+}
+
+.pop_holidays {
+	width: 856px;
+
+	&:after {
+		display: none;
+	}
+
+
+	.pop_head {
+		padding-bottom: 28px;
+	}
+
+	//휴일 관리
+	.wrap_calendar {
+		display: block;
+
+		padding-bottom: 3px;
+		border-bottom : 1px solid $lineBlue;
+
+		input {
+			width     : 115px;
+			padding   : 7px 10px 6px;
+			font-size : $contPopB;
+			background: transparent;
+		}
+
+		&:after {
+			content       : " ";
+			display       : inline-block;
+			position      : relative;
+			width         : 25px;
+			height        : 28px;
+			margin-left   : 7px;
+			vertical-align: top;
+			background    : url('../images/ico_calendar2.png') no-repeat left top;
+		}
+	}
+
+	.holiday_note {
+		width        : 375px;
+		padding      : 0 11px 9px;
+		border-bottom: 1px solid $lineBlue;
+		font-size    : $contPopB;
+		background   : transparent;
+	}
+
+	.tbl {
+		table-layout: auto;
+
+		td {
+			padding  : 28px 35px 28px 0;
+			font-size: $contPopB;
+
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+	}
+
+	&.admin_pop .pop_cont .tbl {
+		tr {
+			background: #fff;
+
+			th {
+				padding   : 0 11px 10px;
+				font-size : $contPopB;
+				text-align: left;
+			}
+		}
+	}
+
+	.pop_bottom_v1 {
+		padding: 14px 258px 21px 261px;
+	}
+}
+
+
+.pop_daesa,
+.pop_calcate_admin {
+
+	//신용카드 정산 집계 & 대사 관리 - 차이건수
+	.pop_head {
+		padding-top   : 15px;
+		padding-bottom: 32px;
+	}
+
+	.pop_cont {
+		padding: 0 27px 0 23px;
+	}
+
+	.tbl {
+		th {
+			font-size: $contPopS;
+		}
+
+		td {
+			padding  : 23px 0 24px;
+			font-size: $contPopS;
+			color    : #242424;
+
+			.bar {
+				color: $lineBlue
+			}
+		}
+	}
+
+	.box_paging {
+		padding-bottom: 37px;
+		margin-top    : 34px;
+	}
+}
+
+.pop_calcate_admin {
+	//신용카드 정산 집계
+	width: 1180px;
+}
+
+
+//공통 셀렉트박스 모양 레이어팝업 디자인
+.select_box_area {
+	position: relative;width: 251px;border-bottom: 2px solid #1684e5;
+
+	.selected_box {
+		padding-bottom: 9px;
+	
+		.select_box_txt {color: #757575;}
+	}
+
+	.select_toggle_box  {
+		display: none; width: 100%; max-height: 150px;
+		position: absolute; top: 25px; left: 0;
+		border: 1px solid #ddd; border-top: 0;
+		overflow: auto; z-index: 1; box-sizing: border-box;
+	}
+
+	.on + .select_toggle_box {display:block;}
+
+	&:after {
+		content: '';display: block;
+		width: 0;height: 0;
+		position: absolute;right: 0;bottom: 9px;
+		border-left: 7px solid transparent; border-right: 7px solid transparent;
+		border-top: 10px solid #1684e5;
+	}
+
+	.list_select_option {
+		background: #fff;
+	
+		li {
+			padding: 5px;cursor: pointer;
+			&:hover {background-color: #f1f1f1;}
+		}
+	}
+}
+
+
+.admin_pop.pop_affiliate_modify .affiliate_tbl .inp_search_prev {width:186px;margin-right:10px;}
+.btn_account_search {display:inline-block;width:50px;height:30px;color:#fff;font-size:13px;line-height:30px;text-align:center;cursor:pointer;background:#ff9e01;}
+
+.box_creatcount_btn {
+	overflow:hidden;position:relative;z-index:30;padding:30px 0;text-align:right;
+
+	.btn {
+		display:inline-block;width:118px;height:30px;margin-right:20px;color:#fff;font-size:15px;line-height:30px;text-align:center;
+		&:last-child {margin-right:0;}
+	}
+	
+	.btn_select {background:#ff9e01}
+	.btn_close {background:#757575}
+}
+
