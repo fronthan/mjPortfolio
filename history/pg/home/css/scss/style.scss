@@ -1,0 +1,741 @@
+@import '_common';
+
+body {position: relative;}
+.mask {
+	position: absolute;
+	width:100vw;height:100%;
+	left:0; top:0;
+	background: rgba(0,0,0,.5);
+	z-index: 10;
+}
+
+.pop_area {
+	position: fixed;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);    
+	z-index: 100;
+}
+
+//공통 헤더
+.header {
+	.inner_wrap {
+		overflow: hidden;
+		max-width: 1380px;
+		margin  : 0 auto;
+	}
+
+	.logo {
+		float     : left;
+		margin-top: 3px;
+		margin-left: 3px;
+		width     : 114px;
+	}	
+
+	.gnb {
+		float      : right;
+		width:55%; min-width:670px;
+
+		ul {overflow: hidden;}
+		li {
+			float       : left;
+			width:20%;
+			line-height : 58px;
+			text-align: center;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			a {
+				color          : #fff;
+				font-size      : 18px;
+				text-decoration: none;
+				letter-spacing : 0.3px;
+				line-height: 100px;
+
+				&.on {
+					padding-bottom: 5px;
+					border-bottom : 2px solid #fff;
+				}
+			}
+		}
+	}
+}
+
+//공통 랩
+.nespay_wrap {
+	width     : 100%;
+	min-width:1280px;
+	min-height    : 100%;
+	padding-bottom: 38px;
+	background: url('../images/bg_main.jpg') no-repeat left top/cover;
+
+	&.sub {padding-bottom: 39px; min-width:1280px;
+		background: none;
+	
+		.header {	
+			position: relative;
+			height          : 100px;
+			background-color: transparentize($titleIndigo, .6);	
+		}
+	}
+}	
+.nes_wrap_content {max-width:1400px; margin: 0 auto;}
+
+//약관 공통
+.policy {
+	width : 220px;
+	margin: 0 auto;
+
+	a {
+		color          : #fff;
+		font-size      : 16px;
+		text-decoration: none;
+
+		&:first-child {
+			margin-right: 41px;
+		}
+
+		&:hover {text-decoration: underline;}
+	}
+
+	&.sub {
+		margin-top: 79px;
+
+		a {
+			color: $basicIndigo;
+		}
+	}
+}
+
+//푸터 공통
+.footer {
+	overflow  : hidden;
+	max-width     : 1400px;
+	margin    : 16px auto 0;
+	color     : #fff;
+	font-size : 14px;
+	border-top: 1px solid #fff;
+
+	.company_info {
+		float      : left;
+		padding    : 15px 0 0 20px;
+		line-height: 24px;
+
+		.name {
+			font-size  : 18px;
+			line-height: 25px;
+			font-weight: 100;
+		}
+
+		.business_info span,
+		.tel_info span {
+			position   : relative;
+			font-weight: 100;
+
+			&:first-child {
+				padding-left: 2px;
+			}
+		}
+
+		.business_info span:after,
+		.tel_info span:after {
+			content   : '';
+			display   : inline-block;
+			width     : 1px;
+			height    : 9px;
+			margin    : 0 17px 0 20px;
+			background: #fff;
+		}
+
+		.business_info span:last-child:after,
+		.tel_info span:last-child:after {
+			display: none;
+		}
+
+		.address {
+			font-weight: 100;
+		}
+	}
+
+	.logo {
+		float : right;
+		margin: 7px 5px 0 0;
+		width:152px;
+	}
+
+	&.sub {
+		color     : $basicIndigo;
+		border-top: 1px solid $basicIndigo;
+
+		.business_info span:after,
+		.tel_info span:after {
+			background: $basicIndigo;
+		}
+	}
+}
+
+.copyright {
+	font-size  : 12px;
+	font-weight: 100;
+	color      : #fff;
+	text-align : center;
+
+	&.sub {
+		color: $basicIndigo;
+	}
+}
+
+
+/*-------------------------
+*	# 홈페이지 - main
+* -------------------------*/
+.main_desc {
+	margin    : 324px 0 305px;
+	color     : #ffffff;
+	text-align: center;
+
+	h2 {
+		font-size: 54px;
+
+		strong {
+			color: $accentColor
+		}
+	}
+
+	p {
+		margin-top : 30px;
+		font-size  : 40px;
+		font-weight: 100;
+
+		strong {
+			font-size  : 46px;
+			font-weight: 300;
+		}
+	}
+}
+
+
+/*-------------------------
+*	# 홈페이지 - service
+* -------------------------*/
+.container_service {
+	margin-top: -100px;
+
+	.service_desc {
+		padding-top   : 249px;
+		padding-bottom: 148px;
+		background    : url(../images/service_visual_main.jpg) no-repeat top center/cover;
+
+		h2 {
+			width      : 100%;
+			max-width:1380px;
+			margin     : 0 auto 39px;
+			font-size  : 48px;
+			line-height: 0.5;
+			color      : #fff
+		}
+
+		p {
+			width      : 100%;
+			max-width:1380px;
+			margin     : 0 auto;
+			font-weight: 100;
+			font-size  : 30px;
+			line-height: 1.53;
+			color      : #fff
+		}
+	}
+
+	.box_content {
+		max-width:1400px;
+		margin: 0 auto;
+	}
+	.wrap_process_service {
+		overflow: hidden;
+		padding:0 28px;
+
+		.group, .process_memo {float: left;}
+
+		.group {
+			width:11.6%;
+
+			dt {
+				position: relative;
+				width: 100%;; height: 150px;
+				border-radius: 50%;
+				text-align: center;
+				background: #eee;
+
+				img {
+					position: absolute;
+					left:50%;
+					top:50%;
+				}
+
+				.icon_customer {
+					width:56px;
+					margin-left: -28px;
+					margin-top:-38px;
+				}
+				.icon_affiliate, .icon_ven {
+					width:76px;
+					margin-left: -38px;
+					margin-top: -38px;
+				}
+				.icon_nepay {
+					width:124px;
+					margin-left: -64px;
+					margin-top: -52px;
+				}				
+			}
+			dd{
+				padding-top: 9px;
+				font-size: 15px;
+				text-align: center;
+				letter-spacing: -0.8px;
+				color:$subtitIndigo;				
+			}
+		}
+
+		.process_txt {
+			padding-top: 17px;
+			padding-left: 21%;
+			font-size: 14px;
+			color:$basicIndigo;
+			font-weight: 100;
+
+			&.txt_bottom {
+				padding-top: 86px;
+				padding-right: 48px;
+				text-align: right;
+			}
+
+			&.txt_bottom_v2 {
+				padding-top: 4px;
+				padding-right: 48px;
+				text-align: right;
+			}
+		}
+
+		.process_memo {		
+			position: relative;
+			width:17.8%;
+
+			.arrow_right {
+				position: absolute;
+				//width: 144px;
+				width:62%;
+				height:33px;
+				top:42px;
+				left:49px;
+
+				&.arw_v1 {
+					background: url(../images/service_process1.png) no-repeat 0 0/contain;
+				}
+				&.arw_v2 {
+					background: url(../images/service_process2.png) no-repeat 0 0/contain;
+				}
+				&.arw_v3 {
+					background: url(../images/service_process3.png) no-repeat 0 0/contain;
+				}
+			}
+
+			.arrow_left {
+				position: absolute;
+				//width:144px;
+				width:62%;
+				height: 33px;
+				top:72px;
+				left:49px;
+
+				&.arw_v1 {
+					background: url(../images/service_process6.png) no-repeat 0 0/contain;
+				}
+				&.arw_v2 {
+					background: url(../images/service_process5_8.png) no-repeat 0 0/contain;
+				}
+
+				&.arw_v3 {
+					background: url(../images/service_process4_7.png) no-repeat 0 0/contain;
+				}
+			}
+		}		
+	}
+}
+
+
+/*-------------------------------------
+*	# 홈페이지 - 신용카드 결제내역 조회
+--------------------------------------*/
+.tit_sty1 {
+	padding  : 80px 0 39px;
+	font-size: 30px;
+	color    : $titleIndigo;
+}
+
+.wrap_payment_history {		
+	background    : #eee;
+
+	.inner_wrap {
+		max-width:1400px;
+		padding-bottom: 40px;
+		margin:0 auto;
+	}
+
+	.list {
+		width:800px;
+		margin: 0 auto;
+		
+		dl {
+			overflow     : hidden;
+			margin-bottom: 5px;
+			border       : 1px solid #d5d5d5;
+		}
+
+		dt,
+		dd {
+			float    : left;
+			font-size: 16px;
+			color    : $basicIndigo;
+		}
+
+		dt {
+			width       : 165px;
+			height      : 55px;
+			padding-left: 20px;
+			border-right: 1px solid #d5d5d5;
+			line-height : 55px;
+			box-sizing  : border-box;
+		}
+
+		dd {
+			padding-left: 40px;
+			line-height : 55px;
+		}
+
+		.confirm_num,
+		.confirm_email {
+			margin-top: 18px;
+			border    : none;
+			background: transparent;
+		}
+
+		.custom_radiobox {
+			&:first-child {
+				width: 223px;
+			}
+
+			.checkmark {
+				top: -3px;
+			}
+		}
+
+		.wrap_calendar {
+			display: inline-block;
+			position: relative;
+			width:122px; margin-top: 15px;
+			overflow: hidden;	
+			vertical-align: top;		
+
+			&:before, &:after {
+				content    : " ";
+				display    : block; z-index: 0;
+			}
+
+			&:before {
+				width:90px; height:25px;
+				float: left;
+				background: #fff; 
+			}
+
+			&:after {
+				width      : 25px; height     : 25px;				
+				float: right;
+				background : url('../images/ico_calendar.png') no-repeat left top;
+			}
+
+			input {
+				display: block; width: 122px; height: 25px;
+				position: absolute;
+				background: none; z-index: 1;
+				cursor: pointer;
+			}
+
+		}
+
+		.inp_line {
+			margin: 0 10px;
+		}
+
+		.notice_isp {
+			margin-bottom: 5px;
+			color        : $accentColor;
+			font-size    : 12px;
+		}
+
+		.tit_captcah {
+			height     : 70px;
+			line-height: 70px;
+		}
+
+		.box_captcha,
+		.write_captcah {
+			float: left;
+		}
+
+		.box_captcha {
+			margin: 10px 0
+		}
+
+		.write_captcah {
+			margin-left: 21px;
+
+			.notice {
+				display    : block;
+				margin     : 4px 0 5px;
+				font-size  : 14px;
+				line-height: 24px;
+			}
+
+			.inp_box {
+				input {
+					width     : 90px;
+					height    : 25px;
+					border    : none;
+					background: #fff;
+				}
+			}
+		}
+	}
+
+	.btn_lookup {
+		@include btnCenter(160px, 55px);
+		appearance: none;
+		cursor: pointer;
+	}
+}
+
+.wrap_transaction_history {
+	.inner_wrap {
+		max-width : 1400px;
+		margin: 0 auto;
+	}
+}
+
+/*--------------------------
+*	# 홈페이지 - 문의 안내
+*---------------------------*/
+.qa_info {
+	float     : left;
+	width     : 283px;
+	margin-top: 78px;
+
+	h2 {
+		font-size: 30px;
+		color    : $titleIndigo;
+	}
+
+	dl {
+		margin-top: 37px;
+		margin-left: 6px;
+	}
+
+	dt {
+		margin-top: 23px;
+		font-size : 22px;
+		color     : $basicIndigo;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	dd {
+		margin     : 8px 0 0 0;
+		font-size  : 18px;
+		font-weight: 100;
+		color      : $basicIndigo;
+	}
+}
+
+.qaform {
+	float        : left;
+	width        : calc(100% - 283px);
+	margin-top   : 146px;
+	padding      : 39px 40px;
+	border-radius: 10px;
+	box-sizing   : border-box;
+	box-shadow   : 0 0 24.8px 2.2px rgba(1, 40, 117, 0.15);
+
+	.inp_box {
+		width         : 534px;
+		margin-top    : 17px;
+		padding-bottom: 15px;
+		border-bottom : 1px solid #eee;
+
+		&:first-child {
+			margin-top: 0
+		}
+
+		&.inp_cont {
+			width         : 100%;
+			margin-top    : 39px;
+			padding-bottom: 20px;				
+		}
+
+		label {
+			width      : 100px;
+			font-size  : 20px;
+			font-weight: 100;
+			color      : $basicIndigo;
+		}
+
+		input {
+			width    : 430px;
+			color    : #949494;
+			border   : none;
+			padding-left: 10px;
+			box-sizing: border-box;
+			font-size: 16px;
+			font-weight: 100;
+			vertical-align: top;
+		}				
+	}
+
+
+	.qa_cont {
+		width      : 100%;
+		height     : 160px;
+		padding-top: 10px;
+		border     : 0 none;
+		resize:none;
+		color      : #949494;
+		font-weight: 100;
+		font-size  : 16px;
+	}
+
+	#btnSubmit {
+		float     : right;
+		width     : 160px;
+		height    : 55px;
+		margin-top: 26px;
+		color     : #fff;
+		font-size : 18px;
+		text-align: center;
+		border    : none;
+		background: #012875;
+	}
+}
+
+
+/*---------------------------------
+*	# 홈페이지 - 신용카드 결제데모
+* --------------------------------*/
+.wrap_demo {
+	width           : 100%;
+	height          : 463px;
+	padding-top     : 50px;
+	background-color: #eeeeee;
+	box-sizing      : border-box;
+
+	#contents {
+		width : 1400px;
+		margin: 0 auto;
+	}
+
+	.notice {
+		margin-bottom: 47px;
+		font-size    : 20px;
+		color        : #fb9e08;
+		text-align   : center;
+
+		.txt {
+			padding-left: 27px;
+			background  : url('../images/ico_demo_info.png') no-repeat left center;
+		}
+	}
+
+	.list_info {
+		overflow: hidden;
+		width   : 652px;
+		height  : 192px;
+		margin  : 0 auto;
+
+		>li {
+			float       : left;
+			width       : 320px;
+			height      : 190px;
+			margin-right: 6px;
+			border      : 1px solid #d5d5d5;
+
+			&:last-child { margin-right: 0; }
+		}
+
+		dl { color: #001b32 }
+
+		dt {
+			padding      : 20px 0 20px 35px;
+			border-bottom: 1px solid #d5d5d5;
+			font-size    : 16px;
+			background   : url('../images/ico_dot_demo.png') no-repeat 19px center;
+		}
+
+		dd {
+			 padding: 20px 0 0 0;
+
+			ul>li {
+				margin-bottom: 10px;
+				padding-left : 37px;
+				font-size    : 14px;
+				font-weight: 100;
+				background   : url('../images/ico_line_demo.png') no-repeat 19px 8px;
+			}
+		}
+
+		input {
+			display: block; width: 248px; height: 25px;
+			margin-top: 6px; padding: 0 11px; border: none;
+			box-sizing: border-box;
+		}
+
+		.paydemo_box {position: relative;}
+		.txt_demo_payment { position: absolute; right:47px; top:5px;}
+		.demo_payment { padding-right: 33px; text-align:right;}
+
+		
+	}
+
+	.btn_payment_demo {
+		display    : block;
+		width      : 160px;
+		height     : 55px;
+		margin     : 48px auto 0;
+		color      : #fff;
+		font-size  : 18px;
+		line-height: 55px;
+		text-align : center;
+		cursor     : pointer;
+		background : #012875;
+	}
+}
+
+/*------------------------------------------
+*	# 홈페이지 - 이용약관, 개인정보처리방침
+* ----------------------------------------*/
+.nes_wrap_content h2 {
+	margin   : 80px 0 39px;
+	font-size: 30px;
+	color    : $titleIndigo;
+}
+
+.nes_wrap_content .box_content {
+	overflow  : auto;
+	width     : 100%;
+	height    : 500px;
+	padding   : 40px;
+	font-size : 12px;
+	border    : 1px solid #d5d5d5;
+	box-sizing: border-box;
+}

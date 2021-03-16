@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  xml:lang="ko-KO">
+<head>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>결제내역조회:네스페이</title>
+    <link rel="stylesheet" href="./css/basic.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/datepicker.css">
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/datepicker.js"></script>
+    <script src="./js/ui_common.js"></script>
+</head>
+<body>
+    <div class="skip_navigation">
+        <ul>
+          <li><a href="#gnb">대메뉴 바로가기</a></li>
+          <li><a href="#container">결제내역 검색 바로가기</a></li>
+          <li><a href="#footer">하단 바로가기</a></li>
+        </ul>
+      </div>
+    <div class="nespay_wrap sub">
+        <div class="header">
+            <div class="inner_wrap">
+                <h1 class="logo">
+                    <a href="./main.html" title="메인으로">
+                       <img src="images/logo_nespay_color2.png" alt="네스페이 로고" />
+                    </a>
+                </h1>
+                <div id="gnb" class="gnb" role="navigation">
+                    <ul>
+                      <li><a href="./main.html">HOME</a></li>
+                      <li><a href="./service.html">SERVICE</a></li>
+                      <li> <a class="on" href="./payment_list.html">결제내역조회</a> </li>
+                      <li> <a href="./qa.html">문의 안내</a> </li>
+                      <li> <a href="./pay_demo.html">결제 데모</a> </li>
+                    </ul>
+                  </div>
+            </div>
+        </div>
+        <div id="container" role="main">
+            <div class="wrap_payment_history">
+                <div class="inner_wrap">
+                    <h2 class="tit_sty1">신용카드 결제내역 검색</h2>
+                    <ul class="list">
+                        <li>
+                            <dl>
+                                <dt>카드 종류 선택</dt>
+                                <dd>
+                                    <label class="custom_radiobox radio_contain">인터넷 안전결제 : 국민카드/BC카드
+                                        <input type="radio" name="isp" class="isp" value="isp" checked="">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="custom_radiobox radio_contain">안심클릭 : 국민카드/BC카드 제외한 모든 카드사
+                                        <input type="radio" name="isp" class="notisp" value="isp" checked="">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>결제 정보 선택</dt>
+                                <dd>
+                                    <label class="custom_radiobox radio_contain">이메일 확인
+                                        <input type="radio" name="info" class="isp" value="authemail" checked="">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="custom_radiobox radio_contain">승인번호 확인
+                                        <input type="radio" name="info" class="notisp" value="authnum" checked="">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>결제 정보 선택</dt>
+                                <dd>
+                                    <input type="text" name="confirmNum" class="confirm_num" value="" placeholder="승인번호를 입력해 주세요." />
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>결제 일자</dt>
+                                <dd>
+                                    <span class="wrap_calendar"><input type="text" class="date" name="startDate" value="" readonly /></span>
+                                    <span class="inp_line"> - </span>
+                                    <span class="wrap_calendar"><input type="text" class="date" name="endDate" value="" readonly /></span>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>기타 정보 (E-mail)</dt>
+                                <dd>
+                                    <input type="email" name="confirm_email" class="confirm_email" value="" placeholder="이메일을 입력해 주세요." />
+                                </dd>
+                            </dl>
+                            <p class="notice_isp">* ISP 카드거래의 경우, 개인정보보호 강화를 위해 결제내역을 받은 E-mail 주소를 추가 기입하셔야 조회할 수 있습니다.</p>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt class="tit_captcah">보안 문자</dt>
+                                <dd class="wrap_captcah clfix">
+                                    <div class="box_captcha">
+                                        <img src="images/img_captcha.png" style="width:211px;height:50px;" />
+                                    </div>
+                                    <div class="write_captcah">
+                                        <span class="notice">이미지를 보이는대로 입력해주세요.</span>
+                                        <span class="inp_box">
+                                            <input type="text" class="inp" name="inp_captcha" />
+                                        </span>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                    <span class="btn_lookup">조회</span>
+                </div>
+            </div>
+            <div class="wrap_transaction_history">
+                <div class="inner_wrap">
+                    <h2 class="tit_sty1">신용카드 거래내역 조회</h2>
+                    <table class="tbl">
+                        <caption>신용카드 거래내역조회 - 승인번호, 거래일자, 결제방법, 가맹점 명, 전화번호, 금액, 부가세, 봉사료, 합계</caption>
+                        <colgroup>
+                            <col width="6.78%" />
+                            <col width="15.87%"/>
+                            <col width="7.92%" />
+                            <col width="17.35%" />
+                            <col width="15.78%" />
+                            <col width="8%" />
+                            <col />
+                            <col width="8.85%" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">승인 번호</th>
+                                <th scope="col">거래 일자</th>
+                                <th scope="col">결제 방법</th>
+                                <th scope="col">가맹점 명</th>
+                                <th scope="col">전화번호</th>
+                                <th scope="col">금액</th>
+                                <th scope="col">부가세</th>
+                                <th scope="col">봉사료</th>
+                                <th scope="col" class="last">합계</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>00827819</td>
+                                <td>2020/01/01 23:59:59</td>
+                                <td>할부 03개월</td>
+                                <td>뉴코아 부천점</td>
+                                <td>032-624-4556</td>
+                                <td>123,365,000원</td>
+                                <td>23,365,500원</td>
+                                <td>123,000,000원</td>
+                                <td>246,365,000원</td>
+                            </tr>
+                            <tr>
+                                <td>00827819</td>
+                                <td>2020/01/01 23:59:59</td>
+                                <td>할부 03개월</td>
+                                <td>뉴코아 부천점</td>
+                                <td>032-624-4556</td>
+                                <td>123,365,000원</td>
+                                <td>23,365,500원</td>
+                                <td>123,000,000원</td>
+                                <td>246,365,000원</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="box_paging clfix">
+                        <span class="btn_prev">
+                            <i class="blind">이전</i>
+                        </span>
+                        <ul class="paging">
+                            <li class="on"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                        </ul>
+                        <span class="btn_next">
+                            <i class="blind">다음</i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="policy sub">
+                <a href="">이용약관</a>
+                <a href="">개인정보처리방침</a>
+            </div>
+        </div>
+        <div id="footer" class="sub footer" role="footer">
+            <div class="company_info">
+                <div class="name">능이소프트(주)</div>
+                <div class="business_info">
+                    <span class="ceo">대 표:이 정현</span>
+                    <span class="corpnumber">사업자 번호: 577-81-01769</span>
+                    <span class="electronic_financial_num">전자금융업등록번호:577-81-01769</span>
+                </div>                
+                <div class="address">주소:서울시 금천구 가산디지털1로 171 SK V1 709호</div>
+                <div class="tel_info">
+                    <span class="tel">대표전화: 070-4138-8899</span>
+                    <span class="fax">팩스: 0505-009-9587</span>
+                </div>                
+            </div>
+            <h1 class="logo"><img src="images/logo_nespay_color1.png" alt="능이소프트페이 로고" /></h1>
+          
+        </div>
+        <div class="copyright sub">ⓒ NES PAY</div>
+    </div>
+</body>
+</html>

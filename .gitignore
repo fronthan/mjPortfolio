@@ -1,2 +1,7 @@
 css/*.css.map
 node_modules
+history/pg/admin
+history/pg/admin_cp
+history/pg/payment
+작업list.html
+coding_list.html
