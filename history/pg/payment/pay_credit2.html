@@ -1,28 +1,22 @@
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko-KO">
 
 <head>
+  <meta name="robots" content="noindex, nofollow" />
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-  <title>능이페이 : PG가 필요하세요? NEPAY를 만나보세요!</title>
-  <link rel="stylesheet" href="css/basic.css">
-  <link rel="stylesheet" href="css/pg.css">
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <link rel="stylesheet" href="css/datepicker.css">
-  <script src="js/datepicker.js"></script>
-  <script src="js/ui_common.js"></script>
-
+  <title>카드결제/정보입력:네스페이</title>
+  <link rel="stylesheet" href="../basic.css">
+  <link rel="stylesheet" href="./css/payment.css">
 </head>
-
-<body >
-  <!-- 신용카드 결제2 -->
-  <div class="pay_credit_pop pop_payment_insert">
+<body>
+  <div class="pay_credit_pop pop_payment_insert" aria-modal="true">
     <div class="pop_head">
       <h1 class="logo">
-        <img src="images/logo_nespay_color1.png" alt="능이소프트페이 로고" />    
+        <img src="../images/logo_nespay_color1.png" alt="네스페이 로고" />    
       </h1>
       <h2 class="head_txt">신용카드 결제</h2>
-      <span class="btn_close_pop"><i class="blind">팝업 닫기 버튼</i></span>
+      <span class="btn_close_pop" tabindex="0"><i class="blind">팝업 닫기 버튼</i></span>
     </div>
     <div class="pop_cont">
       <div class="pop_cont_top">
@@ -46,21 +40,21 @@
       <div class="pop_cont_middle">
         <h3 class="pop_cont_tit">카드사 선택</h3>
         <div class="card_company_group">
-          <ul class="most_card_list">
-            <li><span class="btn_card_type">KB국민</span></li>
-            <li class="active"><span class="btn_card_type">신한</span></li>
-            <li><span class="btn_card_type">삼성</span></li>
-            <li><span class="btn_card_type">현대</span></li>
-            <li><span class="btn_card_type">BC</span></li>
-            <li><span class="btn_card_type">하나</span></li>
-            <li><span class="btn_card_type">롯데</span></li>
-            <li><span class="btn_card_type">NH농협</span></li>
+          <ul class="most_card_list js-select_card">
+            <li class="card_item"><span class="btn_card_type" role="button">KB국민</span></li>
+            <li class="card_item active"><span class="btn_card_type" role="button">신한</span></li>
+            <li class="card_item"><span class="btn_card_type" role="button">삼성</span></li>
+            <li class="card_item"><span class="btn_card_type" role="button">현대</span></li>
+            <li class="card_item"><span class="btn_card_type" role="button">BC</span></li>
+            <li class="card_item"><span class="btn_card_type" role="button">하나</span></li>
+            <li class="card_item"><span class="btn_card_type" role="button">롯데</span></li>
+            <li class="card_item"><span class="btn_card_type" role="button">NH농협</span></li>
           </ul>
-          <div class="common_card_list" onclick="$('#card_company').toggleClass('on')">
+          <div class="common_card_list js-cmn_card">
             <span class="box_tit">기타 카드사</span>
             <div class="cmn_card_area">
               <div id="card_company" class="selected_box">
-                <span class="cmpn_name">우리</span>
+                <span class="cmpn_name js-text">우리</span>
               </div>
               <div class="select_toggle_box">
                 <ul class="cmn_card_list">
@@ -89,11 +83,11 @@
             </div>
           </div>
         </div>
-        <div class="installment_range" onclick="$('#pay_instmt_plan').toggleClass('on')">
+        <div class="installment_range js-inst_range">
           <span class="box_tit">할부 기간</span>
           <div class="instmt_range_area">
             <div id="pay_instmt_plan" class="selected_box">
-              <span class="paymt_plan">일시불</span>
+              <span class="paymt_plan js-text">일시불</span>
             </div>
             <div class="select_toggle_box">
               <div class="instmt_range_list">
@@ -129,27 +123,35 @@
         </div>
       </div>
       <div class="wrap_pop_btn">
-        <span class="btn_cnxl">취 소</span>
-        <span class="btn_next">확 인</span>
+        <span class="btn_cnxl" role="button">취 소</span>
+        <span class="btn_next" role="button">확 인</span>
       </div>
       <strong class="cscenter">고객센터 : 1588-1588</strong>
     </div>
   </div>
+  <script src="./js/ui_common.js"></script>
 
   <script>
-    $('.cmn_card_list').on('click', 'li', function (e) {//기타 카드사 목록
-      const text = $(this).text();
-      $('#card_company .cmpn_name').text(text);
-    });
+    //카드사 선택
+    const js_select_card = document.querySelector('.js-select_card');
+    const card_items = js_select_card.querySelectorAll('.card_item');
+    for(var i=0; card_items.length > i; i++) {
+      card_items[i].addEventListener('click', selectCardMost);
+    }
 
-    $('.instmt_range_list').on('click', 'li', function (e) {//할부 기간 목록
-        const text = $(this).text();
-        $('#pay_instmt_plan .paymt_plan').text(text);
-      });
+    //기타 카드사 셀렉트
+    const js_cmn_card = document.querySelector('.js-cmn_card');
+    js_cmn_card.addEventListener('click', tgSelectBox);
 
-    $('.most_card_list').on('click', 'li', function (e) {
-      $(this).addClass('active').siblings('li').removeClass('active');
-    });
+    //토글 박스 li 선택
+    const tg_boxes = document.querySelectorAll('.select_toggle_box');
+    for(var i=0; tg_boxes.length > i; i++) {
+      tg_boxes[i].addEventListener('click', changeText);
+    }
+
+    //할부 선택
+    const js_inst_range = document.querySelector('.js-inst_range');
+    js_inst_range.addEventListener('click', tgSelectBox);
   </script>
 </body>
 

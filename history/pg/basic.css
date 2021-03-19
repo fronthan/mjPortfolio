@@ -29,7 +29,7 @@ select { margin : 0; height: 30px; margin-right: 3px; border : 1px solid #dcdcdc
 
 button {border: 0; padding: 0;}
 
-caption, legend, .blind { position : absolute; width : 1px; height : 1px; padding : 0; margin     : -1px; overflow   : hidden; clip : rect(0, 0, 0, 0); border : 0; *visibility: hidden; }
+caption, legend, .blind { position : absolute; display:inline-block; width : 1px; height : 1px; padding : 0; margin     : -1px; overflow   : hidden; clip : rect(1px, 1px, 1px, 1px); border : 0; clip-path:inset(50%) }
 
 
 .skip_navigation a { position: absolute; left : -3000% }

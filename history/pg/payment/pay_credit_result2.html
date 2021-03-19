@@ -1,29 +1,22 @@
 <!DOCTYPE html
-  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko-KO">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-  <title>능이페이 : PG가 필요하세요? NEPAY를 만나보세요!</title>
-  <link rel="stylesheet" href="css/basic.css">
-  <link rel="stylesheet" href="css/pg.css">
-
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <link rel="stylesheet" href="css/datepicker.css">
-  <script src="js/datepicker.js"></script>
-  <script src="js/ui_common.js"></script>
-
+<meta name="robots" content="noindex, nofollow" />
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>결제실패:네스페이</title>
+<link rel="stylesheet" href="../basic.css">
+<link rel="stylesheet" href="./css/payment.css">
 </head>
-
 <body>
-  <!-- 신용카드 결제 실패 -->
-  <div class="pay_credit_pop pop_pay_result_fail">
+  <div class="pay_credit_pop pop_pay_result_fail" aria-modal="true">
     <div class="pop_head">
       <h1 class="logo">
-        <img src="images/logo_nespay_color1.png" alt="능이소프트페이 로고" />    
+        <img src="../images/logo_nespay_color1.png" alt="네스페이 로고" /> 
       </h1>
       <h2 class="head_txt">신용카드 결제</h2>
-      <span class="btn_close_pop"><i class="blind">팝업 닫기 버튼</i></span>
+      <span class="btn_close_pop" tabindex="0"><i class="blind">팝업 닫기 버튼</i></span>
     </div>
     <div class="pop_cont">
       <div class="pop_cont_top">
@@ -46,15 +39,15 @@
         <table class="card_result_info_tbl">
           <caption>결제 실패 내용 - 주문번호, 실패사유, 실패코드</caption>
           <tr class="order_number">
-            <th class="cont_middle_th">주문번호</th>
+            <th class="cont_middle_th" scope="row">주문번호</th>
             <td class="order_nbr">ORDER-202030001</td>
           </tr>
           <tr class="fail_why">
-            <th class="cont_middle_th">실패사유</th>
+            <th class="cont_middle_th" scope="row">실패사유</th>
             <td class="fl_why">분실신고 카드</td>
           </tr>
           <tr class="fail_code">
-            <th class="cont_middle_th">실패코드</th>
+            <th class="cont_middle_th" scope="row">실패코드</th>
             <td class="fl_code">9999</td>
           </tr>
         </table>
@@ -63,13 +56,13 @@
     <div class="pop_bottom">
       <div class="fail_notice">
         결제관련 문의는<br>
-        능이페이 고객센터 이메일 <span class="email_txt">center@xxx.com</span><br>
-        또는 1588-1234 연락주시기 바랍니다.
+        네스페이 고객센터 이메일 <span class="email_txt">center@xxx.com</span><br>
+        또는 1111-1111 연락주시기 바랍니다.
       </div>
       <div class="wrap_pop_btn">
-        <span class="btn_next">확 인</span>
+        <span class="btn_next" role="button">확 인</span>
       </div>
-      <strong class="cscenter">고객센터 : 1588-1588</strong>
+      <strong class="cscenter">고객센터 : 1111-1111</strong>
     </div>
   </div>
 </body>

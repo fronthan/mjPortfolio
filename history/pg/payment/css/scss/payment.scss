@@ -1,11 +1,8 @@
 @import '_common';
 
-/*-----------------------------------------------------------------------
-	# 신용카드 - 결제
--------------------------------------------------------------------------*/
 .pop_head {
 	//결제 팝업 헤드 공통
-	overflow  : hidden;
+	
 	margin    : 0 20px;
 	padding   : 20px 0;
 	text-align: center;
@@ -26,7 +23,7 @@
 
 
 	.btn_close_pop {
-		@include bg(21px, 21px, '../images/btn_x.png');
+		@include bg(21px, 21px, '../../images/btn_x.png');
 		position: absolute;
 		right   : 20px;
 		top     : 18px;
@@ -44,7 +41,7 @@
 
 	&:after {
 		content: '';
-		@include bg(60px, 60px, '../images/bg_triangle.png');
+		@include bg(60px, 60px, '../../images/bg_triangle.png');
 		display : block;
 		position: absolute;
 		right   : 0;
@@ -73,10 +70,8 @@
 
 	.custom_checkbox {
 		//결제 팝업 인풋 체크 공통
-		position   : relative;
 		display    : block;
 		font-size  : $contPop;
-		font-weight: 300;
 		line-height: 28px;
 	}
 			.btn_allterm {
@@ -97,7 +92,6 @@
 
 .pop_cont {
 	padding: 0 20px;
-
 }
 
 .pop_bottom {
@@ -109,53 +103,20 @@
 		.btn_receipt {
 			float: left;
 			@include btnCenter(150px, 40px, 0, $contPopB);
-			background: url(../images/bg_btn_gray.svg) no-repeat left top;
+			background: url(../../images/bg_btn_gray.svg) no-repeat left top;
 			cursor    : pointer;
 		}
 
 		.btn_next {
 			float: right;
 			@include btnCenter(150px, 40px, 0, $contPopB);
-			background: url(../images/bg_btn_blue.svg) no-repeat left top;
+			background: url(../../images/bg_btn_blue.svg) no-repeat left top;
 			cursor    : pointer;
 		}
 	}
 }
 
-.pop_yakwan {
-	//신용카드 결제1
-	.wrap_allchk {
-		padding: 20px 0;
 
-		.custom_checkbox {
-			padding-left: 35px;
-		}
-	}
-
-	.wrap_singlechk {
-		border-top: 1px solid $lineBlue;
-
-		.box_term {
-			position: relative;
-			padding      : 20px 0 19px;
-			border-bottom: 1px solid #ddd;
-		}
-
-		.custom_checkbox {
-			.checkmark {
-				margin-left: 11px;
-			}
-		}
-	}
-
-	.pop_bottom {
-		padding-top: 40px;
-
-		.wrap_pop_btn {
-			padding: 10px 50px 0;
-		}
-	}
-}
 
 .pay_info_chk_tbl {
 	//결제 팝업 탑 공통, 결제 정보 테이블
@@ -202,9 +163,47 @@
 	}
 }
 
-.pop_payment_insert {
-	//신용카드 결제2
+/* ---------------------
+* 신용카드 결제 약관동의
+* --------------------- */ 
+.pop_yakwan {
+	.wrap_allchk {
+		padding: 20px 0;
 
+		.custom_checkbox {
+			padding-left: 35px;
+		}
+	}
+
+	.wrap_singlechk {
+		border-top: 1px solid $lineBlue;
+
+		.box_term {
+			position: relative;
+			padding      : 20px 0 19px;
+			border-bottom: 1px solid #ddd;
+		}
+
+		.custom_checkbox {
+			.checkmark {
+				margin-left: 11px;
+			}
+		}
+	}
+
+	.pop_bottom {
+		padding-top: 40px;
+
+		.wrap_pop_btn {
+			padding: 10px 50px 0;
+		}
+	}
+}
+
+/* ---------------------
+* 신용카드 결제 정보입력
+* --------------------- */ 
+.pop_payment_insert {
 	.pay_info_chk_tbl {
 		border    : 1px solid #ddd;
 		border-top: 0;
@@ -232,32 +231,10 @@
 			background: #fff;
 			font-size : $contPopS;
 
-			li {
-				padding: 5px;
-				cursor : pointer;
-
-				&:hover {
-					background: #ddd;
-				}
-			}
+			li:hover {background: #ddd;}
 		}
 
-		.select_toggle_box {
-			display   : none;
-			width     : 100%;
-			max-height: 150px;
-			position  : absolute;
-			top       : 25px;
-			left      : 0;
-			border    : 1px solid #ddd;
-			border-top: 0;
-			overflow  : auto;
-			z-index   : 1;
-
-			li.on {
-				background: $lineBlue;
-			}
-		}
+		.select_toggle_box li.on { background: $lineBlue; }
 
 		.card_company_group {
 			.most_card_list {
@@ -369,9 +346,10 @@
 	}
 }
 
+/* ---------------------
+* 신용카드 결제 요청 중
+* --------------------- */ 
 .pop_pay_on {
-
-	//신용카드 결제3
 	.pay_info_chk_tbl {
 		border: 1px solid #ddd;
 	}
@@ -383,7 +361,7 @@
 		margin       : 49px auto 0;
 		border-radius: 14px;
 		box-shadow   : 0 10px 20px 0 rgba(0, 0, 0, 0.2);
-		background   : #fff url(/images/motion_ing.gif) no-repeat top 120px center;
+		background   : #fff url(../../images/motion_ing.gif) no-repeat top 120px center;
 		box-sizing   : border-box;
 
 		&:before {
@@ -411,9 +389,36 @@
 	}
 }
 
-.pop_pay_result_success {
 
-	//신용카드 결제 성공
+.pay_info_chk_tbl_wrap {
+	//신용카드 결제 성공, 실패 공통
+	border: 1px solid #ddd;
+
+	.pay_info_chk_tbl {
+		width: 100%;
+
+		.affiliate_name {
+
+			th,
+			td {
+				padding-bottom: 25px
+			}
+		}
+
+		th {
+			padding-left: 26px;
+		}
+
+		td {
+			padding-left: 26px;
+		}
+	}
+}
+
+/* ---------------------
+* 신용카드 결제 결과 성공
+* --------------------- */ 
+.pop_pay_result_success {
 	.pop_result_tit {
 		padding   : 18px 0 17px;
 		font-size : $contPopB;
@@ -480,8 +485,10 @@
 	}
 }
 
+/* ---------------------
+* 신용카드 결제 결좌 실패
+* --------------------- */ 
 .pop_pay_result_fail {
-	//신용카드 결제 실패
 
 	.pop_cont_top {
 		margin-bottom: 30px;
@@ -556,34 +563,11 @@
 	}
 }
 
-.pay_info_chk_tbl_wrap {
-	//신용카드 결제 성공, 실패 공통
-	border: 1px solid #ddd;
 
-	.pay_info_chk_tbl {
-		width: 100%;
-
-		.affiliate_name {
-
-			th,
-			td {
-				padding-bottom: 25px
-			}
-		}
-
-		th {
-			padding-left: 26px;
-		}
-
-		td {
-			padding-left: 26px;
-		}
-	}
-}
-
+/* ---------------------
+* 신용카드 결제 매출전표
+* --------------------- */ 
 .pop_sales_slip {
-
-	//신용카드 매출전표
 	.pop_head {
 		margin        : 0 10px;
 		padding-bottom: 17px;
@@ -719,4 +703,3 @@
 		}
 	}
 }
-

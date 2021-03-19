@@ -61,11 +61,11 @@ $contR:16px;
 
 @mixin checkmark {
     .checkmark {
-        background: url('../images/custom_input1_off.svg') no-repeat center/27px;
+        background: url('../../images/custom_input1_off.svg') no-repeat center/27px;
     }
 
     input:checked+.checkmark {
-        background: url('../images/custom_input1_on.svg') no-repeat center/22px;
+        background: url('../../images/custom_input1_on.svg') no-repeat center/22px;
     }
 }
 

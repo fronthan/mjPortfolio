@@ -15,22 +15,21 @@
 
 .custom_checkbox .checkmark { position: absolute; top: 1px; left: 0; height: 28px; width: 28px; border: 0; }
 
-.custom_checkbox .checkmark { background: url("../images/custom_input1_off.svg") no-repeat center/27px; }
+.custom_checkbox .checkmark { background: url("../../images/custom_input1_off.svg") no-repeat center/27px; }
 
-.custom_checkbox input:checked + .checkmark { background: url("../images/custom_input1_on.svg") no-repeat center/22px; }
+.custom_checkbox input:checked + .checkmark { background: url("../../images/custom_input1_on.svg") no-repeat center/22px; }
 
-/*----------------------------------------------------------------------- # 신용카드 - 결제 -------------------------------------------------------------------------*/
-.pop_head { overflow: hidden; margin: 0 20px; padding: 20px 0; text-align: center; }
+.pop_head { margin: 0 20px; padding: 20px 0; text-align: center; }
 
 .pop_head .logo { position: absolute; left: 10px; top: 2px; width: 68px; }
 
 .pop_head .head_txt { display: inline; color: #0f4c82; font-size: 20px; font-weight: 500; }
 
-.pop_head .btn_close_pop { width: 21px; height: 21px; background: url("../images/btn_x.png") no-repeat left top; background-size: 21px 21px; position: absolute; right: 20px; top: 18px; }
+.pop_head .btn_close_pop { width: 21px; height: 21px; background: url("../../images/btn_x.png") no-repeat left top; background-size: 21px 21px; position: absolute; right: 20px; top: 18px; }
 
 .pay_credit_pop { position: relative; width: 460px; height: 690px; border-radius: 10px; box-shadow: 0px 10px 20px 0 rgba(0, 0, 0, 0.2); background: #fff; }
 
-.pay_credit_pop:after { content: ''; width: 60px; height: 60px; background: url("../images/bg_triangle.png") no-repeat left top; background-size: 60px 60px; display: block; position: absolute; right: 0; bottom: 0; }
+.pay_credit_pop:after { content: ''; width: 60px; height: 60px; background: url("../../images/bg_triangle.png") no-repeat left top; background-size: 60px 60px; display: block; position: absolute; right: 0; bottom: 0; }
 
 .pay_credit_pop.pop_sales_slip { width: 520px; height: 840px; }
 
@@ -38,7 +37,7 @@
 
 .pay_credit_pop .cscenter { position: absolute; font-size: 15px; text-align: center; font-weight: 100; color: #747474; left: 0; bottom: 9px; width: 100%; }
 
-.pay_credit_pop .custom_checkbox { position: relative; display: block; font-size: 15px; font-weight: 300; line-height: 28px; }
+.pay_credit_pop .custom_checkbox { display: block; font-size: 15px; line-height: 28px; }
 
 .pay_credit_pop .btn_allterm { position: absolute; right: 0; top: 24px; display: block; width: 70px; height: 22px; margin: 0 auto 0; color: #fff; font-size: 13px; text-align: center; line-height: 22px; background: #ddd; color: #242424; border-radius: 4px; z-index: 1; }
 
@@ -48,10 +47,23 @@
 
 .pop_bottom .wrap_pop_btn { overflow: hidden; }
 
-.pop_bottom .wrap_pop_btn .btn_cnxl, .pop_bottom .wrap_pop_btn .btn_receipt { float: left; display: block; width: 150px; height: 40px; margin: 0 auto 0; color: #fff; font-size: 18px; text-align: center; line-height: 40px; background: #012875; background: url(../images/bg_btn_gray.svg) no-repeat left top; cursor: pointer; }
+.pop_bottom .wrap_pop_btn .btn_cnxl, .pop_bottom .wrap_pop_btn .btn_receipt { float: left; display: block; width: 150px; height: 40px; margin: 0 auto 0; color: #fff; font-size: 18px; text-align: center; line-height: 40px; background: #012875; background: url(../../images/bg_btn_gray.svg) no-repeat left top; cursor: pointer; }
 
-.pop_bottom .wrap_pop_btn .btn_next { float: right; display: block; width: 150px; height: 40px; margin: 0 auto 0; color: #fff; font-size: 18px; text-align: center; line-height: 40px; background: #012875; background: url(../images/bg_btn_blue.svg) no-repeat left top; cursor: pointer; }
+.pop_bottom .wrap_pop_btn .btn_next { float: right; display: block; width: 150px; height: 40px; margin: 0 auto 0; color: #fff; font-size: 18px; text-align: center; line-height: 40px; background: #012875; background: url(../../images/bg_btn_blue.svg) no-repeat left top; cursor: pointer; }
 
+.pay_info_chk_tbl { font-size: 15px; background: #f6f6f6; }
+
+.pay_info_chk_tbl th { padding-left: 22px; font-weight: 500; text-align: left; }
+
+.pay_info_chk_tbl td { padding-left: 18px; padding-right: 20px; font-weight: 300; }
+
+.pay_info_chk_tbl .product_name th, .pay_info_chk_tbl .product_name td { padding-top: 25px; padding-bottom: 20px; }
+
+.pay_info_chk_tbl .payment_price th, .pay_info_chk_tbl .payment_price td { padding-bottom: 20px; }
+
+.pay_info_chk_tbl .payment_date th, .pay_info_chk_tbl .payment_date td { padding-bottom: 24px; }
+
+/* --------------------- 신용카드 결제 약관동의 --------------------- */
 .pop_yakwan .wrap_allchk { padding: 20px 0; }
 
 .pop_yakwan .wrap_allchk .custom_checkbox { padding-left: 35px; }
@@ -66,18 +78,7 @@
 
 .pop_yakwan .pop_bottom .wrap_pop_btn { padding: 10px 50px 0; }
 
-.pay_info_chk_tbl { font-size: 15px; background: #f6f6f6; }
-
-.pay_info_chk_tbl th { padding-left: 22px; font-weight: 500; text-align: left; }
-
-.pay_info_chk_tbl td { padding-left: 18px; padding-right: 20px; font-weight: 300; }
-
-.pay_info_chk_tbl .product_name th, .pay_info_chk_tbl .product_name td { padding-top: 25px; padding-bottom: 20px; }
-
-.pay_info_chk_tbl .payment_price th, .pay_info_chk_tbl .payment_price td { padding-bottom: 20px; }
-
-.pay_info_chk_tbl .payment_date th, .pay_info_chk_tbl .payment_date td { padding-bottom: 24px; }
-
+/* --------------------- 신용카드 결제 정보입력 --------------------- */
 .pop_payment_insert .pay_info_chk_tbl { border: 1px solid #ddd; border-top: 0; }
 
 .pop_payment_insert .box_tit { position: absolute; left: 0; top: 0; font-size: 15px; letter-spacing: -0.9px; }
@@ -86,11 +87,7 @@
 
 .pop_payment_insert .pop_cont_middle .cmn_card_list, .pop_payment_insert .pop_cont_middle .instmt_range_list { background: #fff; font-size: 13px; }
 
-.pop_payment_insert .pop_cont_middle .cmn_card_list li, .pop_payment_insert .pop_cont_middle .instmt_range_list li { padding: 5px; cursor: pointer; }
-
 .pop_payment_insert .pop_cont_middle .cmn_card_list li:hover, .pop_payment_insert .pop_cont_middle .instmt_range_list li:hover { background: #ddd; }
-
-.pop_payment_insert .pop_cont_middle .select_toggle_box { display: none; width: 100%; max-height: 150px; position: absolute; top: 25px; left: 0; border: 1px solid #ddd; border-top: 0; overflow: auto; z-index: 1; }
 
 .pop_payment_insert .pop_cont_middle .select_toggle_box li.on { background: #1684e5; }
 
@@ -150,9 +147,10 @@
 
 .pop_payment_insert .pop_bottom .wrap_pop_btn { margin-top: 41px; padding: 0 50px; }
 
+/* --------------------- 신용카드 결제 요청 중 --------------------- */
 .pop_pay_on .pay_info_chk_tbl { border: 1px solid #ddd; }
 
-.pop_pay_on .card_shape { width: 385px; height: 255px; padding-top: 35px; margin: 49px auto 0; border-radius: 14px; box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2); background: #fff url(/images/motion_ing.gif) no-repeat top 120px center; box-sizing: border-box; }
+.pop_pay_on .card_shape { width: 385px; height: 255px; padding-top: 35px; margin: 49px auto 0; border-radius: 14px; box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2); background: #fff url(../../images/motion_ing.gif) no-repeat top 120px center; box-sizing: border-box; }
 
 .pop_pay_on .card_shape:before { content: ''; display: block; width: 385px; height: 42px; background: #ddd; margin-bottom: 18px; }
 
@@ -160,6 +158,17 @@
 
 .pop_pay_on .nepay_safe_note { padding-top: 47px; line-height: 1.67; font-size: 18px; text-align: center; }
 
+.pay_info_chk_tbl_wrap { border: 1px solid #ddd; }
+
+.pay_info_chk_tbl_wrap .pay_info_chk_tbl { width: 100%; }
+
+.pay_info_chk_tbl_wrap .pay_info_chk_tbl .affiliate_name th, .pay_info_chk_tbl_wrap .pay_info_chk_tbl .affiliate_name td { padding-bottom: 25px; }
+
+.pay_info_chk_tbl_wrap .pay_info_chk_tbl th { padding-left: 26px; }
+
+.pay_info_chk_tbl_wrap .pay_info_chk_tbl td { padding-left: 26px; }
+
+/* --------------------- 신용카드 결제 결과 성공 --------------------- */
 .pop_pay_result_success .pop_result_tit { padding: 18px 0 17px; font-size: 18px; text-align: center; }
 
 .pop_pay_result_success .pop_cont_middle { margin-top: 28px; padding: 0 25px; border: 1px solid #ddd; background: #f6f6f6; }
@@ -184,6 +193,7 @@
 
 .pop_pay_result_success .pop_bottom .wrap_pop_btn { padding: 0 70px; }
 
+/* --------------------- 신용카드 결제 결좌 실패 --------------------- */
 .pop_pay_result_fail .pop_cont_top { margin-bottom: 30px; }
 
 .pop_pay_result_fail .pop_cont_top .pop_result_tit { padding: 18px 0; font-size: 18px; color: #ff4053; text-align: center; }
@@ -210,16 +220,7 @@
 
 .pop_pay_result_fail .pop_bottom .wrap_pop_btn .btn_next { float: none; }
 
-.pay_info_chk_tbl_wrap { border: 1px solid #ddd; }
-
-.pay_info_chk_tbl_wrap .pay_info_chk_tbl { width: 100%; }
-
-.pay_info_chk_tbl_wrap .pay_info_chk_tbl .affiliate_name th, .pay_info_chk_tbl_wrap .pay_info_chk_tbl .affiliate_name td { padding-bottom: 25px; }
-
-.pay_info_chk_tbl_wrap .pay_info_chk_tbl th { padding-left: 26px; }
-
-.pay_info_chk_tbl_wrap .pay_info_chk_tbl td { padding-left: 26px; }
-
+/* --------------------- 신용카드 결제 매출전표 --------------------- */
 .pop_sales_slip .pop_head { margin: 0 10px; padding-bottom: 17px; border-bottom: 0; }
 
 .pop_sales_slip .pop_head .logo { display: none; }
