@@ -36,6 +36,19 @@ caption, legend, .blind { position : absolute; display:inline-block; width : 1px
 .skip_navigation a:focus { display: inline-block; top : 0; left  : 0; z-index : 9999; width : 20%; height : 30px; background : #000; line-height: 30px; color : #fff; text-align : center }
 
 
+.mask {
+  content:'';
+  display:block; width:100%; height:100%;
+  position:fixed; left:0; top:0;
+  background: rgba(0,0,0,0.5);
+  z-index: 100;
+}
+
+.pop_area {
+  position:fixed; left:50%; top:50%;
+  transform:translate(-50%,-50%);
+  z-index: 200;
+}
 
 .btn_close_pop {cursor: pointer;}
 
@@ -53,10 +66,11 @@ caption, legend, .blind { position : absolute; display:inline-block; width : 1px
 .tbl th { padding      : 8px 0; color        : #242424; font-size    : 15px; border-top   : none; border-bottom: 2px solid #0f4c82; }
 
 .tbl td { padding   : 23px 0; border-top: none; font-size : 13px; }
-
 .tbl tbody tr:nth-child(odd) { background: #f3f3f3; }
+.tbl tbody tr:nth-child(odd):hover { background: #fefefe; }
 
 .tbl tbody tr:nth-child(even) { background: #e8ebef; }
+.tbl tbody tr:nth-child(even):hover { background: #fefefe; }
 
 .box_paging .btn_prev, .box_paging .btn_next, .box_paging .paging, .box_paging .paging li { float: left }
 
@@ -64,9 +78,9 @@ caption, legend, .blind { position : absolute; display:inline-block; width : 1px
 .box_paging .btn_prev, .box_paging .btn_next { width : 17px; height: 17px; } 
 
 
-.box_paging .btn_prev { background: url('../images/arrow_tbl_prev.png') no-repeat left top; }
+.box_paging .btn_prev { background: url('./images/arrow_tbl_prev.png') no-repeat left top; }
 
-.box_paging .btn_next { background: url('../images/arrow_tbl_next.png') no-repeat left top; }
+.box_paging .btn_next { background: url('./images/arrow_tbl_next.png') no-repeat left top; }
 
 .box_paging .paging { margin-top: -4px; }
 
