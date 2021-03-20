@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko-KO">
+<head>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>신용카드 거래내역:네스페이</title>   
+    <link rel="stylesheet" href="../basic.css">
+    <link rel="stylesheet" href="./css/admin.css">
+</head>
+<body>
+    <div class="skip_navigation">
+        <ul>
+            <li><a href="gnb">메뉴 바로가기</a></li>
+            <li><a href="#contents">본문 바로가기</a></li>
+            <li><a href="#footer">하단 바로가기</a></li>
+        </ul>
+    </div>
+    <div class="wrap_admin">
+        <div class="header">
+            <div class="inner_wrap">
+                <h1 class="logo">
+                    <a href="#" title="메인으로">
+                         <img src="../images/logo_nespay_color1.png" alt="네스페이 로고" />
+                    </a>
+                </h1>
+                <div id="gnb" class="gnb" role="navigation">
+                    <ul>
+                       <li class="depth1">
+                           <a href="#"> 가맹점 </a>
+                           <div class="depth2">
+                               <ul>
+                                   <li> <a href="./cp_franchisee.html">기본정보</a> </li>
+                                    <li> <a href="./cp_franchisee_contact_manage.html">계약관리</a> </li>
+                               </ul>
+                           </div>
+                       </li> 
+                        <li class="depth1 on">
+                            <a href="#"> 거래내역 </a>
+                            <div class="depth2">
+                                <ul>
+                                    <li> <a href="./cp_deal_admin.html">신용카드 거래내역</a> </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="depth1">
+                            <a href="#"> 정산 </a>
+                            <div class="depth2">
+                                <ul>
+                                    <li> <a href="#">정산내역</a> </li>
+                                    <li> <a href="#">신용카드 정산</a> </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="user_info">
+                    <div class="box_user">
+
+                    </div>
+                </div>
+                <div class="bg_depth2"></div>
+            </div>
+        </div>        
+        <div id="contents" class="admin_container" role="main">     
+            <h2 class="tit_sty1">거래내역</h2>            
+            <div class="wrap_admin_layer">
+                <div class="inner_wrap">
+                    <h3 class="tit_sty2">신용카드 거래내역</h3>
+                    <div class="wrap_util" role="searchbox">
+                        <div class="box_search1">
+                            <dl>
+                                <dt>조회 시작일자</dt>
+                                <dd>
+                                    <div class="calendar_area">
+                                        <span class="wrap_calendar"><input type="text" class="date" name="startDate" value="" readonly></span>
+                                        <span class="inp_line"> ~ </span>
+                                        <span class="wrap_calendar"><input type="text" class="date" name="endDate" value="" readonly></span>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="box_search2">                           
+                            <dl class="box_search_option">
+                                <dt>검색조건</dt>
+                                <dd>
+                                    <select name="sel_option1" class="sel_option1">
+                                        <option value="1">거래번호</option>
+                                    </select>
+                                </dd>
+                            </dl>                            
+                            
+                            <dl class="box_data">
+                                <dd>
+                                    <span>
+                                        <input type="text" name="data_nm" value="" placeholder="검색할 데이터">
+                                    </span>
+                                </dd>
+                            </dl>
+                            <dl class="box_dealstat">
+                                <dt>거래상태</dt>
+                                <dd>
+                                    <select name="sel_option3" class="sel_option3">
+                                        <option value="1">매입상태취소요청</option>
+                                    </select>
+                                </dd>
+                            </dl>
+                            <input type="submit" value="검색" class="btn_searchstart">
+                        </div>
+                        
+                        <div class="tool">
+                            <span class="btn_print"><i class="blind">프린트</i></span>
+                            <span class="btn_xls"><i class="blind">엑셀</i></span>
+                        </div>
+                    </div>
+
+                    <table class="tbl cp_deal_tbl">
+                        <caption>신용카드 거래내역</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">거래일시</th>
+                                <th scope="col">거래번호</th>
+                                <th scope="col">가맹점ID</th>
+                                <th scope="col">주문번호</th>
+                                <th scope="col">주문일시</th>
+                                <th scope="col">상품명</th>
+                                <th scope="col">구매자명</th>
+                                <th scope="col">결제금액</th>
+                                <th scope="col">카드사</th>
+                                <th scope="col">승인일시</th>
+                                <th scope="col">카드사승인번호</th>
+                                <th scope="col">카드번호</th>
+                                <th scope="col">응답코드</th>
+                                <th scope="col">거래상태</th>
+                                <th scope="col" class="last"><span class="btn_cancel">취소</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="date">2020-09-09 23:59:59</span></td>
+                                <td><span class="deal_no js-deal_nbr ">TX202009092300000</span></td>
+                                <td><span class="id">gmarket</span></td>
+                                <td><span class="order_no">ORD2020001234567890</span></td>
+                                <td><span class="order_date">2020-09-09 23:59:59</span></td>
+                                
+                                <td><span class="product_name">홍게카레밥상꿀맛사탕 우거지국거리빵딸기쨈</span></td>
+                                <td><span class="buyer">홍길동</span></td>
+                                <td><span class="payment">999,913,950,000</span></td>
+                                <td><span class="card">국민</span></td>
+                                <td><span class="approval_date">2020-09-09 23:59:59</span></td>
+                                <td><span class="card_approval_num">6385274700</span></td>
+                                <td><span class="card_num">8787-4006-9999-9999</span></td>
+                                <td><span class="response_code">0000</span></td>
+                                <td><span class="deal_status">승인</span></td>
+                                <td><span class="del_cancel">
+                                    <label class="custom_checkbox">
+                                        <input type="checkbox" id="" name="" class="" value="">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="date">2020-09-09 23:59:59</span></td>
+                                <td><span class="deal_no js-deal_nbr ">TX202009092300000</span></td>
+                                <td><span class="id">gmarket</span></td>
+                                <td><span class="order_no">ORD2020001234567890</span></td>
+                                <td><span class="order_date">2020-09-09 23:59:59</span></td>
+                                
+                                <td><span class="product_name">홍게카레밥상꿀맛사탕 우거지국거리빵딸기쨈</span></td>
+                                <td><span class="buyer">홍길동</span></td>
+                                <td><span class="payment">999,913,950,000</span></td>
+                                <td><span class="card">국민</span></td>
+                                <td><span class="approval_date">2020-09-09 23:59:59</span></td>
+                                <td><span class="card_approval_num">6385274700</span></td>
+                                <td><span class="card_num">8787-4006-9999-9999</span></td>
+                                <td><span class="response_code">0000</span></td>
+                                <td><span class="deal_status">승인</span></td>
+                                <td><span class="del_cancel">
+                                        <label class="custom_checkbox">
+                                            <input type="checkbox" id="" name="" class="" value="">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="date">2020-09-09 23:59:59</span></td>
+                                <td><span class="deal_no js-deal_nbr ">TX202009092300000</span></td>
+                                <td><span class="id">gmarket</span></td>
+                                <td><span class="order_no">ORD2020001234567890</span></td>
+                                <td><span class="order_date">2020-09-09 23:59:59</span></td>
+                                
+                                <td><span class="product_name">홍게카레밥상꿀맛사탕 우거지국거리빵딸기쨈</span></td>
+                                <td><span class="buyer">홍길동</span></td>
+                                <td><span class="payment">999,913,950,000</span></td>
+                                <td><span class="card">국민</span></td>
+                                <td><span class="approval_date">2020-09-09 23:59:59</span></td>
+                                <td><span class="card_approval_num">6385274700</span></td>
+                                <td><span class="card_num">8787-4006-9999-9999</span></td>
+                                <td><span class="response_code">0000</span></td>
+                                <td><span class="deal_status">승인</span></td>
+                                <td><span class="del_cancel">
+                                        <label class="custom_checkbox">
+                                            <input type="checkbox" id="" name="" class="" value="">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="date">2020-09-09 23:59:59</span></td>
+                                <td><span class="deal_no js-deal_nbr ">TX202009092300000</span></td>
+                                <td><span class="id">gmarket</span></td>
+                                <td><span class="order_no">ORD2020001234567890</span></td>
+                                <td><span class="order_date">2020-09-09 23:59:59</span></td>
+                                
+                                <td><span class="product_name">홍게카레밥상꿀맛사탕 우거지국거리빵딸기쨈</span></td>
+                                <td><span class="buyer">홍길동</span></td>
+                                <td><span class="payment">999,913,950,000</span></td>
+                                <td><span class="card">국민</span></td>
+                                <td><span class="approval_date">2020-09-09 23:59:59</span></td>
+                                <td><span class="card_approval_num">6385274700</span></td>
+                                <td><span class="card_num">8787-4006-9999-9999</span></td>
+                                <td><span class="response_code">0000</span></td>
+                                <td><span class="deal_status">승인</span></td>
+                                <td><span class="del_cancel">
+                                        <label class="custom_checkbox">
+                                            <input type="checkbox" id="" name="" class="" value="">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="date">2020-09-09 23:59:59</span></td>
+                                <td><span class="deal_no js-deal_nbr ">TX202009092300000</span></td>
+                                <td><span class="id">gmarket</span></td>
+                                <td><span class="order_no">ORD2020001234567890</span></td>
+                                <td><span class="order_date">2020-09-09 23:59:59</span></td>
+                                
+                                <td><span class="product_name">홍게카레밥상꿀맛사탕 우거지국거리빵딸기쨈</span></td>
+                                <td><span class="buyer">홍길동</span></td>
+                                <td><span class="payment">999,913,950,000</span></td>
+                                <td><span class="card">국민</span></td>
+                                <td><span class="approval_date">2020-09-09 23:59:59</span></td>
+                                <td><span class="card_approval_num">6385274700</span></td>
+                                <td><span class="card_num">8787-4006-9999-9999</span></td>
+                                <td><span class="response_code">0000</span></td>
+                                <td><span class="deal_status">승인</span></td>
+                                <td><span class="del_cancel">
+                                        <label class="custom_checkbox">
+                                            <input type="checkbox" id="" name="" class="" value="">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="date">2020-09-09 23:59:59</span></td>
+                                <td><span class="deal_no js-deal_nbr ">TX202009092300000</span></td>
+                                <td><span class="id">gmarket</span></td>
+                                <td><span class="order_no">ORD2020001234567890</span></td>
+                                <td><span class="order_date">2020-09-09 23:59:59</span></td>
+                                
+                                <td><span class="product_name">홍게카레밥상꿀맛사탕 우거지국거리빵딸기쨈</span></td>
+                                <td><span class="buyer">홍길동</span></td>
+                                <td><span class="payment">999,913,950,000</span></td>
+                                <td><span class="card">국민</span></td>
+                                <td><span class="approval_date">2020-09-09 23:59:59</span></td>
+                                <td><span class="card_approval_num">6385274700</span></td>
+                                <td><span class="card_num">8787-4006-9999-9999</span></td>
+                                <td><span class="response_code">0000</span></td>
+                                <td><span class="deal_status">승인</span></td>
+                                <td><span class="del_cancel">
+                                        <label class="custom_checkbox">
+                                            <input type="checkbox" id="" name="" class="" value="">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="date">2020-09-09 23:59:59</span></td>
+                                <td><span class="deal_no js-deal_nbr ">TX202009092300000</span></td>
+                                <td><span class="id">gmarket</span></td>
+                                <td><span class="order_no">ORD2020001234567890</span></td>
+                                <td><span class="order_date">2020-09-09 23:59:59</span></td>
+                                
+                                <td><span class="product_name">홍게카레밥상꿀맛사탕 우거지국거리빵딸기쨈</span></td>
+                                <td><span class="buyer">홍길동</span></td>
+                                <td><span class="payment">999,913,950,000</span></td>
+                                <td><span class="card">국민</span></td>
+                                <td><span class="approval_date">2020-09-09 23:59:59</span></td>
+                                <td><span class="card_approval_num">6385274700</span></td>
+                                <td><span class="card_num">8787-4006-9999-9999</span></td>
+                                <td><span class="response_code">0000</span></td>
+                                <td><span class="deal_status">승인</span></td>
+                                <td><span class="del_cancel">
+                                        <label class="custom_checkbox">
+                                            <input type="checkbox" id="" name="" class="" value="">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="date">2020-09-09 23:59:59</span></td>
+                                <td><span class="deal_no js-deal_nbr ">TX202009092300000</span></td>
+                                <td><span class="id">gmarket</span></td>
+                                <td><span class="order_no">ORD2020001234567890</span></td>
+                                <td><span class="order_date">2020-09-09 23:59:59</span></td>
+                                
+                                <td><span class="product_name">홍게카레밥상꿀맛사탕 우거지국거리빵딸기쨈</span></td>
+                                <td><span class="buyer">홍길동</span></td>
+                                <td><span class="payment">999,913,950,000</span></td>
+                                <td><span class="card">국민</span></td>
+                                <td><span class="approval_date">2020-09-09 23:59:59</span></td>
+                                <td><span class="card_approval_num">6385274700</span></td>
+                                <td><span class="card_num">8787-4006-9999-9999</span></td>
+                                <td><span class="response_code">0000</span></td>
+                                <td><span class="deal_status">승인</span></td>
+                                <td><span class="del_cancel">
+                                        <label class="custom_checkbox">
+                                            <input type="checkbox" id="" name="" class="" value="">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </span></td>
+                            </tr>
+                           
+                           
+                        </tbody>
+                    </table>
+                    <div class="box_paging clfix">
+                        <span class="btn_prev">
+                            <i class="blind">이전</i>
+                        </span>
+                        <ul class="paging">
+                            <li class="on"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                        </ul>
+                        <span class="btn_next">
+                            <i class="blind">다음</i>
+                        </span>
+                    </div>
+                </div>             
+            </div>
+            <div class="policy sub">
+                <a href="">이용약관</a>
+                <a href="">개인정보처리방침</a>
+            </div>
+        </div>
+        <div id="footer" class="footer" role="footer"> 
+            <div class="company_info">
+                <div class="name">(주)능이페이</div>
+                <div class="business_info">
+                    <span class="ceo">대 표:이 정현</span>
+                    <span class="corpnumber">사업자 번호: 577-81-01769</span>
+                    <span class="electronic_financial_num">전자금융업등록번호:577-81-01769</span>
+                </div>                
+                <div class="address">주소:서울시 금천구 가산디지털1로 171 SK V1 709호</div>
+                <div class="tel_info">
+                    <span class="tel">대표전화: 070-4138-8899</span>
+                    <span class="fax">팩스: 0505-009-9587</span>
+                </div>                
+            </div>
+            <h1 class="logo"><img src="../images/logo_nespay_color1.png" alt="네스페이 로고" /></h1>
+          
+        </div>
+        <div class="copyright sub">ⓒ NEUNG E PAY</div>
+    </div>
+    <script src="./js/jquery-3.3.1.min.js"></script><!-- for ajax, datepicker -->
+    <link rel="stylesheet" href="./css/datepicker.css">
+    <script src="./js/datepicker.js"></script>
+    <script src="./js/ui_common.js"></script>
+    <script>
+    setCalendar(); //달력 datepicker
+
+    //거래번호 클릭, 신용카드 거래내역 상세 보기
+    const js_deal_nbr = document.querySelectorAll('.js-deal_nbr');
+    for (var i=0; js_deal_nbr.length > i; i++) {
+        js_deal_nbr[i].addEventListener('click', popFrchInfo);
+    }
+    </script>
+</body>
+</html>

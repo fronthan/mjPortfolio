@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko-KO">
+<head>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>네스페이 : PG가 필요하세요? NESPAY를 만나보세요!</title>
+    <link rel="stylesheet" href="../basic.css">
+    <link rel="stylesheet" href="./css/admin.css">
+</head>
+<body>
+    <div class="skip_navigation">
+        <ul>
+            <li><a href="#container">로그인 바로가기</a></li>
+            <li><a href="#footer">하단 바로가기</a></li>
+        </ul>
+    </div>
+    <div class="wrap_master_main">
+        <div id="container" role="main">
+            <div class="cont_master_main">
+               <h1 class="logo"><span class="blind">NESpay</span></h1>
+               <div class="login_box">
+                    <form>
+                        <fieldset>
+                            <legend>NESpay 로그인</legend>
+                            <div class="wrap_login_area">
+                                <span class="box_input">
+                                    <input type="text" name="login_id" class="login_id" value="" placeholder="아이디를 입력하세요." />
+                                    <input type="password" name="login_pw" class="login_pw" value="" placeholder="비밀번호를 입력하세요." />                                
+                                </span>
+                                <span class="btn_login js-btn_login" role="button"><span class="blind">login</span></span>
+                                <p class="login_info">로그인 관련 문의 : 고객센터 1588-1588</p>
+                            </div>
+                            <div class="layer_confirm_certi js-layer_certi" aria-modal="true">
+                                <div class="pop_head">
+                                    <span class="btn_close_pop"><i class="blind">팝업 닫기 버튼</i></span>
+                                </div>
+                                <div class="wrap_certi_cfm cb">
+                                    <div class="box_input">
+                                        <input type="text" name="inp_certi_cfm" class="inp_certi_cfm" placeholder="휴대폰으로 전송받은 인증 번호를 입력하여 주십시요." />
+                                        <span id="time"></span>
+                                    </div>
+                                    <span class="btn_certi_cfm js-btn_chk_certi" role="button">인증확인</span>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="policy main_cp">
+                <a href="">이용약관</a>
+                <a href="">개인정보처리방침</a>
+            </div>
+        </div>
+        <div id="footer" class="footer" role="footer">
+            <div class="company_info">
+                <div class="name">네스페이(주)</div>
+                <div class="business_info">
+                    <span class="ceo">대 표:이 정현</span>
+                    <span class="corpnumber">사업자 번호: 577-81-01769</span>
+                    <span class="electronic_financial_num">전자금융업등록번호:577-81-01769</span>
+                </div>                
+                <div class="address">주소:서울시 금천구 가산디지털1로 171 SK V1 709호</div>
+                <div class="tel_info">
+                    <span class="tel">대표전화: 070-4138-8899</span>
+                    <span class="fax">팩스: 0505-009-9587</span>
+                </div>                
+            </div>
+            <h1 class="logo"><img src="../images/logo_nespay_color1.png" alt="네스페이 로고" /></h1>
+          
+        </div>
+        <div class="copyright sub">ⓒ NEUNG E PAY</div>
+    </div>
+    <script src="./js/ui_common.js"></script>
+    <script>
+        let control_timer = 0;
+        //로그인 버튼 클릭, 인증 시작
+        const js_btn_login = document.querySelector('.js-btn_login');
+        js_btn_login.addEventListener('click', function(){
+            onCerti();
+        });
+        
+        //인증확인 클릭
+        const js_btn_chk_certi= document.querySelector('.js-btn_chk_certi');
+        js_btn_chk_certi.addEventListener('click', function() {
+            onCerti('off');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko-KO">
+<head>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>가맹점 기본정보:네스페이</title>
+    <link rel="stylesheet" href="../basic.css">
+    <link rel="stylesheet" href="./css/admin.css">
+    <!-- <script type="text/javascript" src="/lib/DataTables/datatables.min.js"></script> -->
+</head>
+<!-- cp - 가맹점 계약관리 > 가맹점ID 검색의 아이콘 누를 때, 가맹점 목록 검색 팝업 -->
+<div class="cp_admin_pop admin_pop pop_affiliate_modify sty2" aria-modal="true">
+    <div class="pop_head">
+        <h1 class="head_txt blind">가맹점 검색 수정</h1>
+        <span class="btn_close_pop"><i class="blind">팝업 닫기 버튼</i></span>
+    </div>
+    <div class="pop_cont_top">
+        <div class="wrap_search_accountarea">
+            <span class="check_condition">
+                <span class="txt">조회조건</span>
+                <div class="access_authority_area select_box_area" onclick="$('#sel_usechk_search').toggleClass('on')">
+                    <div id="sel_usechk_search" class="selected_box ">
+                        <span class="select_box_txt">가맹점명</span>
+                    </div>
+                    <div class="select_toggle_box">
+                        <div class="list_select_option list_access_authority">
+                            <li>가맹점명</li>
+                            <li>가맹점 ID</li>
+                        </div>
+                    </div>
+                </div>
+            </span>
+            <span class="keyword">
+                <span class="txt">검색어</span>
+                <input type="text" id="" name="" class="" value="" />
+            </span>
+            <span class="btn_franchisee">가맹점 검색</span>
+            </span>
+        </div>
+    </div>
+    <div class="pop_content">
+        <table id="datatable" class="tbl master">
+            <caption>가맹점 계약관리</caption>
+            <thead>
+                <tr>
+                    <th scope="col">가맹점번호</th>
+                    <th scope="col">가맹점ID</th>
+                    <th scope="col">가맹점명</th>
+                </tr>
+            </thead>
+            <tbody id="data">
+                <tr>
+                    <td>12348678</td>
+                    <td class="cpid_td">11st</td>
+                    <td>11번가</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>    
+</div>
+</body>
+</html>
