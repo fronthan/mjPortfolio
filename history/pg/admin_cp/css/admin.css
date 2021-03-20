@@ -107,10 +107,26 @@
 
 .copyright.sub { color: #001b32; }
 
+.select_box_area { position: relative; width: 251px; border-bottom: 2px solid #1684e5; }
+
+.select_box_area .selected_box { padding-bottom: 9px; }
+
+.select_box_area .selected_box .select_box_txt { color: #757575; }
+
+.select_box_area .select_toggle_box { display: none; width: 100%; max-height: 150px; position: absolute; top: 26px; left: 0; border: 1px solid #ddd; border-top: 0; overflow: auto; z-index: 1; box-sizing: border-box; }
+
+.select_box_area .on + .select_toggle_box { display: block; }
+
+.select_box_area:after { content: ''; display: block; width: 0; height: 0; position: absolute; right: 0; bottom: 9px; border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 10px solid #1684e5; }
+
+.select_box_area .list_select_option { background: #fff; }
+
+.select_box_area .list_select_option li { padding: 5px; cursor: pointer; }
+
+.select_box_area .list_select_option li:hover { background-color: #f1f1f1; }
+
 /*--------------------------- admin 로그인 페이지 ----------------------------*/
 .wrap_master_main { background: url("../../images/bg_main_master.png") no-repeat top center/cover; padding-top: 120px; }
-
-.cont_master_main .logo { width: 317px; height: 241px; margin: 0 auto; background: url("../../images/logo_nespay_color1.png") no-repeat left center/332px; }
 
 .login_box { width: 585px; height: 413px; margin: 0 auto; background: url("../../images/login_master_box.png") no-repeat left bottom; }
 
@@ -119,6 +135,8 @@
 .wrap_login_area .box_input, .wrap_login_area .btn_login { float: left; }
 
 .wrap_login_area .login_info { clear: left; padding: 79px 58px 0 0; text-align: right; font-size: 15px; color: #a3bdef; letter-spacing: -0.1px; }
+
+.cont_master_main .logo { width: 317px; height: 241px; margin: 0 auto; background: url("../../images/logo_nespay_color1.png") no-repeat left center/332px; }
 
 .cont_master_main .wrap_login_area .box_input { /* placeholder 스타일 지정 */ /* IE */ /* Firefox */ }
 
@@ -152,7 +170,7 @@
 
 .layer_confirm_certi .box_input #time { color: #ff0000; font-size: 20px; }
 
-.layer_confirm_certi .btn_certi_cfm { float: left; width: 137px; height: 50px; margin-left: 20px; color: #fff; font-size: 20px; text-align: center; line-height: 50px; background: #012875; background: url(../images/btn_certi_cfm.png) no-repeat left top; cursor: pointer; }
+.layer_confirm_certi .btn_certi_cfm { float: left; width: 137px; height: 50px; margin-left: 20px; color: #fff; font-size: 20px; text-align: center; line-height: 50px; background: #012875; background: url(../../images/btn_certi_cfm.png) no-repeat left top; cursor: pointer; }
 
 .wrap_admin_layer { position: relative; padding: 0 25px 70px; min-height: 600px; border-radius: 10px; box-shadow: 0px 10px 20px 0 rgba(0, 0, 0, 0.2); box-sizing: border-box; background: url("../../images/bg_triangle2.png") no-repeat right bottom/270px #ffffff; }
 
@@ -280,55 +298,7 @@
 
 .btn_pg_modifiy { padding: 5px 12px; color: #ff9e01; border: 1px solid #ff9e01; text-decoration: none; background: #fff; }
 
-.tbl.master .btn_pg_modifiy { margin-left: 15px; }
-
-.tbl_calender { table-layout: fixed; }
-
-.tbl_calender tr:nth-child(odd) td { background: #efefef; }
-
-.tbl_calender tr:nth-child(even) td { background: #e8ebef; }
-
-.tbl_calender th { height: 60px; line-height: 60px; font-weight: 500; font-size: 15px; border-bottom: 2px solid #fff; background: #0f4c82; color: #fff; }
-
-.tbl_calender td { padding: 13px 13px 11px; height: 100px; border-bottom: 2px solid #fff; box-sizing: border-box; }
-
-.tbl_calender td:nth-child(even) { border-left: 2px solid #fff; border-right: 2px solid #fff; }
-
-.tbl_calender tr:last-child td { border-bottom: 0; }
-
-.tbl_calender .day_view { font-size: 16px; color: #000; }
-
-.tbl_calender .sunday_td .day_view { color: #ce0000; }
-
-.tbl_calender .other_month .day_view { color: #757575; }
-
-.tbl_calender .info_dash { padding-top: 16px; padding-left: 20%; font-size: 13px; }
-
-.tbl_calender .approval { display: flex; align-items: center; color: #ce0000; }
-
-.tbl_calender .cancel { display: flex; align-items: center; margin-top: 16px; color: #6a6a6a; }
-
-.tbl_calender .won_val { margin-left: auto; text-align: right; }
-
-.system_error { margin-top: 79px; padding-top: 59px; padding-bottom: 189px; }
-
-.system_error .inner_wrap { width: 730px; margin: 0 auto; }
-
-.system_error .icon_syserror { display: block; margin: 0 auto 34px; }
-
-.system_error .inform_tit { font-size: 48px; text-align: center; color: #0f4c82; }
-
-.system_error .inform_txt { padding-top: 25px; padding-bottom: 58px; font-size: 30px; color: #0f4c82; }
-
-.system_error .error_info li { position: relative; padding-left: 20px; margin-bottom: 28px; font-size: 0; color: #242424; text-align: left; }
-
-.system_error .error_info li:before { content: ''; display: block; width: 5px; height: 5px; position: absolute; left: 0; top: 8px; border-radius: 50%; background: #3b00c0; }
-
-.system_error .error_info .note_tit { display: inline-block; padding-right: 5px; font-size: 24px; }
-
-.system_error .error_info .error_code { display: inline-block; font-size: 24px; }
-
-/*-------------------------------------------------------------------------------- # ADMIN 가맹점 팝업 - cp, master ---------------------------------------------------------------------------------*/
+/*---------------------- # 가맹점 팝업 공통 ------------------------*/
 .cp_admin_pop { position: relative; width: 920px; border-radius: 10px; box-shadow: 0px 10px 20px 0 rgba(0, 0, 0, 0.2); background: #fff; }
 
 .cp_admin_pop:after { content: ''; width: 100px; height: 100px; background: url("../../images/bg_triangle.png") no-repeat left top; background-size: 100px 100px; display: block; position: absolute; right: 0; bottom: 0; }
@@ -343,77 +313,119 @@
 
 .cp_admin_pop .pop_cont_top td { padding: 15px 0; font-size: 15px; color: #757575; }
 
-.cp_admin_pop.pop_covenant_info .pop_head { padding-bottom: 23px; }
+.pop_transaction { width: 1080px; padding-bottom: 50px; }
 
-.cp_admin_pop.pop_covenant_info .pop_cont { padding: 0 60px 35px; }
+.pop_transaction .affiliate_tbl .cont_th { width: 102px; }
 
-.cp_admin_pop.pop_covenant_info .covenant_tbl { width: 100%; }
+.pop_transaction .wrap_transaction_payment { border-top: 1px solid #0f4c82; }
 
-.cp_admin_pop.pop_covenant_info .covenant_tbl .cont_th { width: 143px; padding: 15px 18px 15px 0; font-size: 15px; text-align: right; box-sizing: border-box; }
+.pop_transaction .section_transaction_history { overflow: auto; border-top: 6px solid #0f4c82; height: 260px; }
 
-.cp_admin_pop.pop_covenant_info .covenant_tbl tr td:first-of-type { width: 265px; }
+.pop_transaction .wrap_transaction_history { overflow: hidden; padding: 6px 0; border-bottom: 1px solid #fff; background: #f3f3f3; }
 
-.cp_admin_pop.pop_covenant_info .covenant_tbl td { font-size: 15px; color: #757575; }
+.pop_transaction .wrap_transaction_history.ok { background: #e8ebef; }
 
-.cp_admin_pop.pop_covenant_info .covenant_tbl .fee_pct { padding-top: 15px; }
+.pop_transaction .wrap_transaction_history.ok .ico_state { background: #1684e6; }
 
-.cp_admin_pop.pop_covenant_info .cause_info .aflte_info { padding-bottom: 8px; }
+.pop_transaction .wrap_transaction_history .ico_state { float: left; width: 50px; height: 50px; margin: 12px 16px; border-radius: 25px; line-height: 50px; font-size: 15px; font-weight: 500; color: #fff; text-align: center; background: #a1a1a1; }
 
-.cp_admin_pop.pop_covenant_info .covenant_tbl .effective_date, .cp_admin_pop.pop_covenant_info .covenant_tbl .chg_date, .cp_admin_pop.pop_covenant_info .covenant_tbl .termination_date, .cp_admin_pop.pop_covenant_info .covenant_tbl .revocation_date { color: #242424; }
+.pop_transaction .wrap_transaction_history table { float: left; width: calc(100% - 82px) !important; }
 
-.cp_admin_pop.pop_covenant_info .covenant_tbl .effective_date .vtc_bar, .cp_admin_pop.pop_covenant_info .covenant_tbl .chg_date .vtc_bar, .cp_admin_pop.pop_covenant_info .covenant_tbl .termination_date .vtc_bar, .cp_admin_pop.pop_covenant_info .covenant_tbl .revocation_date .vtc_bar { color: #1684e5; }
+.pop_transaction .wrap_transaction_history table th, .pop_transaction .wrap_transaction_history table td { padding: 10px 0 !important; }
 
-.cp_admin_pop.pop_covenant_info .fee_aflte_info .cont_th, .cp_admin_pop.pop_covenant_info .fee_aflte_info .fee_tp, .cp_admin_pop.pop_covenant_info .fee_aflte_info .aflte_info { padding-top: 20px; }
+.pop_transaction .wrap_transaction_history table th { text-align: center !important; }
 
-.cp_admin_pop.pop_covenant_info .stop_dates .cont_th { padding-top: 0; }
+.pop_transaction .affiliate_basic th { padding: 15px 17px 15px 0; box-sizing: border-box; font-size: 15px; text-align: right; letter-spacing: -0.4px; }
 
-.cp_admin_pop.pop_covenant_info .stop_dates .termination_date, .cp_admin_pop.pop_covenant_info .stop_dates .revocation_date { padding-top: 0; }
+.pop_covenant_info .pop_head { padding-bottom: 23px; }
 
-.cp_admin_pop.pop_affiliate_info .pop_cont_bottom { margin: 0 59px 12px; border-top: 2px solid #1684e5; border-bottom: 2px solid #1684e5; }
+.pop_covenant_info .pop_cont { padding: 0 60px 35px; }
 
-.cp_admin_pop.pop_affiliate_info .pop_cont_bottom .responsible_list_tbl .cont_th { width: 143px; padding: 15px 17px 15px 0; text-align: right; box-sizing: border-box; font-size: 15px; }
+.pop_covenant_info .covenant_tbl { width: 100%; }
 
-.cp_admin_pop.pop_affiliate_info .pop_cont_bottom .responsible_list_tbl td:after { content: ''; display: block; width: 1px; height: 15px; position: absolute; right: 0; top: 15px; background: #1684e5; }
+.pop_covenant_info .covenant_tbl .cont_th { width: 143px; padding: 15px 18px 15px 0; font-size: 15px; text-align: right; box-sizing: border-box; }
 
-.cp_admin_pop.pop_affiliate_info .pop_cont_bottom .responsible_list_tbl .rspsblty_name { padding-left: 0; padding-right: 17px; }
+.pop_covenant_info .covenant_tbl tr td:first-of-type { width: 265px; }
 
-.cp_admin_pop.pop_affiliate_info .pop_cont_bottom .responsible_list_tbl .rspsblty_directnbr { padding-left: 20px; padding-right: 0; }
+.pop_covenant_info .covenant_tbl td { font-size: 15px; color: #757575; }
 
-.cp_admin_pop.pop_affiliate_info .pop_cont_bottom .responsible_list_tbl .contract_responsible th, .cp_admin_pop.pop_affiliate_info .pop_cont_bottom .responsible_list_tbl .contract_responsible td { padding-top: 26px; }
+.pop_covenant_info .covenant_tbl .fee_pct { padding-top: 15px; }
 
-.cp_admin_pop.pop_affiliate_info .pop_cont_bottom .responsible_list_tbl .contract_responsible td:after { top: 26px; }
+.pop_covenant_info .cause_memo { display: block; overflow: auto; width: 658px; height: 90px; border: 1px solid #1684e5; resize: none; background: #fff; }
 
-.cp_admin_pop.pop_affiliate_info .pop_cont_bottom .responsible_list_tbl .rspsblty_cellnbr { padding-left: 27px; padding-right: 0; }
+.pop_covenant_info .cause_info .aflte_info { padding-bottom: 8px; }
 
-.cp_admin_pop.pop_affiliate_info .pop_cont_bottom .responsible_list_tbl .rspsblty_email { padding-left: 24px; }
+.pop_covenant_info .covenant_tbl .effective_date, .pop_covenant_info .covenant_tbl .chg_date, .pop_covenant_info .covenant_tbl .termination_date, .pop_covenant_info .covenant_tbl .revocation_date { color: #242424; }
 
-.cp_admin_pop.pop_affiliate_info .pop_cont_bottom .responsible_list_tbl .rspsblty_email:after { display: none; }
+.pop_covenant_info .covenant_tbl .effective_date .vtc_bar, .pop_covenant_info .covenant_tbl .chg_date .vtc_bar, .pop_covenant_info .covenant_tbl .termination_date .vtc_bar, .pop_covenant_info .covenant_tbl .revocation_date .vtc_bar { color: #1684e5; }
 
-.cp_admin_pop.pop_affiliate_info .pop_cont_bottom .customer_responsible .cont_th, .cp_admin_pop.pop_affiliate_info .pop_cont_bottom .customer_responsible td { padding-bottom: 22px; }
+.pop_covenant_info .fee_aflte_info .cont_th, .pop_covenant_info .fee_aflte_info .fee_tp, .pop_covenant_info .fee_aflte_info .aflte_info { padding-top: 20px; }
 
-.cp_admin_pop.pop_transaction { width: 1080px; padding-bottom: 50px; }
+.pop_covenant_info .stop_dates .cont_th { padding-top: 0; }
 
-.cp_admin_pop.pop_transaction .affiliate_tbl .cont_th { width: 102px; }
+.pop_covenant_info .stop_dates .termination_date, .pop_covenant_info .stop_dates .revocation_date { padding-top: 0; }
 
-.cp_admin_pop.pop_transaction .wrap_transaction_payment { border-top: 1px solid #0f4c82; }
+.pop_affiliate_info .pop_cont_bottom { margin: 0 59px 12px; border-top: 2px solid #1684e5; border-bottom: 2px solid #1684e5; }
 
-.cp_admin_pop.pop_transaction .section_transaction_history { overflow: auto; border-top: 6px solid #0f4c82; height: 260px; }
+.pop_affiliate_info .pop_cont_bottom .responsible_list_tbl .cont_th { width: 143px; padding: 15px 17px 15px 0; text-align: right; box-sizing: border-box; font-size: 15px; }
 
-.cp_admin_pop.pop_transaction .wrap_transaction_history { overflow: hidden; padding: 6px 0; border-bottom: 1px solid #fff; background: #f3f3f3; }
+.pop_affiliate_info .pop_cont_bottom .responsible_list_tbl td { font-size: 13px; }
 
-.cp_admin_pop.pop_transaction .wrap_transaction_history.ok { background: #e8ebef; }
+.pop_affiliate_info .pop_cont_bottom .responsible_list_tbl td:after { content: ''; display: block; width: 1px; height: 15px; position: absolute; right: 0; top: 15px; background: #1684e5; }
 
-.cp_admin_pop.pop_transaction .wrap_transaction_history.ok .ico_state { background: #1684e6; }
+.pop_affiliate_info .pop_cont_bottom .responsible_list_tbl .rspsblty_name { padding-left: 0; padding-right: 17px; }
 
-.cp_admin_pop.pop_transaction .wrap_transaction_history .ico_state { float: left; width: 50px; height: 50px; margin: 12px 16px; border-radius: 25px; line-height: 50px; font-size: 15px; font-weight: 500; color: #fff; text-align: center; background: #a1a1a1; }
+.pop_affiliate_info .pop_cont_bottom .responsible_list_tbl .rspsblty_directnbr { padding-left: 20px; padding-right: 0; }
 
-.cp_admin_pop.pop_transaction .wrap_transaction_history table { float: left; width: calc(100% - 82px) !important; }
+.pop_affiliate_info .pop_cont_bottom .responsible_list_tbl .contract_responsible th, .pop_affiliate_info .pop_cont_bottom .responsible_list_tbl .contract_responsible td { padding-top: 26px; }
 
-.cp_admin_pop.pop_transaction .wrap_transaction_history table th, .cp_admin_pop.pop_transaction .wrap_transaction_history table td { padding: 10px 0 !important; }
+.pop_affiliate_info .pop_cont_bottom .responsible_list_tbl .contract_responsible td:after { top: 26px; }
 
-.cp_admin_pop.pop_transaction .wrap_transaction_history table th { text-align: center !important; }
+.pop_affiliate_info .pop_cont_bottom .responsible_list_tbl .rspsblty_cellnbr { padding-left: 27px; padding-right: 0; }
 
-.cp_admin_pop.pop_transaction .affiliate_basic th { padding: 15px 17px 15px 0; box-sizing: border-box; font-size: 15px; text-align: right; letter-spacing: -0.4px; }
+.pop_affiliate_info .pop_cont_bottom .responsible_list_tbl .rspsblty_email { padding-left: 24px; }
+
+.pop_affiliate_info .pop_cont_bottom .responsible_list_tbl .rspsblty_email:after { display: none; }
+
+.pop_affiliate_info .pop_cont_bottom .customer_responsible .cont_th, .pop_affiliate_info .pop_cont_bottom .customer_responsible td { padding-bottom: 22px; }
+
+.pop_affiliate_modify { padding-bottom: 19px; }
+
+.pop_affiliate_modify:after { display: none; }
+
+.pop_affiliate_modify .wrap_search_accountarea { padding: 10px 0 34px; font-size: 15px; }
+
+.pop_affiliate_modify .wrap_search_accountarea .check_condition { margin-right: 101px; }
+
+.pop_affiliate_modify .wrap_search_accountarea .txt { margin-right: 19px; }
+
+.pop_affiliate_modify .wrap_search_accountarea span { display: inline-block; }
+
+.pop_affiliate_modify .wrap_search_accountarea .select_box_area { display: inline-block; width: 171px; cursor: pointer; }
+
+.pop_affiliate_modify .wrap_search_accountarea input[type="text"] { width: 171px; margin-right: 60px; border-bottom: 2px solid #1684e6; }
+
+.pop_affiliate_modify .wrap_search_accountarea .btn_franchisee { display: inline-block; width: 118px; height: 30px; color: #fff; font-size: 15px; line-height: 30px; text-align: center; background: #ff9e01; cursor: pointer; vertical-align: top; }
+
+.pop_affiliate_modify .tbl td { color: #242424; padding: 15px 0; font-size: 15px; }
+
+.pop_affiliate_modify .tbl td:first-child:hover { text-decoration: none; }
+
+.pop_affiliate_modify .tbl .cpid_td:hover { text-decoration: underline; }
+
+.pop_affiliate_modify .pop_content { padding: 0 24px; }
+
+.pop_affiliate_modify .keyword input { padding-bottom: 9px; }
+
+.pop_affiliate_modify .dataTables_wrapper .top { height: 0; overflow: hidden; }
+
+.pop_affiliate_modify .dataTables_scrollBody .sorting { height: 0; overflow: hidden; padding: 0; font-size: 0; }
+
+.pop_affiliate_modify #data tr { cursor: pointer; }
+
+.pop_affiliate_modify #data tr.active { background: #fff; }
+
+.pop_affiliate_modify #data tr:hover { background: #fff; }
 
 .pop_affiliate_info { padding-bottom: 50px; }
 
@@ -427,394 +439,9 @@
 
 .pop_affiliate_info.pop_calculate_info { padding-bottom: 27px; }
 
-.pop_system_menu .affiliate_tbl .aflte_number { width: auto; }
-
-.pop_system_menu .affiliate_tbl { margin: 0 60px 25px; }
-
-.pop_system_menu .cont_th { padding-right: 16px; font-size: 15px; color: #242424; text-align: right; }
-
-.pop_system_menu td { color: #242424; }
-
-.pop_system_menu .menu_code { color: #757575; }
-
-.pop_system_menu input { width: 251px; }
-
-.pop_system_menu .menu_url input { width: 560px; }
-
-.pop_system_menu .sysmenu_tg_list { background: #fff; font-size: 13px; }
-
-.pop_system_menu .sysmenu_tg_list li { padding: 5px; cursor: pointer; }
-
-.pop_system_menu .sysmenu_tg_list li:hover { background: #ddd; }
-
-.pop_system_menu .select_toggle_box { display: none; width: 100%; max-height: 150px; position: absolute; top: 25px; left: 0; border: 1px solid #ddd; border-top: 0; overflow: auto; z-index: 1; }
-
-.pop_system_menu .select_toggle_box li.on { background: #1684e5; }
-
-.pop_system_menu .pop_cont_bottom { margin: 0 40px 30px; }
-
-.admin_pop { position: relative; width: 920px; border-radius: 10px; box-shadow: 0px 10px 20px 0 rgba(0, 0, 0, 0.2); background: #fff; }
-
-.admin_pop::after { content: ''; display: block; width: 100px; height: 100px; background: url("../../images/bg_triangle.png") no-repeat left top; background-size: 100px 100px; position: absolute; right: 0; bottom: 0; }
-
-.admin_pop .pop_head .btn_close_pop { right: 10px; top: 10px; }
-
-.admin_pop td { padding: 15px 0; font-size: 15px; color: #757575; }
-
-.admin_pop.pop_affiliate_info .pop_cont_top { margin: 0 60px; }
-
-.admin_pop.pop_affiliate_info .pop_cont_middle { margin: 13px 59px 0; padding-bottom: 6px; border-top: 2px solid #1684e5; border-bottom: 2px solid #1684e5; }
-
-.admin_pop.pop_affiliate_info .pop_cont_bottom { margin: 20px 59px 0; padding-bottom: 8px; }
-
-.admin_pop.pop_affiliate_info .responsible_list_tbl .cont_th { width: 143px; padding: 15px 17px 15px 0; text-align: right; box-sizing: border-box; font-size: 15px; }
-
-.admin_pop.pop_affiliate_info .responsible_list_tbl td:after { content: ''; display: block; width: 1px; height: 15px; position: absolute; right: 0; top: 15px; background: #1684e5; }
-
-.admin_pop.pop_affiliate_info .responsible_list_tbl .rspsblty_name { padding-left: 0; padding-right: 17px; }
-
-.admin_pop.pop_affiliate_info .responsible_list_tbl .rspsblty_directnbr { padding-left: 20px; padding-right: 41px; }
-
-.admin_pop.pop_affiliate_info .responsible_list_tbl .contract_responsible th, .admin_pop.pop_affiliate_info .responsible_list_tbl .contract_responsible td { padding-top: 26px; }
-
-.admin_pop.pop_affiliate_info .responsible_list_tbl .contract_responsible td:after { top: 26px; }
-
-.admin_pop.pop_affiliate_info .responsible_list_tbl .rspsblty_cellnbr { padding-left: 27px; padding-right: 44px; }
-
-.admin_pop.pop_affiliate_info .responsible_list_tbl .rspsblty_email { padding-left: 24px; }
-
-.admin_pop.pop_affiliate_info .responsible_list_tbl .rspsblty_email:after { display: none; }
-
-.admin_pop.pop_affiliate_info .control_cp_tbl .cont_th { width: 151px; padding: 15px 18px 0 0; font-size: 15px; text-align: right; box-sizing: border-box; }
-
-.admin_pop.pop_affiliate_info .control_cp_tbl .manageer_contact { width: 287px; }
-
-.admin_pop.pop_affiliate_modify:after { display: none; }
-
-.admin_pop.pop_affiliate_modify.sty2:after { display: block; }
-
-.admin_pop.pop_affiliate_modify.sty2 .pop_cont_top { margin: 0 56px; padding-top: 0; }
-
-.admin_pop.pop_affiliate_modify.sty2 .wrap_search_accountarea { padding: 0 0 34px; font-size: 15px; }
-
-.admin_pop.pop_affiliate_modify.sty2 .wrap_search_accountarea .check_condition { margin-right: 101px; padding-left: 34px; }
-
-.admin_pop.pop_affiliate_modify.sty2 .wrap_search_accountarea .txt { margin-right: 19px; }
-
-.admin_pop.pop_affiliate_modify.sty2 .wrap_search_accountarea span { display: inline-block; }
-
-.admin_pop.pop_affiliate_modify.sty2 .wrap_search_accountarea .select_box_area { display: inline-block; width: 171px; cursor: pointer; }
-
-.admin_pop.pop_affiliate_modify.sty2 .wrap_search_accountarea input[type="text"] { width: 171px; margin-right: 60px; border-bottom: 2px solid #1684e6; }
-
-.admin_pop.pop_affiliate_modify.sty2 .wrap_search_accountarea .btn_franchisee { display: inline-block; width: 118px; height: 30px; color: #fff; font-size: 15px; line-height: 30px; text-align: center; background: #ff9e01; cursor: pointer; vertical-align: top; }
-
-.admin_pop.pop_affiliate_modify.sty2 .tbl td { color: #242424; }
-
-.admin_pop.pop_affiliate_modify.sty2 .tbl td:first-child:hover { text-decoration: none; }
-
-.admin_pop.pop_affiliate_modify.sty2 .tbl .cpid_td:hover { text-decoration: underline; }
-
-.admin_pop.pop_affiliate_modify.sty2 .pop_content { padding: 0 24px; }
-
-.admin_pop.pop_affiliate_modify.sty2 .keyword input { padding-bottom: 9px; }
-
-.admin_pop.pop_affiliate_modify.sty2 .dataTables_wrapper .top { height: 0; overflow: hidden; }
-
-.admin_pop.pop_affiliate_modify.sty2 .dataTables_scrollBody .sorting { height: 0; overflow: hidden; padding: 0; font-size: 0; }
-
-.admin_pop.pop_affiliate_modify.sty2 #data tr { cursor: pointer; }
-
-.admin_pop.pop_affiliate_modify.sty2 #data tr.active { background: #fff; }
-
-.admin_pop.pop_affiliate_modify.sty2 #data tr:hover { background: #fff; }
-
-.admin_pop.pop_affiliate_modify.sty3 .pop_cont_top { margin: 0 24px; }
-
-.admin_pop.pop_affiliate_modify.sty3 .wrap_search_accountarea { padding: 25px 0 34px; font-size: 15px; }
-
-.admin_pop.pop_affiliate_modify.sty3 .pop_affiliate_modify .tbl td { color: #242424; }
-
-.admin_pop.pop_affiliate_modify.sty3 .wrap_search_accountarea .check_condition { margin-right: 101px; padding-left: 79px; }
-
-.admin_pop.pop_affiliate_modify.sty3 .wrap_search_accountarea .txt { margin-right: 19px; }
-
-.admin_pop.pop_affiliate_modify.sty3 .wrap_search_accountarea span, .admin_pop.pop_affiliate_modify.sty3 .wrap_search_accountarea .select_box_area { display: inline-block; }
-
-.admin_pop.pop_affiliate_modify.sty3 .wrap_search_accountarea .select_box_area, .admin_pop.pop_affiliate_modify.sty3 .wrap_search_accountarea input[type="text"] { width: 171px; }
-
-.admin_pop.pop_affiliate_modify.sty3 .wrap_search_accountarea input[type="text"] { margin-right: 63px; border-bottom: 2px solid #1684e6; }
-
-.admin_pop.pop_affiliate_modify.sty3 .wrap_search_accountarea .btn_franchisee { display: inline-block; width: 118px; height: 30px; color: #fff; font-size: 15px; line-height: 30px; text-align: center; background: #ff9e01; }
-
-@media only screen and (min-width: 1340px) and (max-width: 1620px) { .admin_pop.pop_affiliate_modify.sty3 #wrap_admin .header .gnb { margin-left: 30px; } }
-
-@media only screen and (max-width: 1340px) { .admin_pop.pop_affiliate_modify.sty3 #gnb { width: 75%; margin-left: 0  !important; }
-  .admin_pop.pop_affiliate_modify.sty3 #gnb .depth1 { width: 20% !important; margin-right: 0 !important; } }
-
-.admin_pop.pop_affiliate_modify .pop_cont_top { margin: 0 59px; padding-top: 17px; }
-
-.admin_pop.pop_affiliate_modify .pop_cont_top .affiliate_tbl .cont_th, .admin_pop.pop_affiliate_modify .pop_cont_top .affiliate_tbl td { padding-top: 0; padding-bottom: 21px; }
-
-.admin_pop.pop_affiliate_modify .cont_th { width: 143px; padding: 0 16px 15px 0; font-size: 15px; text-align: right; box-sizing: border-box; }
-
-.admin_pop.pop_affiliate_modify .aflte_number { width: 265px; }
-
-.admin_pop.pop_affiliate_modify .pop_cont_middle { margin: 25px 59px 0; }
-
-.admin_pop.pop_affiliate_modify .responsible_list_tbl .rspsblty_name { padding-right: 18px; }
-
-.admin_pop.pop_affiliate_modify .responsible_list_tbl .rspsblty_directnbr { padding-right: 16px; }
-
-.admin_pop.pop_affiliate_modify .responsible_list_tbl .rspsblty_cellnbr { padding-right: 17px; }
-
-.admin_pop.pop_affiliate_modify .responsible_list_tbl .cont_th, .admin_pop.pop_affiliate_modify .responsible_list_tbl td { padding-bottom: 18px; padding-top: 0; }
-
-.admin_pop.pop_affiliate_modify .responsible_list_tbl input { width: 151px; padding-bottom: 7px; border-bottom: 2px solid #1684e5; }
-
-.admin_pop.pop_affiliate_modify .covenant_tbl td { padding-top: 0; padding-bottom: 21px; }
-
-.admin_pop.pop_affiliate_modify .covenant_tbl td input { width: 251px; padding-bottom: 4px; border-bottom: 2px solid #1684e5; }
-
-.admin_pop.pop_affiliate_modify .covenant_tbl .aflte_name { padding-bottom: 18px; }
-
-.admin_pop.pop_affiliate_modify .covenant_tbl .profit_type { padding-bottom: 18px; }
-
-.admin_pop.pop_affiliate_modify .profit_type_area, .admin_pop.pop_affiliate_modify .tax_tp_area, .admin_pop.pop_affiliate_modify .wk_info_area, .admin_pop.pop_affiliate_modify .pay_type_area, .admin_pop.pop_affiliate_modify .middle_pg_area, .admin_pop.pop_affiliate_modify .fee_type_area { position: relative; width: 251px; border-bottom: 2px solid #1684e5; }
-
-.admin_pop.pop_affiliate_modify .profit_type_area:after, .admin_pop.pop_affiliate_modify .tax_tp_area:after, .admin_pop.pop_affiliate_modify .wk_info_area:after, .admin_pop.pop_affiliate_modify .pay_type_area:after, .admin_pop.pop_affiliate_modify .middle_pg_area:after, .admin_pop.pop_affiliate_modify .fee_type_area:after { content: ''; display: block; position: absolute; right: 0; bottom: 9px; width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 10px solid #1684e5; }
-
-.admin_pop.pop_affiliate_modify .profit_type_area .select_toggle_box, .admin_pop.pop_affiliate_modify .tax_tp_area .select_toggle_box, .admin_pop.pop_affiliate_modify .wk_info_area .select_toggle_box, .admin_pop.pop_affiliate_modify .pay_type_area .select_toggle_box, .admin_pop.pop_affiliate_modify .middle_pg_area .select_toggle_box, .admin_pop.pop_affiliate_modify .fee_type_area .select_toggle_box { display: none; width: 100%; max-height: 150px; position: absolute; top: 25px; left: 0; border: 1px solid #ddd; border-top: 0; overflow: auto; z-index: 1; box-sizing: border-box; }
-
-.admin_pop.pop_affiliate_modify .profit_type_area .on + .select_toggle_box, .admin_pop.pop_affiliate_modify .tax_tp_area .on + .select_toggle_box, .admin_pop.pop_affiliate_modify .wk_info_area .on + .select_toggle_box, .admin_pop.pop_affiliate_modify .pay_type_area .on + .select_toggle_box, .admin_pop.pop_affiliate_modify .middle_pg_area .on + .select_toggle_box, .admin_pop.pop_affiliate_modify .fee_type_area .on + .select_toggle_box { display: block; }
-
-.admin_pop.pop_affiliate_modify .profit_type_area li, .admin_pop.pop_affiliate_modify .tax_tp_area li, .admin_pop.pop_affiliate_modify .wk_info_area li, .admin_pop.pop_affiliate_modify .pay_type_area li, .admin_pop.pop_affiliate_modify .middle_pg_area li, .admin_pop.pop_affiliate_modify .fee_type_area li { padding: 5px; cursor: pointer; }
-
-.admin_pop.pop_affiliate_modify .profit_type_area li:hover, .admin_pop.pop_affiliate_modify .tax_tp_area li:hover, .admin_pop.pop_affiliate_modify .wk_info_area li:hover, .admin_pop.pop_affiliate_modify .pay_type_area li:hover, .admin_pop.pop_affiliate_modify .middle_pg_area li:hover, .admin_pop.pop_affiliate_modify .fee_type_area li:hover { background: #ddd; color: #242424; }
-
-.admin_pop.pop_affiliate_modify .selected_box { padding-bottom: 9px; }
-
-.admin_pop.pop_affiliate_modify .raw_prft_list, .admin_pop.pop_affiliate_modify .tax_type_list, .admin_pop.pop_affiliate_modify .work_if_list, .admin_pop.pop_affiliate_modify .work_if_list, .admin_pop.pop_affiliate_modify .fee_type_list, .admin_pop.pop_affiliate_modify .middle_pg_list, .admin_pop.pop_affiliate_modify .pay_type_list { background: #fff; }
-
-.admin_pop.pop_affiliate_modify .prft_type, .admin_pop.pop_affiliate_modify .tax_tp_txt { color: #757575; }
-
-.admin_pop.pop_affiliate_modify .affiliate_tbl input { width: 251px; padding: 0 0 4px; border-bottom: 2px solid #1684e5; }
-
-.admin_pop.pop_affiliate_modify .pop_cont_bottom { margin: 0 59px; padding-bottom: 8px; padding-top: 13px; }
-
-.admin_pop.pop_affiliate_modify .pop_cont_bottom td { padding: 0 0 19px; color: #242424; }
-
-.admin_pop.pop_affiliate_modify .pop_cont_bottom .vtc_bar { padding: 0 2px 0 1px; color: #1684e5; }
-
-.admin_pop.pop_affiliate_modify .pop_cont_bottom .effective_date { width: 265px; }
-
-.admin_pop.pop_affiliate_modify .pop_cont_bottom .effective_date.sty2 { width: auto; }
-
-.admin_pop .btn_save { display: block; width: 150px; height: 40px; margin: 20px auto 0; color: #fff; font-size: 18px; text-align: center; line-height: 40px; background: #012875; background: url(../../images/bg_btn_blue.svg) no-repeat left top; }
-
-.admin_pop .btn_cnxl { display: block; width: 150px; height: 40px; margin: 0 auto 0; color: #fff; font-size: 18px; text-align: center; line-height: 40px; background: #012875; background: url(../../images/bg_btn_gray.svg) no-repeat left top; }
-
-.responsible_list_tbl .cont_th { width: 143px; padding: 15px 17px 15px 0; text-align: right; box-sizing: border-box; font-size: 15px; }
-
-.responsible_list_tbl td { position: relative; overflow: hidden; font-size: 15px; color: #757575; }
-
-.control_cp .cont_th { width: 143px; padding: 0 17px 17px 0; text-align: right; box-sizing: border-box; font-size: 15px; }
-
-.control_cp td { padding-top: 0; color: #242424; }
-
-.control_cp .vtc_bar { padding: 0 2px 0 1px; color: #1684e5; }
-
-.control_cp .effective_date { width: 265px; }
-
-.fee_percent .cont_th { vertical-align: top; }
-
-.fee_percent .card_company_list { overflow: hidden; }
-
-.fee_percent .card_company_list li { padding-right: 68px; margin-bottom: 30px; float: left; }
-
-.fee_percent .card_company_list li:first-child { padding-right: 76px; }
-
-.fee_percent .card_company_list li:nth-child(5) { padding-right: 0; }
-
-.fee_percent .card_company_list .vam_bar { content: ''; display: inline-block; width: 1px; height: 15px; background: #1684e5; margin: 0 13px; vertical-align: middle; }
-
-.cause_memo { display: block; overflow: auto; width: 658px; height: 90px; border: 1px solid #1684e5; resize: none; background: #fff; }
-
-.covenant_modify .pop_cont { padding: 0 59px; }
-
-.covenant_modify .pop_cont .affiliate_tbl .cont_th { width: 140px; }
-
-.covenant_modify .pop_cont .affiliate_tbl .svc_name, .covenant_modify .pop_cont .affiliate_tbl .pay_sms, .covenant_modify .pop_cont .affiliate_tbl .pay_tp { padding-top: 7px; }
-
-.covenant_modify .pop_cont .affiliate_tbl .mdd_pg { padding-top: 3px; }
-
-.covenant_modify .pop_cont .affiliate_tbl .aflte_number { width: 251px; }
-
-.covenant_modify .pop_cont .affiliate_tbl .fee_pct { padding-top: 5px; }
-
-.covenant_modify .pop_cont .affiliate_tbl .fee_percent .cont_th { padding-top: 5px; }
-
-.covenant_modify .pop_cont .affiliate_tbl .fee_aflte_info td { padding-top: 10px; }
-
-.covenant_modify .pop_cont .affiliate_tbl .aflte_info { padding-top: 0; }
-
-.covenant_modify .pop_cont .card_company_list input { width: 41px; text-align: center; }
-
-.covenant_modify .pop_cont .card_company_list .vam_bar { margin: 0 5px 0 13px; }
-
-.covenant_modify .pop_cont .card_company_list li { padding-right: 57px; margin-bottom: 22px; }
-
-.covenant_modify .pop_cont .card_company_list li:first-child { padding-right: 63px; }
-
-.covenant_modify .pop_cont .card_company_list li:nth-child(5) { padding-right: 0; }
-
-.covenant_modify .control_cp_tbl .cont_th { width: 141px; padding-right: 15px; }
-
-.covenant_modify .control_cp_tbl input { width: 251px; padding-bottom: 6px; border-bottom: 2px solid #1684e5; }
-
-.covenant_modify .control_cp_tbl .manageer_contact { width: 261px; }
-
-.pop_calculate_modify { padding-bottom: 0; }
-
-.pop_calculate_modify:after { display: none; }
-
-.pop_calculate_modify .pop_head { padding-bottom: 38px; }
-
-.pop_calculate_modify .affiliate_tbl input { padding-bottom: 8px; border-bottom: 2px solid #1684e5; }
-
-.pop_calculate_modify .affiliate_tbl .cont_th, .pop_calculate_modify .affiliate_tbl .aflte_name, .pop_calculate_modify .affiliate_tbl .aflte_number { padding-top: 0; padding-bottom: 23px; }
-
-.pop_calculate_modify .affiliate_tbl .affiliate_nbr, .pop_calculate_modify .affiliate_tbl .svc_id, .pop_calculate_modify .affiliate_tbl .account_company, .pop_calculate_modify .affiliate_tbl .account_number { padding-top: 0; padding-bottom: 18px; }
-
-.pop_calculate_modify .affiliate_tbl .account_name { padding-top: 0; padding-bottom: 19px; }
-
-.pop_calculate_modify .affiliate_tbl .acnt_company_area { position: relative; width: 251px; padding-bottom: 7px; border-bottom: 2px solid #1684e5; }
-
-.pop_calculate_modify .affiliate_tbl .acnt_company_area:after { content: ''; display: block; position: absolute; right: 0; bottom: 9px; width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 10px solid #1684e5; }
-
-.pop_calculate_modify .affiliate_tbl .acnt_company_area .select_toggle_box { display: none; width: 100%; max-height: 150px; position: absolute; top: 25px; left: 0; border: 1px solid #ddd; border-top: 0; overflow: auto; z-index: 1; box-sizing: border-box; }
-
-.pop_calculate_modify .affiliate_tbl .acnt_company_area .on + .select_toggle_box { display: block; }
-
-.pop_calculate_modify .affiliate_tbl .acnt_company_area li { padding: 5px; cursor: pointer; }
-
-.pop_calculate_modify .affiliate_tbl .acnt_company_area .acnt_company_list { background: #fff; font-size: 13px; }
-
-.pop_calculate_modify .affiliate_tbl .acnt_company_area .acnt_company_list li { padding: 5px; cursor: pointer; }
-
-.pop_calculate_modify .affiliate_tbl .acnt_company_area .acnt_company_list li:hover { background: #ddd; }
-
 .pop_bottom_v1 { overflow: hidden; padding: 14px 293px 21px 290px; background: #e8ebef; }
 
 .pop_bottom_v1 .btn_save { float: left; margin-top: 0; }
 
 .pop_bottom_v1 .btn_cnxl { float: right; }
-
-.pop_system_code { width: 1060px; }
-
-.pop_system_code:after { display: none; }
-
-.pop_system_code .pop_head { padding-bottom: 35px; }
-
-.pop_system_code .pop_cont { padding: 0 35px 28px; }
-
-.pop_system_code .tbl tbody tr { background: transparent; }
-
-.pop_system_code .tbl { border-bottom: 0; }
-
-.pop_system_code .tbl th { padding: 0 10px 11px; text-align: left; font-size: 18px; }
-
-.pop_system_code .tbl td { padding: 32px 0 0 0; font-size: 18px; }
-
-.pop_system_code .tbl td input { width: 170px; padding: 0 10px 8px; margin-right: 35px; border-bottom: 1px solid #1684e5; box-sizing: border-box; }
-
-.pop_system_code .pop_bottom_v1 { padding-right: 363px; padding-left: 360px; }
-
-.useable_area { width: 170px; padding: 0 10px 11px; margin-right: 0; border-bottom: 1px solid #1684e5; box-sizing: border-box; position: relative; text-align: left; }
-
-.useable_area:after { content: ''; display: block; position: absolute; right: 0; bottom: 11px; width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 10px solid #1684e5; }
-
-.useable_area .select_toggle_box { display: none; width: 100%; max-height: 150px; position: absolute; top: 25px; left: 0; border: 1px solid #ddd; border-top: 0; overflow: auto; z-index: 1; box-sizing: border-box; }
-
-.useable_area .on + .select_toggle_box { display: block; }
-
-.useable_area li { padding: 5px; cursor: pointer; }
-
-.useable_area .select_toggle_box { top: 30px; }
-
-.useable_area .useable_list { background: #fff; }
-
-.useable_area .useable_list li { padding: 5px; cursor: pointer; }
-
-.useable_area .useable_list li:hover { background: #ddd; }
-
-.pop_holidays { width: 856px; }
-
-.pop_holidays:after { display: none; }
-
-.pop_holidays .pop_head { padding-bottom: 28px; }
-
-.pop_holidays .wrap_calendar { display: block; padding-bottom: 3px; border-bottom: 1px solid #1684e5; }
-
-.pop_holidays .wrap_calendar input { width: 115px; padding: 7px 10px 6px; font-size: 18px; background: transparent; }
-
-.pop_holidays .wrap_calendar:after { content: " "; display: inline-block; position: relative; width: 25px; height: 28px; margin-left: 7px; vertical-align: top; background: url("../../images/ico_calendar2.png") no-repeat left top; }
-
-.pop_holidays .holiday_note { width: 375px; padding: 0 11px 9px; border-bottom: 1px solid #1684e5; font-size: 18px; background: transparent; }
-
-.pop_holidays .tbl td { padding: 28px 35px 28px 0; font-size: 18px; }
-
-.pop_holidays .tbl td:last-child { padding-right: 0; }
-
-.pop_holidays.admin_pop .pop_cont .tbl tr { background: #fff; }
-
-.pop_holidays.admin_pop .pop_cont .tbl tr th { padding: 0 11px 10px; font-size: 18px; text-align: left; }
-
-.pop_holidays .pop_bottom_v1 { padding: 14px 258px 21px 261px; }
-
-.pop_daesa .pop_head, .pop_calcate_admin .pop_head { padding-top: 15px; padding-bottom: 32px; }
-
-.pop_daesa .pop_cont, .pop_calcate_admin .pop_cont { padding: 0 27px 0 23px; }
-
-.pop_daesa .tbl th, .pop_calcate_admin .tbl th { font-size: 13px; }
-
-.pop_daesa .tbl td, .pop_calcate_admin .tbl td { padding: 23px 0 24px; font-size: 13px; color: #242424; }
-
-.pop_daesa .tbl td .bar, .pop_calcate_admin .tbl td .bar { color: #1684e5; }
-
-.pop_daesa .box_paging, .pop_calcate_admin .box_paging { padding-bottom: 37px; margin-top: 34px; }
-
-.pop_calcate_admin { width: 1180px; }
-
-.select_box_area { position: relative; width: 251px; border-bottom: 2px solid #1684e5; }
-
-.select_box_area .selected_box { padding-bottom: 9px; }
-
-.select_box_area .selected_box .select_box_txt { color: #757575; }
-
-.select_box_area .select_toggle_box { display: none; width: 100%; max-height: 150px; position: absolute; top: 25px; left: 0; border: 1px solid #ddd; border-top: 0; overflow: auto; z-index: 1; box-sizing: border-box; }
-
-.select_box_area .on + .select_toggle_box { display: block; }
-
-.select_box_area:after { content: ''; display: block; width: 0; height: 0; position: absolute; right: 0; bottom: 9px; border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 10px solid #1684e5; }
-
-.select_box_area .list_select_option { background: #fff; }
-
-.select_box_area .list_select_option li { padding: 5px; cursor: pointer; }
-
-.select_box_area .list_select_option li:hover { background-color: #f1f1f1; }
-
-.admin_pop.pop_affiliate_modify .affiliate_tbl .inp_search_prev { width: 186px; margin-right: 10px; }
-
-.btn_account_search { display: inline-block; width: 50px; height: 30px; color: #fff; font-size: 13px; line-height: 30px; text-align: center; cursor: pointer; background: #ff9e01; }
-
-.box_creatcount_btn { overflow: hidden; position: relative; z-index: 30; padding: 30px 0; text-align: right; }
-
-.box_creatcount_btn .btn { display: inline-block; width: 118px; height: 30px; margin-right: 20px; color: #fff; font-size: 15px; line-height: 30px; text-align: center; }
-
-.box_creatcount_btn .btn:last-child { margin-right: 0; }
-
-.box_creatcount_btn .btn_select { background: #ff9e01; }
-
-.box_creatcount_btn .btn_close { background: #757575; }
 /*# sourceMappingURL=admin.css.map */
