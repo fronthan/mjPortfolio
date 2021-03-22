@@ -1,0 +1,8 @@
+{
+    "diffEditor.codeLens": true,
+    "editor.minimap.maxColumn": 100,
+    "editor.minimap.showSlider": "always",
+    "editor.minimap.size": "fill",
+    "workbench.list.openMode": "doubleClick",
+    "workbench.list.smoothScrolling": true
+}

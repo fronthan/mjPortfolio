@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko-KO">
+<head>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>시스템 휴일관리 생성:네스페이</title>    
+    <link rel="stylesheet" href="../basic.css">
+    <link rel="stylesheet" href="./css/admin.css">
+</head>
+<body>
+  <div class="admin_pop pop_holidays" aria-modal="true">
+    <div class="pop_head">
+      <h1 class="head_txt">신규 휴일 관리</h1>
+      <span class="btn_close_pop" role="button"><i class="blind">팝업 닫기 버튼</i></span>
+    </div>
+    <div class="pop_cont">
+      <table class="tbl">
+        <thead>
+          <tr>
+            <th scope="col">휴일일자</th>
+            <th scope="col">휴일명</th>
+            <th scope="col">사용여부</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="">
+             <span class="wrap_calendar">
+               <input type="text" class="date" name="" value="2020-05-01" readonly/>
+            </span>
+            </td>
+            <td>
+              <span class="wrap_inp">
+                <input type="text" id="" name="" class="holiday_note" placeholder="어린이 날 대체 휴일" />
+              </span>
+            </td>          
+            <td>
+              <div class="useable_area js-selectbox">
+                <div id="use_able" class="selected_box">
+                  <span class="useable_txt js-text">사용</span>
+                </div>
+                <div class="select_toggle_box">
+                  <ul class="useable_list">
+                    <li>사용</li>
+                    <li>서비스 중단</li>
+                    <li>기타</li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pop_bottom_v1">
+      <span class="btn_save" role="button">저 장</span>
+      <span class="btn_cnxl" role="button">취 소</span>
+    </div>
+  </div>
+  </body>
+  </html>

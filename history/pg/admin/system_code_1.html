@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko-KO">
+<head>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>시스템 공통코드관리:네스페이</title>    
+    <link rel="stylesheet" href="../basic.css">
+    <link rel="stylesheet" href="./css/admin.css">
+</head>
+<body>
+  <div class="admin_pop pop_system_code" aria-modal="true">
+    <div class="pop_head">
+      <h1 class="head_txt">신규 공통코드</h1>
+      <span class="btn_close_pop" role="button"><i class="blind">팝업 닫기 버튼</i></span>
+    </div>
+    <div class="pop_cont">
+      <table class="tbl">
+        <thead>
+          <tr>
+            <th scope="col">그룹코드</th>
+            <th scope="col">코드</th>
+            <th scope="col">코드명</th>
+            <th scope="col">코드설명</th>
+            <th scope="col">사용설명</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" id="group_code" name="" class="code_group" placeholder="G01L"/></td>
+            <td><input type="text" id="code" name="" class="code" placeholder="13"/></td>
+            <td><input type="text" id="name_code" name="" class="code_name" placeholder="국민카드"/></td>
+            <td><input type="text" id="note_code" name="" class="code_note" placeholder="신용카드 매입사"/></td>
+            <td>
+              <div class="useable_area js-selectbox">
+                <div id="use_able" class="selected_box">
+                  <span class="useable_txt js-text">서비스 중</span>
+                </div>
+                <div class="select_toggle_box">
+                  <ul class="useable_list">
+                    <li>서비스 중</li>
+                    <li>서비스 중단</li>
+                    <li>기타</li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>    
+    <div class="pop_bottom_v1">
+      <span class="btn_save" role="button">저 장</span>
+      <span class="btn_cnxl" role="button">삭 제</span>
+    </div>
+  </div>
+  </body>
+  </html>

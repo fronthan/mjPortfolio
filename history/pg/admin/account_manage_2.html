@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko-KO">
+<head>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>가맹점 기본정보:네스페이</title>    
+    <link rel="stylesheet" href="../basic.css">
+    <link rel="stylesheet" href="./css/admin.css">
+</head>
+<body> 
+    <div class="admin_pop" aria-modal="true">
+        <div class="pop_head">
+            <h1 class="head_txt">계정관리 상세수정</h1>
+            <span class="btn_close_pop" role="button" tabindex="0"><i class="blind">팝업 닫기 버튼</i></span>
+        </div>
+        <div class="pop_cont_top">
+            <table class="affiliate_tbl">
+                <caption>계정관리 상세수정 - USER ID, 사용자명, 연락처, EMAIL, 소속회사, 접근권한, 가맹점, 메뉴그룹, 사용여부, 비밀번호
+                </caption>               
+                <tr>
+                    <th class="cont_th" scope="row">USER ID</th>
+                    <td>
+                        <input type="text" id="cp_id" name="" class="" value="tester" />
+                    </td>
+                    <th class="cont_th" scope="row">사용자 명</th>
+                    <td>
+                        <input type="text" id="cp_user_name" name="" class="" value="김덕배" />
+                    </td>
+                </tr>    
+                <tr>
+                    <th class="cont_th" scope="row">연락처</th>
+                    <td>
+                        <input type="text" id="cp_phone" name="" class="" value="010-1234-5678" />
+                    </td>
+                    <th class="cont_th" scope="row">Email</th>
+                    <td>
+                        <input type="text" id="cp_email" name="" class="" value="tester@gmail.com" />
+                    </td>
+                </tr>     
+                <tr>
+                    <th class="cont_th" scope="row">소속회사</th>
+                    <td>
+                        <input type="text" id="c" name="" class="" value="지마켓 협력업체" />
+                    </td>
+                    <th class="cont_th" scope="row">접근권한</th>
+                    <td>
+                        <div class="select_box_area js-selectbox" tabindex="0">
+                            <div id="access_authority" class="selected_box">
+                                <span class="select_box_txt js-text">CP</span>
+                            </div>
+                            <div class="select_toggle_box">
+                                <div class="list_select_option list_access_authority">
+                                    <li>CP</li>
+                                    <li>서비스 중단</li>
+                                    <li>기타</li>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>  
+                <tr>
+                    <th class="cont_th" scope="row">가맹점</th>
+                    <td>
+                        <input type="text" id="cp_name" name="" class="inp_search_prev js-text" value="지마켓" readonly />
+                        <span class="btn_account_search js-search_frch_name" role="search">검색</span>
+                    </td>
+                    <th class="cont_th" scope="row">메뉴그룹</th>
+                    <td>
+                        <input type="text" id="menu_group" name="" class="inp_search_prev js-text" value="전체메뉴" readonly/>
+                        <span class="btn_account_search js-search_menu_group" role="search">검색</span>
+                    </td>
+                   
+                </tr>  
+                <tr>
+                    <th class="cont_th" scope="row">사용여부</th>
+                    <td>
+                        <div class="select_box_area js-selectbox">
+                            <div id="sel_use_check" class="selected_box">
+                                <span class="select_box_txt js-text">사용</span>
+                            </div>
+                            <div class="select_toggle_box">
+                                <div class="list_select_option list_access_authority">
+                                    <li>사용</li>
+                                    <li>사용안함</li>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <th class="cont_th" scope="row">비밀번호</th>
+                    <td>
+                        <input type="text" id="cp_pw" name="" class="" placeholder="비밀번호" />
+                    </td>                    
+                </tr>             
+            </table>
+        </div>     
+        <div class="pop_cont_bottom">
+            <table class="control_cp">
+                <tr>
+                    <th class="cont_th" scope="row">등록일자</th>
+                    <td class="effective_date sty2">2020-01-01<span class="vtc_bar">ㅣ</span>23:59:59</td>
+                    <th class="cont_th" scope="row">변경일자</th>
+                    <td class="chg_date">2020-01-01<span class="vtc_bar">ㅣ</span>23:59:59</td>
+                </tr>
+                <tr>
+                    <th class="cont_th">해지일자</th>
+                    <td class="revocation_date">2020-01-01<span class="vtc_bar">ㅣ</span>23:59:59</td>
+                    <th class="cont_th">작업자 ID</th>
+                    <td class="worked_adm_id">tester@gmail.com</td>
+                </tr>
+            </table>
+        </div> 
+
+        <div class="pop_bottom_v1">
+        <span class="btn_save" role="button" tabindex="0">저 장</span>
+        <span class="btn_cnxl" role="button" tabindex="0">취 소</span>
+        </div>      
+    </div>
+</body>
+</html>

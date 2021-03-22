@@ -1,6 +1,4 @@
-css/*.css.map
+*/css/*.css.map
 node_modules
-history/pg/admin
 작업list.html
-coding_list.html
 history/pg/payment/css/scss/back.pg.scss

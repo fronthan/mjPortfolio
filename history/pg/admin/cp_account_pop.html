@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko-KO">
+<head>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>가맹점 검색:네스페이</title>    
+    <link rel="stylesheet" href="../basic.css">
+    <link rel="stylesheet" href="./css/admin.css">
+</head>
+<body>    
+    <!-- master - 가맹점 기본정보 > 가맹점ID 검색의 아이콘 누를 때, 가맹점 목록 검색 팝업
+    * (가맹점 계정관리의 검색 팝업과 다름) -->
+    <div class="admin_pop pop_cp_account" aria-modal="true">       
+        <div class="pop_cont_top">
+            <div class="wrap_search_accountarea">
+                <span class="check_condition">
+                    <span class="txt">조회조건</span>
+                    <div class="select_box_area js-selectbox">
+                        <div id="sel_use_check" class="selected_box ">
+                            <span class="select_box_txt js-text">가맹점명</span>
+                        </div>
+                        <div class="select_toggle_box">
+                            <div class="list_select_option list_access_authority">
+                                <li>가맹점명</li>
+                                <li>가맹점 ID</li>
+                            </div>
+                        </div>
+                    </div>
+                </span>
+                <span class="keyword">
+                    <span class="txt">검색어</span>
+                    <input type="text" id="cp_search" name="" class="" value="tester" />
+                </span>
+                <span class="btn_franchisee">가맹점 검색</span>
+            </div>
+            <div class="wrawrap_admin_layer">
+                <table class="tbl master">
+                    <caption>가맹점 계약관리</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">계약번호</th>
+                            <th scope="col">가맹점ID</th>
+                            <th scope="col">가맹점명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>12348678</td>
+                            <td class="cpid_td">11st</td>
+                            <td>11번가</td>
+                        </tr>
+                         <tr>
+                            <td>12348678</td>
+                            <td class="cpid_td">11st</td>
+                            <td>11번가</td>
+                        </tr>
+                         <tr>
+                            <td>12348678</td>
+                            <td class="cpid_td">11st</td>
+                            <td>11번가</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="box_creatcount_btn">
+                 <span role="button" tabindex="0" class="btn btn_close btn_close_pop">닫기</span>
+            </div>
+        </div>        
+    </div>
+</body>
+</html>

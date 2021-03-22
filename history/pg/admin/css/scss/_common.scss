@@ -1,0 +1,154 @@
+
+
+// 공통색상 
+$accentColor : #ff9e01;
+$basicIndigo : #001b32;
+$titleIndigo : #012875;
+$subtitIndigo : #0f4c82;
+$inputGray   : #757575;
+$lineBlue    :#1684e5;
+
+//폰트 사이즈
+$titlePop: 20px;
+$contPop : 15px;
+$contPopS: 13px;
+$contPopB:18px;
+$contR:16px;
+
+
+@mixin check_custom1($width, $height, $border, $padding:28px) {
+    //좌측 기준
+    display            : inline-block;
+    position           : relative;
+    padding-left       : $padding;
+    cursor             : pointer;
+    -webkit-user-select: none;
+    -moz-user-select   : none;
+    -ms-user-select    : none;
+    user-select        : none;
+
+    input {
+        position: absolute;
+        height  : 0;
+        width   : 0;
+        opacity : 0;
+        cursor  : pointer
+    }
+
+    .checkmark {
+        position: absolute;
+        top     : 1px;
+        left    : 0;
+        height  : $height;
+        width   : $width;
+        border  : $border;
+    }
+}
+
+@mixin radiomark {
+    input:checked+.checkmark:after {
+        display      : block;
+        width        : 10px;
+        height       : 10px;
+        position     : absolute;
+        left         : 4px;
+        top          : 4px;
+        background   : #fb9e08;
+        border-radius: 50%;
+        content      : '';
+    }
+}
+
+@mixin checkmark {
+    .checkmark {
+        background: url('../../images/custom_input1_off.svg') no-repeat center/27px;
+    }
+
+    input:checked+.checkmark {
+        background: url('../../images/custom_input1_on.svg') no-repeat center/22px;
+    }
+}
+
+.custom_radiobox {
+    @include check_custom1(18px, 18px, 1px solid #d5d5d5);
+    line-height: 1;
+
+    .checkmark {
+        border-radius: 50%;
+        background   : transparent;
+    }
+
+    @include radiomark;
+    font-size: 14px;
+    color    : #001b32;
+}
+
+.custom_checkbox {
+    @include check_custom1(28px, 28px, 0, 43px);
+    @include checkmark;
+}
+
+
+
+@mixin btnCenter($width, $height, $marginTop:20px, $fsSize:18px, $bgcolor:$titleIndigo) {
+    display    : block;
+    width      : $width;
+    height     : $height;
+    margin     : $marginTop auto 0;
+    color      : #fff;
+    font-size  : $fsSize;
+    text-align : center;
+    line-height: $height;
+    background : $bgcolor;
+}
+
+@mixin bg($width, $height, $url) {
+    width          : $width;
+    height         : $height;
+    background     : url($url) no-repeat left top;
+    background-size: $width $height;
+}
+
+
+
+
+@mixin selectCustom($bdlr:7px, $bdtop:10px, $bottom:9px, $maxheight:150px, $top:25px) {
+    position: relative;
+    cursor: pointer;
+
+    &:after {
+        content     : '';
+        display     : block;
+        position    : absolute;
+        right       : 0;
+        bottom      : $bottom;
+        width       : 0;
+        height      : 0;
+        border-left : $bdlr solid transparent;
+        border-right: $bdlr solid transparent;
+        border-top  : $bdtop solid #1684e5;
+    }
+
+    .select_toggle_box {
+        display   : none;
+        width     : 100%;
+        max-height: $maxheight;
+        position  : absolute;
+        top       : $top;
+        left      : 0;
+        border    : 1px solid #ddd;
+        border-top: 0;
+        overflow  : auto;
+        z-index   : 1;
+        box-sizing:border-box
+    }
+
+    .on + .select_toggle_box {
+        display: block;
+    }
+
+    li {
+        padding: 5px;
+        cursor: pointer;
+    }
+}
