@@ -50,6 +50,12 @@ function removeTyped () {
     document.querySelector('#typed').remove();
     document.querySelector('.typed-cursor').remove();
     document.querySelector('.mj_header').style.zIndex = '100';  
+
+    initAOS();
+}
+
+function initAOS() {
+    AOS.init();
 }
   
 /* -------------------
@@ -93,16 +99,52 @@ var EiwafDevice = {
 	}
 };
 
-function deviceCheck() {
+function deviceCheck() {//모바일과 타 디바이스의 history에서 다른 이벤트 구현
     EiwafDevice.detect();
 
     return EiwafDevice.type;
 }
 
 
-  /* ----------------------
-  * 스크롤 이벤트
-  * ----------------------*/
+/* ---------------------------
+  * 클릭이벤트, 헤더 업뎃
+  * --------------------------- */
+const my_tnb = document.querySelector('.my_tnb ul');
+const tnb_li_items = my_tnb.querySelectorAll('li');
+for (var i=0; tnb_li_items.length > i; i++) {
+    tnb_li_items[i].addEventListener('click', function(){
+        const txt = tnb_li_items[i].textContent;
+        setTnbActive(txt);
+
+        
+    })
+}
+/* ----------------------
+* 스크롤 이벤트
+* ----------------------*/
+ function getSectionTop() {//offsetTop 값 가져오기
+     const history_height = document.querySelector('.mj_history').offsetTop - 100;
+ 
+     const contact_height = document.querySelector('.mj_contact').offsetTop - 150;
+ 
+     return [history_height, contact_height];
+ }
+ 
+ function setTnbActive(tnb) {//tnb 온오프
+     const nav = tnb.slice(0,1).toUpperCase()+tnb.slice(1).toLowerCase();
+ 
+     tnb_li_items.forEach(function(val){
+         val.classList.remove('on');
+ 
+         const current_txt = val.textContent;
+ 
+         if ( current_txt == nav ) {
+             val.classList.add('on');
+         }
+     });
+ }
+
+
   window.addEventListener('scroll', scrollEvent);
   
   let did_scroll; 
@@ -126,8 +168,6 @@ function deviceCheck() {
   function hasScrolled() {//5만큼 보다 더 스크롤이 된다면
   
       var st = window.scrollY;
-      const window_h = window.outerHeight;
-      const docu_h = document.body.clientHeight;
   
       if (Math.abs(last_st - st) <= delta) return;
   
@@ -144,6 +184,19 @@ function deviceCheck() {
       }
       
       last_st = st;
+      
+      //현재 스크롤의 섹션 위치
+      const offsetTops = getSectionTop();
+      let tnb = 0;
+      if (last_st > offsetTops[0] && last_st < offsetTops[1]){
+        tnb = 'history';
+      } else if (last_st > offsetTops[1]) {
+          tnb = 'contact';
+      } else if (last_st < offsetTops[0]) {
+          tnb = "skill";
+      }
+
+      setTnbActive(tnb);
   }
 
 

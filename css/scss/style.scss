@@ -1,5 +1,5 @@
 @import '_common';
-
+html {scroll-behavior: smooth;}
 %center_page {
   max-width: 1274px;
   margin: 0 auto;
@@ -47,7 +47,7 @@
   transition: all 1s;
 
   &.change_bg {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.8);
     transition: all .3s;
 
     a:hover {
@@ -101,6 +101,13 @@
   align-items: center;
   transition: width .4s;
 
+  a {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    line-height: 64px;
+  }
+  
   ul {
     display: flex;
     flex-grow: 1;
@@ -110,19 +117,13 @@
       font-weight: 350;
       font-size: 1.6rem;
       text-align: center;
-    }
-  }
 
-  a {
-    display: inline-block;
-    width: 64px;
-    height: 64px;
-    line-height: 64px;
-  }
-  a:hover {
-    border-radius: 50%;
-    background-color: $colorSkin;
-  }
+      &.on a, a:hover {
+        border-radius: 50%;
+        background-color: $colorSkin;
+      }    
+    }
+  }  
 }
 
 .mj_portfolio {

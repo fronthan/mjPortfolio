@@ -11,6 +11,8 @@ body { background: #fff3dc; }
 
 .cont_tit .tit_para { color: #5f5f5f; font-family: "Noto Sans KR", "Nanum Gothic", sans-serif; font-size: 1.2rem; font-weight: 350; line-height: 17px; }
 
+html { scroll-behavior: smooth; }
+
 .mj_header .header_wrap, .skill_conts, .history_main, .contact_main { max-width: 1274px; margin: 0 auto; }
 
 .mask { content: " "; display: block; width: 100%; height: 100%; position: fixed; left: 0; top: 0; background: rgba(0, 0, 0, 0.5); z-index: 1000; }
@@ -23,7 +25,7 @@ body { background: #fff3dc; }
 
 .mj_header { position: absolute; top: 0; left: 0; width: 100%; z-index: -1; transition: all 1s; }
 
-.mj_header.change_bg { background: rgba(255, 255, 255, 0.5); transition: all .3s; }
+.mj_header.change_bg { background: rgba(255, 255, 255, 0.8); transition: all .3s; }
 
 .mj_header.change_bg a:hover { background: #ffd980; }
 
@@ -43,13 +45,13 @@ body { background: #fff3dc; }
 
 .my_tnb { max-width: 760px; width: 59%; display: flex; align-items: center; transition: width .4s; }
 
+.my_tnb a { display: inline-block; width: 64px; height: 64px; line-height: 64px; }
+
 .my_tnb ul { display: flex; flex-grow: 1; }
 
 .my_tnb ul li { flex-grow: 1; font-weight: 350; font-size: 1.6rem; text-align: center; }
 
-.my_tnb a { display: inline-block; width: 64px; height: 64px; line-height: 64px; }
-
-.my_tnb a:hover { border-radius: 50%; background-color: #fff3dc; }
+.my_tnb ul li.on a, .my_tnb ul li a:hover { border-radius: 50%; background-color: #fff3dc; }
 
 .mj_portfolio { background: url(/images/bg_skill.svg) no-repeat center 0; }
 

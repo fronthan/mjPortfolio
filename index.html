@@ -14,6 +14,10 @@
     <script src="js/cm_html5shiv.js"></script>
     <script src="js/cm_respond.js"></script>
 <![endif]-->
+
+    <!-- 애니메이션 라이브러리 -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <link rel="stylesheet" href="css/reset_browser.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -30,20 +34,20 @@
             </h1>
             <nav class="my_tnb" role="navigation">
                 <ul>
-                    <li><a href="#">Skill</a></li>
-                    <li><a href="#">History</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#mj_skill">Skill</a></li>
+                    <li><a href="#mj_history">History</a></li>
+                    <li><a href="#mj_contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main class="mj_portfolio" role="main">
-        <div class="mj_skill">
-            <h2 class="cont_tit">SKILL</h2>
+        <div class="mj_skill" id="mj_skill">
+            <h2 class="cont_tit" data-aos="slide-down" data-aos-easing="linear" data-aos-offset="200" data-aos-once="true">SKILL</h2>
             <div class="skill_conts">
                 <ul class="skill_main">
-                    <li>
+                    <li data-aos="fade-right" data-aos-easing="linear" data-aos-offset="100" data-aos-duration="500">
                         <h3 class="skill_name">
                             <img src="images/skill_html5.svg" alt="" />
                         </h3>
@@ -54,7 +58,7 @@
                                 사용하지 않고 <br><em class="mark_txt">의미있는 마크업</em>으로 검색 친화적인 사이트를 구현합니다.</div>
                         </div>
                     </li>
-                    <li>
+                    <li data-aos="fade-up" data-aos-easing="linear" data-aos-offset="100" data-aos-duration="500">
                         <h3 class="skill_name">
                             <img src="images/skill_css.svg" alt="" />
                         </h3>
@@ -67,7 +71,7 @@
                                 작성합니다.</div>
                         </div>
                     </li>
-                    <li>
+                    <li data-aos="fade-left" data-aos-easing="linear" data-aos-offset="100" data-aos-duration="500">
                         <h3 class="skill_name">
                             <img src="images/skill_js.svg" alt="" />
                         </h3>
@@ -79,7 +83,7 @@
                         </div>
                     </li>
                 </ul>
-                <ul class="skill_sub">
+                <ul class="skill_sub"  data-aos="fade-up" data-aos-duration="500">
                     <li><img src="images/skill_react.svg" alt="리액트" /></li>
                     <li><img src="images/skill_node.svg" alt="노드 제이에스" /></li>
                     <!-- <li><img src="images/skill_vue.svg" alt="뷰 제이에스" /></li>
@@ -87,35 +91,35 @@
                 </ul>
             </div>
         </div>
-        <div class="mj_history">
-            <h2 class="cont_tit">WORKING HISTORY
+        <div class="mj_history" id="mj_history">
+            <h2 class="cont_tit" data-aos="fade-down" data-aos-easing="linear" data-aos-offset="200" data-aos-once="true">WORKING HISTORY
                 <div class="tit_para">Last update 2021.02.17</div>
             </h2>
             <ul class="history_main">                
-                <li class="history_item">
+                <li class="history_item" data-aos="flip-left" data-aos-offset="200"  data-aos-duration="500">
                     <div class="item_img_s">
                         <img src="images/history_pg.jpg" alt="PG" title="자세히 보려면 클릭하세요" class="js-history_img" tabindex="0"/>
                     </div>
                 </li>
-                <li class="history_item">
+                <li class="history_item" data-aos="flip-left" data-aos-offset="200"  data-aos-duration="500" data-aos-delay="500">
                     <div class="item_img_s">
                         <img src="images/history_pb.jpg" alt="playblock" title="자세히 보려면 클릭하세요" class="js-history_img" tabindex="0"/>
                     </div>
                 </li>                
-                <li class="history_item">
+                <li class="history_item" data-aos="zoom-out" data-aos-offset="200"  data-aos-duration="800" data-aos-delay="800">
                     <div class="item_img_s">
                         <img src="images/history_pk.jpg" alt="playkok" title="자세히 보려면 클릭하세요" class="js-history_img" tabindex="0"/>
                     </div>
                 </li>
             </ul>
         </div>
-        <div class="mj_contact">
-            <h2 class="cont_tit">CONTACT</h2>
+        <div class="mj_contact" id="mj_contact">
+            <h2 class="cont_tit" data-aos="fade-down"  data-aos-easing="linear"data-aos-offset="200" data-aos-once="true">CONTACT</h2>
             <div class="contact_main">
-                <span class="mj_mail">
+                <span class="mj_mail" data-aos="fade-up" data-aos-offset="200" data-aos-once="true">
                     <a href="#" title="클릭하시면 클립보드로 복사됩니다." alt="프론트엔드 개발자 한민정의 이메일 주소"> cynthia0330@kakao.com</a>
                 </span>
-                <div class="opentalk_area">
+                <div class="opentalk_area" data-aos="fade-up" data-aos-offset="200" data-aos-duration="500">
                     <div class="big_note">지금 바로 <b class="mark_txt">카카오톡 오픈 채팅</b>하기</div>
                     <span class="small_note">(QR코드를 찍거나 코드를 클릭하시면 카카오톡 PC톡으로 연결됩니다.)</span>
                     <div class="qr_code"></div>
@@ -132,6 +136,8 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- json을 위한 jquery -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- 애니메이션 라이브러리 -->
     <script src="js/front_common.js"></script>
 </body>
 
