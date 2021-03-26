@@ -1,9 +1,0 @@
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR:wght@350;400;500&family=Roboto:wght@500&display=swap");
-html { font-family: "Noto Sans KR", "Nanum Gothic", sans-serif; font-weight: 400; font-size: 62.5%; }
-
-body { background: #fff3dc; }
-
-::selection { background-color: rgba(255, 217, 128, 0.7); }
-
-#typed { display: flex; width: 100%; height: 100%; justify-content: center; align-items: center; position: fixed; left: 0; top: 0; background: #fff3dc; text-align: center; z-index: 1; font-size: 2rem; color: #80594d; }
-/*# sourceMappingURL=loading.css.map */

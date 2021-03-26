@@ -3,24 +3,32 @@
     "name": "플레이콕",
     "data_range": "2020.01.01~2020.05.04",
     "end_service": true,
-    "intro": "새로운 세상에서 다양한 사람들과 이야기해보세요. 같은 관심사를 가진 사람들과 이웃을 맺고 서로 소통하거나 좋아하는 컨텐츠를 볼 수 있고 키워드로 빠르게 검색해 플레이콕에서 즐거운 시간을 보낼 수 있습니다. 자신의 취미를 발견하고 이웃들과 함께 추억을 만들어보세요.",
+    "intro": "같은 관심사를 가진 사람들과 이웃을 맺고 서로 소통하거나 좋아하는 컨텐츠를 볼 수 있고 키워드로 빠르게 검색해 플레이콕에서 즐거운 시간을 보낼 수 있습니다. 소셜 네트워크 서비스, 사업 포기로 인한 서비스 종료",
     "dev_tech": "html, css, php5, javascript, jquery, ajax",
-    "dev_system": "Jetbrains phpStorm"
+    "dev_system": "Jetbrains phpStorm",
+    "main_name" : "pk",
+    "code_view" : null,
+    "site_type" : "SNS"
   },
   "playblock": {
     "name": "플레이블록",
     "data_range": "2020.05.06~2020.10.30",
     "end_service": true,
-    "intro": "홈페이지 빌더",
+    "intro": "홈페이지 빌더. 사업 포기로 인한 서비스 종료",
     "dev_tech": "html, css, php5, javascript, jquery, ajax",
-    "dev_system": "VSCode, GitLab"
+    "dev_system": "VSCode, GitLab",
+    "main_name" : "pb",
+    "code_view" : null
   },
   "PG": {
-    "name": "NE Pay",
+    "name": "NES Pay",
     "data_range": "2020.07.08~2020.11.30",
     "end_service": true,
     "intro": "능이소프트 PG 사업 인허가를 위한 개발",
     "dev_tech": null,
-    "dev_system": "VSCode, GitLab"
+    "dev_system": "VSCode, GitLab",
+    "main_name" : "pg",
+    "code_view" : true,
+    "site_type" : "Payment Gateway"
   }
 }

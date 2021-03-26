@@ -2,12 +2,12 @@
 <html lang="ko">
 
 <head>
+    <meta name="robots" content="noindex, nofollow">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="format-detection" content="telephone=no, address=no, email=no">
     <meta name="description" content="" />
-    <meta name="robots" content="noindex, nofollow"> <!-- 임시 메타 -->
     <title>portfolio</title>
     <script src="js/cm_vendorFreeFix.js"></script>
 <!--[if lt IE 9]>
@@ -15,12 +15,11 @@
     <script src="js/cm_respond.js"></script>
 <![endif]-->
     <link rel="stylesheet" href="css/reset_browser.css">
-    <link rel="stylesheet" href="css/loading.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <header class="mj_header">
+    <header class="mj_header" role="heading">
         <div class="header_wrap">
             <h1 class="mj_title">
                 <div class="ko_name">한민정</div>
@@ -29,7 +28,7 @@
                     <em class="job_txt">Front End Developer</em>
                 </div>
             </h1>
-            <nav class="my_tnb">
+            <nav class="my_tnb" role="navigation">
                 <ul>
                     <li><a href="#">Skill</a></li>
                     <li><a href="#">History</a></li>
@@ -39,7 +38,7 @@
         </div>
     </header>
 
-    <main class="mj_portfolio">
+    <main class="mj_portfolio" role="main">
         <div class="mj_skill">
             <h2 class="cont_tit">SKILL</h2>
             <div class="skill_conts">
@@ -92,61 +91,22 @@
             <h2 class="cont_tit">WORKING HISTORY
                 <div class="tit_para">Last update 2021.02.17</div>
             </h2>
-            <ul class="history_main">
+            <ul class="history_main">                
                 <li class="history_item">
-                    <span class="item_img_s">
-                        <img src="images/history_pb.png" alt="playblock" title="자세히 보려면 클릭하세요" class="js-history_img"/>
-                    </span>                   
-                </li>
-                <li class="history_item">
-                    <span class="item_img_s">
-                        <img src="images/history_pg.png" alt="PG" title="자세히 보려면 클릭하세요" class="js-history_img" />
-                    </span>
-                </li>
-                <li class="history_item">
-                    <span class="item_img_s">
-                        <img src="images/history_pk_s.jpg" alt="" title="자세히 보려면 클릭하세요" />
-                    </span>
-                </li>
-                <li class="history_item view_mode">
                     <div class="item_img_s">
-                        <img src="images/history_pk_s.jpg" alt="playkok" title="자세히 보려면 클릭하세요" class="js-history_img"/>
-                        <div class="m_site_desc">
-                            <div class="site_title">플레이콕</div>
-                            <span class="proj_range">2020.01.01~2020.04.30</span><span class="closed_mark">서비스 종료</span>
-                            <span class="site_type">SNS</span>
-                        </div>
+                        <img src="images/history_pg.jpg" alt="PG" title="자세히 보려면 클릭하세요" class="js-history_img" tabindex="0"/>
                     </div>
-
-                    <div class="history_detail">
-                        <div class="item_img">
-                            <span class="img_wrap"><img src="images/history_pk.jpg" alt="사이트 메인 이미지" />
-                                <a href="#" class="btn_view_code">코드보기</a>
-                            </span>                            
-                        </div>
-                        <dl class="site_desc">
-                            <dt class="head_area">
-                                <div class="site_title"><span class="title_txt">
-                                플레이콕</span>
-                                    <div class="preview_btns">
-                                        <button class="btn_mobile"><span class="blind_inline">모바일로 미리보기</span></button>
-                                        <button class="btn_tablet"><span class="blind_inline">태블릿으로 미리보기</span></button>
-                                        <button class="btn_desktop"><span class="blind_inline">데스크탑으로 미리보기</span></button>
-                                    </div>
-                                </div>
-                                <span class="proj_range">2020.01.01~2020.04.30</span><span class="closed_mark">서비스 종료</span>
-                            </dt>
-                            <dd class="site_intro">
-                                새로운 세상에서 다양한 사람들과 이야기해보세요.<br>
-                                같은 관심사를 가진 사람들과 이웃을 맺고 서로 소통하거나 좋아하는 컨텐츠를 볼 수 있고 키워드로 빠르게 검색 해<br>
-                                플레이콕에서 즐거운 시간을 보낼 수 있습니다.<br>
-                                자신의 취미를 발견하고 이웃들과 함께 추억을 만들어보세요.
-                            </dd>
-                            <dd class="dev_tech"><b class="small_tit">기술 : </b><span class="tech_txt"></span></dd>
-                            <dd class="dev_system"><b class="small_tit">환경 : </b><span class="sys_txt"></span></dd>
-                        </dl>
+                </li>
+                <li class="history_item">
+                    <div class="item_img_s">
+                        <img src="images/history_pb.jpg" alt="playblock" title="자세히 보려면 클릭하세요" class="js-history_img" tabindex="0"/>
                     </div>
                 </li>                
+                <li class="history_item">
+                    <div class="item_img_s">
+                        <img src="images/history_pk.jpg" alt="playkok" title="자세히 보려면 클릭하세요" class="js-history_img" tabindex="0"/>
+                    </div>
+                </li>
             </ul>
         </div>
         <div class="mj_contact">
@@ -164,7 +124,7 @@
             </div>
         </div>
     </main>
-    <footer class="mj_footer">
+    <footer class="mj_footer" role="footer">
         <span class="frontend">Frontend Developer 한민정 webdev-han.xyz</span>
         <span class="webdesigner">Design by 민소정</span>
     </footer>
