@@ -255,8 +255,7 @@ html {scroll-behavior: smooth;}
     }
   }
 
-  .site_desc {
-    max-width: 1254px;
+  .site_desc {    
     border-top: 2px solid $colorYellow;
     background: #fff;
     color: $colorMaroon;
@@ -270,6 +269,7 @@ html {scroll-behavior: smooth;}
 }
 
 .site_desc {
+  width:100%;
   font-size: 1.2rem;
   line-height: 16px;
 
@@ -418,8 +418,8 @@ html {scroll-behavior: smooth;}
     .tech_sys_area {position: absolute; left:495px; bottom:36px;}
   }
 
-  .site_desc {
-    width: calc(100vw - 37px);
+  .site_desc {   
+    max-width: 1254px;
     height:275px;
     padding: 31px 30px 40px 475px;
   }
@@ -470,7 +470,7 @@ html {scroll-behavior: smooth;}
 
 
   .site_desc {
-    width: 940px;
+    max-width: 940px;
     padding: 31px 30px 40px;
   }
 
@@ -511,25 +511,23 @@ html {scroll-behavior: smooth;}
 }
 
 @media (max-width:1024px) {
+  .enter_t {display:block;}
+
+  
   .history_main {
     max-width: 640px;
-
+    
     .history_item {
       width:calc(50% - 20px);
     }
   }
-
-
-  .enter_t {display:block;}
-}
-
-@media (max-width:1024px) {
-  
-  
   .history_detail {margin-top: 0; padding-top: 10px;}
 
-  .site_desc {display:none}
+  .site_desc {margin: 0 30px;}
+
 }
+
+
 
 @media (max-width:810px) and (min-width:721px) {
   .enter_tm {display:block}

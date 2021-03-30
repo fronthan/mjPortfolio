@@ -95,11 +95,11 @@ html { scroll-behavior: smooth; }
 
 .history_detail .item_img .img_wrap .btn_view_code:hover, .history_detail .item_img .img_wrap .btn_view_code:active { background: rgba(255, 217, 128, 0.9); }
 
-.history_detail .site_desc { max-width: 1254px; border-top: 2px solid #ffd980; background: #fff; color: #403333; }
+.history_detail .site_desc { border-top: 2px solid #ffd980; background: #fff; color: #403333; }
 
 .history_detail .site_desc .head_area { margin-bottom: 23px; padding-left: 5px; border-left: 2px solid #ffd980; }
 
-.site_desc { font-size: 1.2rem; line-height: 16px; }
+.site_desc { width: 100%; font-size: 1.2rem; line-height: 16px; }
 
 .site_desc .site_title { padding-bottom: 4px; font-size: 2rem; line-height: 27px; }
 
@@ -154,7 +154,7 @@ html { scroll-behavior: smooth; }
   .history_item .item_img_s:hover { outline: 1px solid #ffd980; }
   .history_detail { position: relative; max-width: 1274px; padding: 23px 0 0 20px; }
   .history_detail .tech_sys_area { position: absolute; left: 495px; bottom: 36px; }
-  .site_desc { width: calc(100vw - 37px); height: 275px; padding: 31px 30px 40px 475px; }
+  .site_desc { max-width: 1254px; height: 275px; padding: 31px 30px 40px 475px; }
   .m_site_desc { display: none; } }
 
 @media (max-width: 1274px) { .mj_header .header_wrap { padding: 8px 20px; }
@@ -168,7 +168,7 @@ html { scroll-behavior: smooth; }
 
 @media (max-width: 1274px) and (min-width: 1025px) { .history_main { max-width: 940px; }
   .history_main .history_item { width: calc(33.3% - 20px); }
-  .site_desc { width: 940px; padding: 31px 30px 40px; }
+  .site_desc { max-width: 940px; padding: 31px 30px 40px; }
   .skill_conts .skill_main { justify-content: center; padding-top: 10%; } }
 
 @media (max-width: 1274px) and (min-width: 721px) { .skill_conts { max-width: 912px; }
@@ -178,12 +178,11 @@ html { scroll-behavior: smooth; }
   .skill_conts .skill_main li:nth-child(3) .skill_name { margin-top: -7%; margin-bottom: 4%; }
   .mj_skill .cont_tit { padding-top: 15%; } }
 
-@media (max-width: 1024px) { .history_main { max-width: 640px; }
+@media (max-width: 1024px) { .enter_t { display: block; }
+  .history_main { max-width: 640px; }
   .history_main .history_item { width: calc(50% - 20px); }
-  .enter_t { display: block; } }
-
-@media (max-width: 1024px) { .history_detail { margin-top: 0; padding-top: 10px; }
-  .site_desc { display: none; } }
+  .history_detail { margin-top: 0; padding-top: 10px; }
+  .site_desc { margin: 0 30px; } }
 
 @media (max-width: 810px) and (min-width: 721px) { .enter_tm { display: block; } }
 
@@ -196,7 +195,8 @@ html { scroll-behavior: smooth; }
   .skill_conts .skill_name { margin-bottom: 6%; }
   .history_detail { padding-top: 0px; padding-left: 0; }
   .history_main .history_item { width: 100%; }
-  .history_main .history_item .item_img_s { width: calc(100% - 40px); max-width: 304px; margin: 0 auto; text-align: center; } }
+  .history_main .history_item .item_img_s { width: calc(100% - 40px); max-width: 304px; margin: 0 auto; text-align: center; }
+  .skill_sub { max-width: 420px; } }
 
 @media (max-width: 720px) and (min-width: 481px) { .mj_skill .cont_tit { padding-top: 20%; } }
 
