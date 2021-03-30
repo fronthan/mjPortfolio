@@ -18,21 +18,25 @@ function popupUI() {
 	//파일 불러오기
 	$(".pop_area").load(load_file_name + " .history_detail", function () {
 	  //ajax 메소드이므로 jqeury.js 필요 
-
-        document.addEventListener("click", function (e) {
-            e.stopPropagation();
-
-            if (! e.target.closest('.history_detail')) {
-                closeModal(pop_area, maskdiv);
-            }
-        });	
-	  
+        document.addEventListener("click", eventPart);	  
 	});
+
+    function eventPart(e) {//레이어 온 상태에서만 실행되는 팝업 제거 이벤트 리스너
+        e.stopPropagation();
+ 
+        if (! e.target.closest('.history_detail')) {
+            closeModal(pop_area, maskdiv);
+        }
+    }
 
 	/* 공통 레이어팝업 삭제 함수 */
 	function closeModal(pop_area, maskdiv) {
-	  document.body.removeChild(maskdiv);
-	  document.body.removeChild(pop_area);
+        const pop = pop_area;
+        const mask = maskdiv;
+        document.body.removeChild(mask);
+        document.body.removeChild(pop);
+
+        document.removeEventListener("click", eventPart);//클릭 이벤트 삭제
 	}
   }
 
@@ -113,11 +117,9 @@ const my_tnb = document.querySelector('.my_tnb ul');
 const tnb_li_items = my_tnb.querySelectorAll('li');
 for (var i=0; tnb_li_items.length > i; i++) {
     tnb_li_items[i].addEventListener('click', function(){
-        const txt = tnb_li_items[i].textContent;
-        setTnbActive(txt);
-
-        
-    })
+        const txt = this.textContent;
+        setTnbActive(txt); 
+    });
 }
 /* ----------------------
 * 스크롤 이벤트
