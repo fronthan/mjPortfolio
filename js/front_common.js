@@ -44,7 +44,7 @@ function popupUI() {
 // 페이지 로딩 중 함수
 var typed = new Typed('#typed', {
     strings: ['페이지를 불러오는 중입니다. . .'],
-    typeSpeed: 0050,
+    typeSpeed: 0300,
     onComplete: (self) => {
             
         setTimeout(removeTyped, 1000);
