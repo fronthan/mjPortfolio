@@ -269,7 +269,7 @@ html {scroll-behavior: smooth;}
 }
 
 .site_desc {
-  width:100%;
+  width:100vw;
   font-size: 1.2rem;
   line-height: 16px;
 
@@ -432,7 +432,6 @@ html {scroll-behavior: smooth;}
     padding: 8px 20px;
   }
  
-  
   .history_detail .item_img {display:none;}
 
   .item_img_s {position: relative;}
@@ -450,6 +449,8 @@ html {scroll-behavior: smooth;}
     .site_title {margin-bottom: 0.8rem;}
    .site_type {display: block; margin-top: 0.8rem;}
   }
+
+  .site_desc .dev_tech {margin-top:20px}
 
   .view_mode .item_img_s:after {
     content:' ';
@@ -523,7 +524,11 @@ html {scroll-behavior: smooth;}
   }
   .history_detail {margin-top: 0; padding-top: 10px;}
 
-  .site_desc {margin: 0 30px;}
+  .site_desc {
+    width:calc(100vw - 60px);
+    margin: 0 30px;
+    padding:15px 20px 20px
+  }
 
 }
 

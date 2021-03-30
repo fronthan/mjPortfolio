@@ -229,6 +229,9 @@ function changeHistoryDetail(ev) {
             const dev_system = project.dev_system;
             const img_name = project.main_name;
             const code_view = project.code_view;
+            const mobile = project.mobile;
+            const tablet = project.tablet;
+            const desktop = project.desktop;
     
             const history_item = document.querySelector('.history_detail');
             const site_desc = history_item.querySelector('.site_desc');
@@ -246,6 +249,18 @@ function changeHistoryDetail(ev) {
             site_desc.querySelector('.site_intro').textContent = intro;  
             site_desc.querySelector('.tech_txt').textContent = dev_tech;
             site_desc.querySelector('.sys_txt').textContent = dev_system;
+
+            //디바이스 아이콘
+            if ( !mobile ) {
+                history_item.querySelector('.btn_mobile').remove();
+            }
+            if (!tablet ) {
+                history_item.querySelector('.btn_tablet').remove();
+            }
+            if (!desktop) {
+                history_item.querySelector('.btn_desktop').remove();
+            }
+
         });
     } else { //모바일
 
