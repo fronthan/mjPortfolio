@@ -126,20 +126,49 @@ html {scroll-behavior: smooth;}
   }  
 }
 
+.mj_introduce {
+  background: url(/images/bg_skill.svg) repeat center 0/cover;
+  overflow: hidden;
+  padding-bottom: 6%;
+
+  .cont_tit {
+    padding-top: 10%;
+    transition: padding .4s;
+
+    .tit_para {padding-top: 20px;}
+  }
+}
+
+.introduce_main {
+  @extend %center_page;
+  margin-top: 40px;
+  padding: 30px;
+  background: transparentize($colorSkin, 0.5);
+
+  p {padding-bottom: 22px;
+    font-size:1.2rem;
+    line-height: 1.4;
+  
+    &:last-child {padding-bottom: 0;}
+
+    a:hover, a:active {text-decoration: underline;}
+  }
+}
+
 .mj_portfolio {
   background: url(/images/bg_skill.svg) no-repeat center 0;
   overflow: hidden;
 }
 
+.mj_history {
+  padding-bottom: 6%;
+  background: url(/images/bg_skill.svg) no-repeat center 0;
+  transition: padding .4s;
+}
+
 .mj_skill {
   padding-bottom: 10%;
-  background: url(/images/bg_skill.svg) repeat center 0/cover;
-  overflow: hidden;
-
-  .cont_tit {
-    padding-top: 10%;
-    transition: padding .4s;
-  }
+  background: url(/images/bg_history.svg) repeat;
 }
 
 .skill_conts {
@@ -155,7 +184,7 @@ html {scroll-behavior: smooth;}
 
     li {
       padding: 0 18px;
-      background: transparentize($colorSkin, 0.5);
+      background: transparentize(#fff, 0.5);
     }
   }
 
@@ -196,11 +225,7 @@ html {scroll-behavior: smooth;}
 }
 
 
-.mj_history {
-  padding-bottom: 6%;
-  background: url(/images/bg_history.svg) repeat;
-  transition: padding .4s;
-}
+
 
 .history_main {
   display: flex;
@@ -237,6 +262,8 @@ html {scroll-behavior: smooth;}
     .img_wrap {
       display: block;
       position: relative;
+      height: 260px;
+      background: $colorYellow;
 
       .btn_view_code {
         display: block;
@@ -278,6 +305,7 @@ html {scroll-behavior: smooth;}
     font-size: 2rem;
     line-height: 27px;
 
+    .site_link:hover, .site_link:active {text-decoration: underline;}
     .preview_btns {
       display: inline-flex;
       padding-left: 10px;
@@ -315,7 +343,7 @@ html {scroll-behavior: smooth;}
 
 .mj_contact {
   padding: 0 0 6.8%;
-  background: url(/images/bg_skill.svg) repeat center 0;
+  background: url(/images/bg_history.svg) repeat;
   overflow: hidden;
 }
 
@@ -506,7 +534,7 @@ html {scroll-behavior: smooth;}
     }
   }
 
-  .mj_skill .cont_tit {
+  .mj_introduce .cont_tit {
     padding-top: 15%;
   }  
 }
@@ -579,7 +607,7 @@ html {scroll-behavior: smooth;}
 }
 
 @media (max-width:720px) and (min-width:481px) {
-  .mj_skill .cont_tit {
+  .mj_introduce .cont_tit {
     padding-top: 20%;
   }
 }
@@ -592,7 +620,7 @@ html {scroll-behavior: smooth;}
 
 @media (max-width:480px) {
   .txt_box {display:none}
-  .mj_skill .cont_tit {
+  .mj_introduce .cont_tit {
     padding-top: 25%;
   }
   .my_tnb {width:auto; min-width:200px;}

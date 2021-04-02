@@ -24,7 +24,8 @@
     "code_view" : null,
     "mobile" :true,
     "tablet" : true,
-    "desktop": true
+    "desktop": true,
+    "link": "http://mindcrying.cafe24.com/home_builder/index.html"
   },
   "PG": {
     "name": "NES Pay",
