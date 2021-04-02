@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+%wrap {
+    max-width:720px;
+    margin: 0 auto;
+}
+
+/* Header.js */
+.header {
+    background: #fff;
+
+    .header_wrap{
+        @extend %wrap;
+        position: relative;
+        padding: 20px 30px;
+    }
+
+    .pk_logo {
+        display: block;
+        text-align: center;}
+
+    .icon_search {position: absolute; right:30px; top:26px;}
+
+}
+
+/* Footer.js */
+.footer {
+    background: #F8f8f8;
+    
+    .terms {padding: 10px 0; background: #4d4d4d;}
+    .terms_wrap {display: flex;
+        @extend %wrap;
+
+        li {flex:1; text-align: center; color:#fff; font-size: 12px;}
+    }
+
+    .notice {padding: 30px 10px;}
+    .notice_area {
+        @extend %wrap;
+        color:#000; text-align: center;
+        font-size:13px;
+    }
+
+}
+
+/* Home.js */
+.pk_main {
+    @extend %wrap;
+  
+    padding: 0 10px;
+
+    .hello_message {padding: 35px 10px 25px; font-size: 18px; color:#4d4d4d}
+
+    .post_wrap {
+        display: flex;
+        flex-wrap:wrap;
+        padding-bottom: 30px;
+    }
+
+}
+
+/* components / post*/
+.post {
+    width:50%;
+    max-width:330px;
+    margin: 10px;
+}
