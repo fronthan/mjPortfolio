@@ -61,6 +61,8 @@ html { scroll-behavior: smooth; }
 
 .introduce_main { margin-top: 40px; padding: 30px; background: rgba(255, 243, 220, 0.5); }
 
+.introduce_main .mark_txt { background: #ffd980; font-size: inherit; }
+
 .introduce_main p { padding-bottom: 22px; font-size: 1.2rem; line-height: 1.4; }
 
 .introduce_main p:last-child { padding-bottom: 0; }
@@ -83,7 +85,7 @@ html { scroll-behavior: smooth; }
 
 .skill_conts .sentence:last-child { padding-bottom: 44px; }
 
-.skill_conts .sentence .mark_txt { background: #ffd980; font-size: inherit; }
+.skill_conts .sentence .mark_txt { background: rgba(255, 217, 128, 0.7); font-size: inherit; }
 
 .skill_conts .skill_name { margin-bottom: 10%; margin-top: -17%; text-align: center; transition: margin .4s; }
 

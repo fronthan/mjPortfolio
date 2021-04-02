@@ -145,6 +145,11 @@ html {scroll-behavior: smooth;}
   padding: 30px;
   background: transparentize($colorSkin, 0.5);
 
+  .mark_txt {
+    background: $colorYellow;
+    font-size: inherit;
+  }
+  
   p {padding-bottom: 22px;
     font-size:1.2rem;
     line-height: 1.4;
@@ -202,7 +207,7 @@ html {scroll-behavior: smooth;}
     }
 
     .mark_txt {
-      background: $colorYellow;
+      background:transparentize($color: $colorYellow, $amount: 0.3);
       font-size: inherit;
     }
   }
