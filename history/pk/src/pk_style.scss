@@ -1,4 +1,10 @@
 @charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR:wght@350;400;500&family=Roboto:wght@500&display=swap"); //nanum : 400 regular, 700 bold /notosans : 350 demilight, 400 regular, 500 medium / roboto : 500 medium
+
+$colorBlue : #2F80ED;
+$colorPurple :#9B51E0;
+
+html {font-family:'Nanum Gothic', sans-serif; font-weight:400}
 
 %wrap {
     max-width:720px;
@@ -49,7 +55,30 @@
   
     padding: 0 10px;
 
-    .hello_message {padding: 35px 10px 25px; font-size: 18px; color:#4d4d4d}
+    .hello_message {padding: 35px 10px 25px; font-size: 18px; color:#4d4d4d; }
+
+    .page_title {
+        padding-top: 80px;
+        padding-bottom: 20px;
+        margin-bottom: 60px;
+        border-bottom: 2px solid $colorPurple;
+        font-size: 25px; color:#4d4d4d;
+        text-align: center;
+    }
+
+    .visitor_area {
+        display: flex;
+        justify-content: space-around;
+        padding:35px 10px 25px;
+
+        .btn_login, .btn_register {font-size:16px; color:#4d4d4d;
+        
+        &:hover, &:active {
+            text-decoration: underline;
+            cursor: pointer;
+        }}
+
+    }
 
     .post_wrap {
         display: flex;
@@ -66,6 +95,20 @@
     margin: 10px;
 }
 
+/* routes / Keyword */
+.result_list {
+    display: flex;
+    flex-wrap:wrap;
+    max-width:720px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    .keyword_item {
+        font-size:24px; color:#4d4d4d;
+        padding: 25px 60px 25px 0;
+    }
+
+}
 //pop_area 공통
 .pop_area {
     position:fixed;
@@ -75,10 +118,13 @@
 
     .pop_head {
         display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width:720px;
         position: relative;
+        margin: 0 auto;
         padding: 20px 40px;
         background: #f8f8f8;
-        text-align: right;
     }
     .pop_title {text-align: left;}
 
@@ -87,7 +133,6 @@
     .inp_keyword {display: block; width:100%; padding: 5px 5px; background: none; border:0; color:#9B51E0; font-size: 36px;}
 
     .btn_close {
-        font-size:20px;
-        color:#4d4d4d;
+        width:20px; height:20px;
     }
 }
