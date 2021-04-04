@@ -65,3 +65,29 @@
     max-width:330px;
     margin: 10px;
 }
+
+//pop_area 공통
+.pop_area {
+    position:fixed;
+    left:0; top:0;
+    width:100%; height:100%;
+    background: #fff;
+
+    .pop_head {
+        display: flex;
+        position: relative;
+        padding: 20px 40px;
+        background: #f8f8f8;
+        text-align: right;
+    }
+    .pop_title {text-align: left;}
+
+    .box_inp {max-width:500px; border-bottom: 2px solid #c4c4c4;}
+
+    .inp_keyword {display: block; width:100%; padding: 5px 5px; background: none; border:0; color:#9B51E0; font-size: 36px;}
+
+    .btn_close {
+        font-size:20px;
+        color:#4d4d4d;
+    }
+}
