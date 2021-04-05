@@ -31,6 +31,7 @@ a {
 
 
 button {border: none; background: none; outline:0;}
+input:focus {outline:0;}
 table { width:100%; border-collapse:collapse; border-spacing:0; }
 h1,h2,h3,h4,h5,h6 {font-weight: normal;}
 em, i, strong, b {font-weight: inherit; font-style:normal}

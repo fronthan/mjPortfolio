@@ -1,14 +1,35 @@
 @charset "utf-8";
+@import '_common';
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR:wght@350;400;500&family=Roboto:wght@500&display=swap"); //nanum : 400 regular, 700 bold /notosans : 350 demilight, 400 regular, 500 medium / roboto : 500 medium
 
 $colorBlue : #2F80ED;
+$colorBlueSoft : #29ABE2;
 $colorPurple :#9B51E0;
 
-html {font-family:'Nanum Gothic', sans-serif; font-weight:400}
+html {font-family:'Nanum Gothic', sans-serif; font-weight:400; height:100%;}
+
+body {height:100%}
 
 %wrap {
     max-width:720px;
     margin: 0 auto;
+}
+
+@mixin pk_btn($bgc:$colorBlueSoft) {
+    display: block;
+    width:200px; height:38px; line-height: 38px;
+    margin: 0 auto;
+    border-radius: 20px;
+    background: $bgc;
+    font-weight: 500;
+    font-size: 17px;
+    color:#fff;
+}
+
+
+.box_inp {max-width:500px; border-bottom: 2px solid #c4c4c4;
+
+input { display: block; width:100%; padding: 5px 5px; background: none; border:0; color:#9B51E0; font-size: 18px; }
 }
 
 /* Header.js */
@@ -128,11 +149,20 @@ html {font-family:'Nanum Gothic', sans-serif; font-weight:400}
     }
     .pop_title {text-align: left;}
 
-    .box_inp {max-width:500px; border-bottom: 2px solid #c4c4c4;}
+    
 
     .inp_keyword {display: block; width:100%; padding: 5px 5px; background: none; border:0; color:#9B51E0; font-size: 36px;}
 
     .btn_close {
         width:20px; height:20px;
     }
+}
+
+/* routes > Login */
+.pk_login {min-height:calc(100vh - 380px); margin: 0 auto; padding-bottom: 40px;
+
+.btn_login {
+    @include pk_btn();
+    margin-top: 20px;
+}
 }
