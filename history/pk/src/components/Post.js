@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const bg_add_post = {backgroundImage:"URL('btn_plus.svg')", backgroundPosition:'center', backgroundRepeat: 'no-repeat'}
 
@@ -18,9 +19,11 @@ function Post(props) {
                             <button className="btn_more"><span className="blind_inline">더보기</span></button>
                         </span>                       
                     }
-                     <span className="img_area">
-                        <img src={src} alt=""/>
-                    </span>
+                    <Link to="/article">
+                        <span className="img_area">
+                            <img src={src} alt=""/>
+                        </span>
+                    </Link>
                 </div>
             }           
         </>

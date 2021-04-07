@@ -5,6 +5,7 @@ function LayerHead(props) {
   const [keyword, setKeyword ] = useState('');
 
   const title = props.title;
+  const user_nick = props.user;
   const imageX = {
       backgroundImage:"url('btn_close.svg')",
       backgroundSize:'cover'
@@ -21,7 +22,7 @@ function LayerHead(props) {
             </div>
         }  
         {title !== '키워드 검색' &&
-          <div className="title_txt">{title}</div>
+          <div className="title_txt">{user_nick}님의 게시물</div>
         }
         </div>
         <Link to="/" className="btn_close" style={imageX} />
