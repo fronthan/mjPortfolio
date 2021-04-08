@@ -50,7 +50,7 @@ html {scroll-behavior: smooth;}
     background: rgba(255, 255, 255, 0.8);
     transition: all .3s;
 
-    a:hover {
+    .on a, a:hover {
       background: $colorYellow;
     }
   }
@@ -127,23 +127,18 @@ html {scroll-behavior: smooth;}
 }
 
 .mj_introduce {
-  background: url(/images/bg_skill.svg) repeat center 0/cover;
+  background: url(/images/bg_history.svg) repeat;
   overflow: hidden;
   padding-bottom: 6%;
 
-  .cont_tit {
-    padding-top: 10%;
-    transition: padding .4s;
-
-    .tit_para {padding-top: 20px;}
-  }
+  .cont_tit .tit_para {padding: 20px 30px 0;}
 }
 
 .introduce_main {
   @extend %center_page;
   margin-top: 40px;
   padding: 30px;
-  background: transparentize($colorSkin, 0.5);
+  background: transparentize(#fff, 0.5);
 
   .mark_txt {
     background: $colorYellow;
@@ -161,19 +156,18 @@ html {scroll-behavior: smooth;}
 }
 
 .mj_portfolio {
-  background: url(/images/bg_skill.svg) no-repeat center 0;
   overflow: hidden;
 }
 
 .mj_history {
-  padding-bottom: 6%;
-  background: url(/images/bg_skill.svg) no-repeat center 0;
+  padding-bottom: 10%;
+  background: url(/images/bg_skill.svg) 0 center/cover;
   transition: padding .4s;
 }
 
 .mj_skill {
   padding-bottom: 10%;
-  background: url(/images/bg_history.svg) repeat;
+  background: url(/images/bg_skill.svg)  0 center/cover;
 }
 
 .skill_conts {
@@ -189,7 +183,7 @@ html {scroll-behavior: smooth;}
 
     li {
       padding: 0 18px;
-      background: transparentize(#fff, 0.5);
+      background: rgba(255, 243, 220, 0.5);
     }
   }
 
@@ -228,8 +222,6 @@ html {scroll-behavior: smooth;}
     transition: margin .4s;
   }
 }
-
-
 
 
 .history_main {
@@ -495,6 +487,11 @@ html {scroll-behavior: smooth;}
    }
 }
 
+@media (min-width:1025px) {
+  .mj_history .cont_tit {
+    padding-top: 10%;
+  }  
+}
 @media (max-width:1274px) and (min-width:1025px) {
   .history_main {
     max-width: 940px;
@@ -537,16 +534,11 @@ html {scroll-behavior: smooth;}
         }
       }
     }
-  }
-
-  .mj_introduce .cont_tit {
-    padding-top: 15%;
   }  
 }
 
 @media (max-width:1024px) {
   .enter_t {display:block;}
-
   
   .history_main {
     max-width: 640px;
@@ -565,7 +557,11 @@ html {scroll-behavior: smooth;}
 
 }
 
-
+@media (max-width:1024px) and(min-width:721px) {
+  .mj_history .cont_tit {
+    padding-top: 15%;
+  }  
+}
 
 @media (max-width:810px) and (min-width:721px) {
   .enter_tm {display:block}
@@ -580,9 +576,19 @@ html {scroll-behavior: smooth;}
 
 
 @media (max-width: 720px) {
+
+  .cont_tit {padding-bottom: 50px;}
+  .cont_tit:after {height:30px;}
   .my_tnb {
     width: 50%;
   }
+
+
+  .mj_history .cont_tit {
+    padding-top: 13%;
+  }  
+
+  .introduce_main {margin-top: 25px;}
     
   .skill_conts .skill_main {
     padding-top:4%;
@@ -612,7 +618,9 @@ html {scroll-behavior: smooth;}
 }
 
 @media (max-width:720px) and (min-width:481px) {
-  .mj_introduce .cont_tit {
+  html {font-size:9px}
+
+  .mj_history .cont_tit {
     padding-top: 20%;
   }
 }
@@ -624,8 +632,9 @@ html {scroll-behavior: smooth;}
 }
 
 @media (max-width:480px) {
+  html {font-size:8px}
   .txt_box {display:none}
-  .mj_introduce .cont_tit {
+  .mj_history .cont_tit {
     padding-top: 25%;
   }
   .my_tnb {width:auto; min-width:200px;}

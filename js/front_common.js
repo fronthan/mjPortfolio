@@ -42,23 +42,25 @@ function popupUI() {
 }
 
 // 페이지 로딩 중 함수
-var typed = new Typed("#typed", {
-  strings: ["페이지를 불러오는 중입니다. . ."],
-  typeSpeed: 0200,
-  onComplete: (self) => {
-    setTimeout(removeTyped, 500);
-  },
-});
+// var typed = new Typed("#typed", {
+//   strings: ["페이지를 불러오는 중입니다. . ."],
+//   typeSpeed: 0200,
+//   onComplete: (self) => {
+//     setTimeout(removeTyped, 500);
+//   },
+// });
 function removeTyped() {
   document.querySelector("#typed").remove();
   document.querySelector(".typed-cursor").remove();
-  document.querySelector(".mj_header").style.zIndex = "100";
+  // document.querySelector(".mj_header").style.zIndex = "100";
 
-  initAOS();
+  // initAOS();
 }
 
+initAOS();
 function initAOS() {
   AOS.init();
+  document.querySelector(".mj_header").style.zIndex = "100";
 }
 
 /* -------------------
@@ -117,8 +119,11 @@ function deviceCheck() {
 const my_tnb = document.querySelector(".my_tnb ul");
 const tnb_li_items = my_tnb.querySelectorAll("li");
 for (var i = 0; tnb_li_items.length > i; i++) {
-  tnb_li_items[i].addEventListener("click", function () {
+  tnb_li_items[i].querySelector('a').addEventListener("click", function (e) {
+    e.stopPropagation();
+
     const txt = this.getAttribute("data-name");
+    did_scroll = false;
     setTnbActive(txt);
   });
 }
@@ -146,15 +151,16 @@ email_address.addEventListener("click", function (e) {
  * ----------------------*/
 function getSectionTop() {
   //offsetTop 값 가져오기
+  const introduce_height = document.querySelector(".mj_introduce").offsetTop -0;
   const skill_height = document.querySelector(".mj_skill").offsetTop - 50;
-  const history_height = document.querySelector(".mj_history").offsetTop - 50;
-  const contact_height = document.querySelector(".mj_contact").offsetTop - 200;
+  const contact_height = document.querySelector(".mj_contact").offsetTop - 50;
 
-  return [skill_height, history_height, contact_height];
+  return [introduce_height, skill_height, contact_height];
 }
 
 function setTnbActive(tnb) {
   //tnb 온오프
+
   const nav = tnb.slice(0, 1).toUpperCase() + tnb.slice(1).toLowerCase();
 
   tnb_li_items.forEach(function (val) {
@@ -164,6 +170,7 @@ function setTnbActive(tnb) {
 
     if (current_txt == nav) {
       val.classList.add("on");
+      return false;
     }
   });
 }
@@ -213,11 +220,11 @@ function hasScrolled() {
   let tnb = 0;
 
   if (last_st < offsetTops[0]) {
-    tnb = "introduce";
-  } else if (last_st > offsetTops[0] && last_st < offsetTops[1]) {
-    tnb = "skill";
-  } else if (last_st > offsetTops[1] && last_st < offsetTops[2]) {
     tnb = "history";
+  } else if (last_st > offsetTops[0] && last_st < offsetTops[1]) {
+    tnb = "introduce";
+  } else if (last_st > offsetTops[1] && last_st < offsetTops[2]) {
+    tnb = "skill";
   } else if (last_st > offsetTops[2]) {
     tnb = "contact";
   }
@@ -239,16 +246,23 @@ function changeHistoryDetail(ev) {
 
   const device = deviceCheck();
 
-  if (device != "phone") {
-    //mobile 이외 디바이스, 만들지 않고 파일을 가져와 변경한다
-    popupUI();
+  const mobile_els = device != 'phone' ? popupUI() : makeMobileEle();
 
-    $.getJSON("/js/history.json", function (data) {
-      const project = data[target_alt];
+  $.getJSON("/js/history.json", function (data) {
+    const project = data[target_alt];
 
-      const site_name = project.name;
+    //디바이스 무관 공통 데이터
+    const site_name = project.name;
+    const date_range = project.data_range;
+    const end_service = project.end_service;
+
+    if (device != "phone") {
+      //mobile 이외 디바이스, 만들지 않고 파일을 가져와 변경한다     
+      
+      const history_item = document.querySelector(".history_detail");
+      const site_desc = history_item.querySelector(".site_desc");
+
       const link = project.link;
-      const date_range = project.data_range;
       const intro = project.intro;
       const dev_tech = project.dev_tech;
       const dev_system = project.dev_system;
@@ -258,9 +272,6 @@ function changeHistoryDetail(ev) {
       const tablet = project.tablet;
       const desktop = project.desktop;
 
-      const history_item = document.querySelector(".history_detail");
-      const site_desc = history_item.querySelector(".site_desc");
-
       history_item.querySelector(".js-img").setAttribute("src", "images/history_" + img_name + ".jpg");
 
       if (code_view !== null) {
@@ -269,7 +280,6 @@ function changeHistoryDetail(ev) {
         history_item.querySelector(".js-view_code").remove();
       }
 
-      console.log(link);
       if (link !== undefined) {
         site_desc.querySelector('.site_link').setAttribute("href", link);
         site_desc.querySelector(".site_link").textContent = site_name;
@@ -277,7 +287,6 @@ function changeHistoryDetail(ev) {
         site_desc.querySelector(".title_txt").textContent = site_name;
       }
 
-      site_desc.querySelector(".proj_range").textContent = date_range;
       site_desc.querySelector(".site_intro").textContent = intro;
       site_desc.querySelector(".tech_txt").textContent = dev_tech;
       site_desc.querySelector(".sys_txt").textContent = dev_system;
@@ -292,48 +301,44 @@ function changeHistoryDetail(ev) {
       if (!desktop) {
         history_item.querySelector(".btn_desktop").remove();
       }
-    });
-  } else {
-    //모바일
 
-    if (!ev.target.closest(".view_mode")) {
-      //열려있는 박스가 있으면 지우기
-      const history_main = document.querySelector(".history_main");
-      const msd = document.querySelector(".m_site_desc");
-      const history_item = history_main.querySelector(".view_mode");
-      if (history_item != null) {
-        history_item.classList.remove("view_mode");
-        msd.remove();
-      }
-    }
+    } else {
+      //모바일
+      if (!ev.target.closest(".view_mode")) {
+        //열려있는 박스가 있으면 지우기
+        const history_main = document.querySelector(".history_main");
+        const msd = document.querySelector(".m_site_desc");
+        const history_item = history_main.querySelector(".view_mode");
+        if (history_item != null) {
+          history_item.classList.remove("view_mode");
+          msd.remove();
+        }
+      }     
 
-    const mobile_els = makeMobileEle();
-    target.after(mobile_els);
-
-    const item_box = target.closest(".history_item");
-    item_box.classList.add("view_mode");
-
-    $.getJSON("/js/history.json", function (data) {
-      const project = data[target_alt];
-
-      const site_name = project.name;
-      const date_range = project.data_range;
       const site_type = project.site_type;
-      const end_service = project.end_service;
 
+      target.after(mobile_els);
+      
+      const item_box = target.closest(".history_item");
+      item_box.classList.add("view_mode");
+      
       const m_site_desc = item_box.querySelector(".m_site_desc");
-
       m_site_desc.querySelector(".site_title").textContent = site_name;
-      m_site_desc.querySelector(".proj_range").textContent = date_range;
-      if (end_service == true) {
-        m_site_desc.querySelector(".closed_mark").textContent = "서비스 종료";
-      }
 
       if (site_type != null) {
         m_site_desc.querySelector(".site_type").textContent = site_type;
       }
-    });
-  }
+    }
+
+    //디바이스 무관 공통 데이터 화면 처리
+    document.querySelector(".proj_range").textContent = date_range;  
+    
+    if (end_service != true ) {
+      document.querySelector('.closed_mark').remove();
+    } else if (end_service == true) {
+      document.querySelector('.closed_mark').textContent = "서비스 종료";
+    }
+  });
 }
 
 function makeMobileEle() {

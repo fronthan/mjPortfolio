@@ -27,7 +27,7 @@ html { scroll-behavior: smooth; }
 
 .mj_header.change_bg { background: rgba(255, 255, 255, 0.8); transition: all .3s; }
 
-.mj_header.change_bg a:hover { background: #ffd980; }
+.mj_header.change_bg .on a, .mj_header.change_bg a:hover { background: #ffd980; }
 
 .mj_header.fixed { position: fixed; transition: all 1s; }
 
@@ -53,13 +53,11 @@ html { scroll-behavior: smooth; }
 
 .my_tnb ul li.on a, .my_tnb ul li a:hover { border-radius: 50%; background-color: #fff3dc; }
 
-.mj_introduce { background: url(/images/bg_skill.svg) repeat center 0/cover; overflow: hidden; padding-bottom: 6%; }
+.mj_introduce { background: url(/images/bg_history.svg) repeat; overflow: hidden; padding-bottom: 6%; }
 
-.mj_introduce .cont_tit { padding-top: 10%; transition: padding .4s; }
+.mj_introduce .cont_tit .tit_para { padding: 20px 30px 0; }
 
-.mj_introduce .cont_tit .tit_para { padding-top: 20px; }
-
-.introduce_main { margin-top: 40px; padding: 30px; background: rgba(255, 243, 220, 0.5); }
+.introduce_main { margin-top: 40px; padding: 30px; background: rgba(255, 255, 255, 0.5); }
 
 .introduce_main .mark_txt { background: #ffd980; font-size: inherit; }
 
@@ -69,15 +67,15 @@ html { scroll-behavior: smooth; }
 
 .introduce_main p a:hover, .introduce_main p a:active { text-decoration: underline; }
 
-.mj_portfolio { background: url(/images/bg_skill.svg) no-repeat center 0; overflow: hidden; }
+.mj_portfolio { overflow: hidden; }
 
-.mj_history { padding-bottom: 6%; background: url(/images/bg_skill.svg) no-repeat center 0; transition: padding .4s; }
+.mj_history { padding-bottom: 10%; background: url(/images/bg_skill.svg) 0 center/cover; transition: padding .4s; }
 
-.mj_skill { padding-bottom: 10%; background: url(/images/bg_history.svg) repeat; }
+.mj_skill { padding-bottom: 10%; background: url(/images/bg_skill.svg) 0 center/cover; }
 
 .skill_conts .skill_main { display: flex; flex-wrap: wrap; justify-content: center; padding-top: 6.9%; transition: padding .4s; }
 
-.skill_conts .skill_main li { padding: 0 18px; background: rgba(255, 255, 255, 0.5); }
+.skill_conts .skill_main li { padding: 0 18px; background: rgba(255, 243, 220, 0.5); }
 
 .skill_conts .skill_desc { font-weight: 350; text-align: center; }
 
@@ -183,6 +181,8 @@ html { scroll-behavior: smooth; }
   .site_desc .dev_tech { margin-top: 20px; }
   .view_mode .item_img_s:after { content: ' '; display: block; width: 100%; height: 100%; position: absolute; left: 0; top: 0; background-color: rgba(30, 30, 30, 0.5); z-index: 0; } }
 
+@media (min-width: 1025px) { .mj_history .cont_tit { padding-top: 10%; } }
+
 @media (max-width: 1274px) and (min-width: 1025px) { .history_main { max-width: 940px; }
   .history_main .history_item { width: calc(33.3% - 20px); }
   .site_desc { max-width: 940px; padding: 31px 30px 40px; }
@@ -192,8 +192,7 @@ html { scroll-behavior: smooth; }
   .skill_conts .skill_main li { width: calc(50% - 30px); flex-grow: initial; }
   .skill_conts .skill_main li:nth-child(2) { margin-left: 2%; }
   .skill_conts .skill_main li:nth-child(3) { width: calc(100% - 40px); margin-top: 8%; }
-  .skill_conts .skill_main li:nth-child(3) .skill_name { margin-top: -7%; margin-bottom: 4%; }
-  .mj_introduce .cont_tit { padding-top: 15%; } }
+  .skill_conts .skill_main li:nth-child(3) .skill_name { margin-top: -7%; margin-bottom: 4%; } }
 
 @media (max-width: 1024px) { .enter_t { display: block; }
   .history_main { max-width: 640px; }
@@ -201,12 +200,18 @@ html { scroll-behavior: smooth; }
   .history_detail { margin-top: 0; padding-top: 10px; }
   .site_desc { width: calc(100vw - 60px); margin: 0 30px; padding: 15px 20px 20px; } }
 
+@media (max-width: 1024px) and (min-width: 721px) { .mj_history .cont_tit { padding-top: 15%; } }
+
 @media (max-width: 810px) and (min-width: 721px) { .enter_tm { display: block; } }
 
 @media (max-width: 780px) and (min-width: 721px) { .enter_ts { display: block; }
   .skill_conts .skill_main li { padding: 0 14px; } }
 
-@media (max-width: 720px) { .my_tnb { width: 50%; }
+@media (max-width: 720px) { .cont_tit { padding-bottom: 50px; }
+  .cont_tit:after { height: 30px; }
+  .my_tnb { width: 50%; }
+  .mj_history .cont_tit { padding-top: 13%; }
+  .introduce_main { margin-top: 25px; }
   .skill_conts .skill_main { padding-top: 4%; }
   .skill_conts .skill_main li { width: 100%; max-width: 420px; margin: 16% 0 0; padding: 0 16px; }
   .skill_conts .skill_name { margin-bottom: 6%; }
@@ -215,11 +220,13 @@ html { scroll-behavior: smooth; }
   .history_main .history_item .item_img_s { width: calc(100% - 40px); max-width: 304px; margin: 0 auto; text-align: center; }
   .skill_sub { max-width: 420px; } }
 
-@media (max-width: 720px) and (min-width: 481px) { .mj_introduce .cont_tit { padding-top: 20%; } }
+@media (max-width: 720px) and (min-width: 481px) { html { font-size: 9px; }
+  .mj_history .cont_tit { padding-top: 20%; } }
 
 @media (max-width: 600px) { .skill_conts .skill_sub { padding: 0 25px; } }
 
-@media (max-width: 480px) { .txt_box { display: none; }
-  .mj_introduce .cont_tit { padding-top: 25%; }
+@media (max-width: 480px) { html { font-size: 8px; }
+  .txt_box { display: none; }
+  .mj_history .cont_tit { padding-top: 25%; }
   .my_tnb { width: auto; min-width: 200px; } }
 /*# sourceMappingURL=style.css.map */
