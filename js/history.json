@@ -40,5 +40,20 @@
     "mobile" : false,
     "tablet" : false,
     "desktop" :true
+  },
+  "pkReact": {
+    "name": "플레이콕 리액트",
+    "data_range": "2021.04.01~2020.04.08",
+    "end_service": true,
+    "intro": "리액트 프로젝트를 위한 퍼블리싱 연습용 사이트, 가상 사이트",
+    "dev_tech": "React",
+    "dev_system": "VSCode, GitHub",
+    "main_name" : "pk React",
+    "code_view" : null,
+    "site_type" : "Blog",
+    "mobile" : true,
+    "tablet" : true,
+    "desktop" :true,
+    "link": "http://fronthan.github.io/react_pk_simple"
   }
 }
