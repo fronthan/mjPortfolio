@@ -9,3 +9,4 @@ history/pk/src/components/Modal.js
 historypk/src/routes/Login.js
 historypk/src/routes/Article.js
 historypk/src/routes/Register.js
+debug.log

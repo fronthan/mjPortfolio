@@ -4,7 +4,7 @@ import Post from "../components/Post";
 
 function Home() {
 
-  const bg_opt = {backgroundImage:"URL('btn_option.svg')"}
+  const bg_opt = {backgroundImage:"URL('btn_option.svg')", backgroundSize:'cover'}
   
   return (
     <main className="pk_main" role="main">
