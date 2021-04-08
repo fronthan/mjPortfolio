@@ -6,9 +6,9 @@ const keywords = ["커피", "카페", "가산동", "웹개발", "웹디자인", 
 function ListItem(props) {
     return <li className="keyword_item">{props.itemword}</li>
 }
-export default function Keyword() {
+function Keyword() {
     const keyword_list = keywords.map((word, index) => 
-        <ListItem itemword={word} />
+        <ListItem itemword={word} key={index}/>
     );
     return (
         <div className="pop_area" aria-modal="true">
@@ -19,3 +19,5 @@ export default function Keyword() {
         </div>
     )
 }
+
+export default Keyword;

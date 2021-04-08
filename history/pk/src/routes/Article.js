@@ -1,11 +1,8 @@
 import React from "react";
-import LayerHead from "../components/Common/LayerHead";
 
 function Article() {
   return (
-    <div className="pop_area" aria-modal="true">
-      <LayerHead title="게시물" user="player1" />
-      <div className="cont_area">
+    <>     
         <div className="post_detail">
           <span className="box_img">
             <img src="sns002.jpg" alt="" />
@@ -47,8 +44,7 @@ function Article() {
             </button>
           </div>
         </div>
-      </div>
-    </div>
+    </>
   );
 }
 

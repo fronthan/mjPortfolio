@@ -1,16 +1,16 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 
 const bg_add_post = {backgroundImage:"URL('btn_plus.svg')", backgroundPosition:'center', backgroundRepeat: 'no-repeat'}
 
 function Post(props) {
+    
     const data = props.data;
     const src = props.src;
 
     return (
         <>
             {data === "add_post" &&
-                <div className="post add_post" style={bg_add_post}><span className="blind_inline">게시물 올리기</span></div> 
+                <div className="add_post" style={bg_add_post}><span className="blind_inline">게시물 올리기</span></div> 
             }
             {data !== "add_post" &&
                 <div className="post">
@@ -19,13 +19,11 @@ function Post(props) {
                             <button className="btn_more"><span className="blind_inline">더보기</span></button>
                         </span>                       
                     }
-                    <Link to="/article">
-                        <span className="img_area">
-                            <img src={src} alt=""/>
-                        </span>
-                    </Link>
+                    <span className="img_area">
+                        <img src={src} alt=""/>
+                    </span>
                 </div>
-            }           
+            }
         </>
     );
 }

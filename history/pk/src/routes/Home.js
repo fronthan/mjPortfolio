@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Post from "../components/Post";
 
 function Home() {
+  
   return (
     <main className="pk_main" role="main">
       <div className="hello_message">

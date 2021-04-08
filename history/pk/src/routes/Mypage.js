@@ -16,7 +16,7 @@ function Home() {
       </div>
       <div className="pk_mypage">
         <div className="posts">
-          <Post data="add_post" />          
+          <Post data="add_post" />        
           <Post data="mysns" src="sns007.jpg"/>
           <Post data="mysns" src="sns005.jpg"/>
           <Post data="mysns" src="sns006.jpg"/>
